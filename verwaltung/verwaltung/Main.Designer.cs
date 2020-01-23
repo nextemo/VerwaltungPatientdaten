@@ -28,12 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.tSearch = new System.Windows.Forms.TextBox();
+            this.lSearch = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // tSearch
+            // 
+            this.tSearch.Location = new System.Drawing.Point(647, 25);
+            this.tSearch.Name = "tSearch";
+            this.tSearch.Size = new System.Drawing.Size(100, 20);
+            this.tSearch.TabIndex = 0;
+            // 
+            // lSearch
+            // 
+            this.lSearch.AutoSize = true;
+            this.lSearch.Location = new System.Drawing.Point(560, 28);
+            this.lSearch.Name = "lSearch";
+            this.lSearch.Size = new System.Drawing.Size(81, 13);
+            this.lSearch.TabIndex = 1;
+            this.lSearch.Text = "Patientensuche";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(383, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 34);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Neuer Patient";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(176, 17);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(135, 34);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Patient bearbeiten";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(753, 23);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(44, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "GO";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // Main
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lSearch);
+            this.Controls.Add(this.tSearch);
+            this.Name = "Main";
             this.Text = "Main";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox tSearch;
+        private System.Windows.Forms.Label lSearch;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
