@@ -19,7 +19,10 @@ namespace verwaltung
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (tboxUsername.Text == "AMD")
+            {
 
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
