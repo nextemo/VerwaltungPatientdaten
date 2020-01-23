@@ -21,5 +21,12 @@ namespace verwaltung
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var vName = tboxVorname.Text;
+            var nName = tboxNachname.Text;
+            var neuPatient = new Patient(vName, nName);
+        }
     }
 }

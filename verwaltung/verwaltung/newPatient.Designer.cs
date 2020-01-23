@@ -34,6 +34,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.tboxVorname = new System.Windows.Forms.TextBox();
+            this.tboxNachname = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -71,6 +73,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Speichern";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -91,11 +94,27 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // tboxVorname
+            // 
+            this.tboxVorname.Location = new System.Drawing.Point(82, 74);
+            this.tboxVorname.Name = "tboxVorname";
+            this.tboxVorname.Size = new System.Drawing.Size(100, 20);
+            this.tboxVorname.TabIndex = 6;
+            // 
+            // tboxNachname
+            // 
+            this.tboxNachname.Location = new System.Drawing.Point(82, 99);
+            this.tboxNachname.Name = "tboxNachname";
+            this.tboxNachname.Size = new System.Drawing.Size(100, 20);
+            this.tboxNachname.TabIndex = 7;
+            // 
             // newPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tboxNachname);
+            this.Controls.Add(this.tboxVorname);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -117,5 +136,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox tboxVorname;
+        private System.Windows.Forms.TextBox tboxNachname;
     }
 }
