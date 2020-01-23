@@ -37,13 +37,13 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(374, 245);
+            this.btnLogin.Location = new System.Drawing.Point(358, 243);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(100, 23);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // tboxUsername
             // 
@@ -71,7 +71,7 @@
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(294, 191);
+            this.lbPassword.Location = new System.Drawing.Point(296, 191);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(53, 13);
             this.lbPassword.TabIndex = 4;
