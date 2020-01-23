@@ -17,14 +17,21 @@ namespace verwaltung
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            string password = "test"; //check password
+            if (tboxPassword.Text != password)
+            {
+                MessageBox.Show("Password ist ungültig");
+            }
+            else {
+                MessageBox.Show("Welcome!");
+            }
         }
     }
 }
