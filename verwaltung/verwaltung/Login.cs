@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace verwaltung
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -28,9 +28,14 @@ namespace verwaltung
             if (tboxPassword.Text != password)
             {
                 MessageBox.Show("Password ist ungültig");
+            } else if (string.IsNullOrWhiteSpace(tboxUsername.Text)){
+                MessageBox.Show("Den Feld darf nicht leer sein.");
+                tboxUsername.BackColor = Color.Red;
             }
             else {
-                MessageBox.Show("Welcome!");
+                MainForm mainForm = new MainForm();
+                this.Hide();
+                mainForm.Show();
             }
         }
     }

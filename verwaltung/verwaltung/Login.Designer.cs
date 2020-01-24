@@ -1,6 +1,6 @@
 ﻿namespace verwaltung
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -77,7 +77,7 @@
             this.lbPassword.TabIndex = 4;
             this.lbPassword.Text = "Password";
             // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,8 +87,9 @@
             this.Controls.Add(this.tboxPassword);
             this.Controls.Add(this.tboxUsername);
             this.Controls.Add(this.btnLogin);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

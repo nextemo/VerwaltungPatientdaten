@@ -10,14 +10,25 @@ using System.Windows.Forms;
 
 namespace verwaltung
 {
-    public partial class Main : Form
+    public partial class MainForm : Form
     {
-        public Main()
+        public MainForm()
         {
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnNeuPatient_Click(object sender, EventArgs e)
+        {
+            NeuPatient neuPatient = new NeuPatient();
+            neuPatient.Show();
+        }
+
+        private void btnPatientBearb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSuchen_Click(object sender, EventArgs e)
         {
 
         }

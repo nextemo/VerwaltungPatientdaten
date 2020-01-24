@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace verwaltung
 {
-    public partial class newPatient : Form
+    public partial class NeuPatient : Form
     {
-        public newPatient()
+        public NeuPatient()
         {
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnPZurück_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnPSpeichern_Click(object sender, EventArgs e)
         {
             var vName = tboxVorname.Text;
             var nName = tboxNachname.Text;
