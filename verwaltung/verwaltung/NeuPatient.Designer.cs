@@ -38,8 +38,8 @@
             this.btnPPreview = new System.Windows.Forms.Button();
             this.lbPGebDatum = new System.Windows.Forms.Label();
             this.gebDatumPicker = new System.Windows.Forms.DateTimePicker();
-            this.lbPGeschlecht = new System.Windows.Forms.Label();
-            this.tboxPGeschlecht = new System.Windows.Forms.TextBox();
+            this.rMänlich = new System.Windows.Forms.RadioButton();
+            this.rWeiblich = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // lbPVorname
@@ -138,31 +138,37 @@
             this.gebDatumPicker.Size = new System.Drawing.Size(398, 35);
             this.gebDatumPicker.TabIndex = 10;
             // 
-            // lbPGeschlecht
+            // rMänlich
             // 
-            this.lbPGeschlecht.AutoSize = true;
-            this.lbPGeschlecht.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPGeschlecht.Location = new System.Drawing.Point(250, 274);
-            this.lbPGeschlecht.Name = "lbPGeschlecht";
-            this.lbPGeschlecht.Size = new System.Drawing.Size(127, 26);
-            this.lbPGeschlecht.TabIndex = 12;
-            this.lbPGeschlecht.Text = "Geschlecht:";
+            this.rMänlich.AutoSize = true;
+            this.rMänlich.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rMänlich.Location = new System.Drawing.Point(454, 271);
+            this.rMänlich.Name = "rMänlich";
+            this.rMänlich.Size = new System.Drawing.Size(105, 30);
+            this.rMänlich.TabIndex = 15;
+            this.rMänlich.TabStop = true;
+            this.rMänlich.Text = "Mänlich";
+            this.rMänlich.UseVisualStyleBackColor = true;
             // 
-            // tboxPGeschlecht
+            // rWeiblich
             // 
-            this.tboxPGeschlecht.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPGeschlecht.Location = new System.Drawing.Point(383, 268);
-            this.tboxPGeschlecht.Name = "tboxPGeschlecht";
-            this.tboxPGeschlecht.Size = new System.Drawing.Size(398, 35);
-            this.tboxPGeschlecht.TabIndex = 14;
+            this.rWeiblich.AutoSize = true;
+            this.rWeiblich.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rWeiblich.Location = new System.Drawing.Point(609, 271);
+            this.rWeiblich.Name = "rWeiblich";
+            this.rWeiblich.Size = new System.Drawing.Size(113, 30);
+            this.rWeiblich.TabIndex = 16;
+            this.rWeiblich.TabStop = true;
+            this.rWeiblich.Text = "Weiblich";
+            this.rWeiblich.UseVisualStyleBackColor = true;
             // 
             // NeuPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 599);
-            this.Controls.Add(this.tboxPGeschlecht);
-            this.Controls.Add(this.lbPGeschlecht);
+            this.Controls.Add(this.rWeiblich);
+            this.Controls.Add(this.rMänlich);
             this.Controls.Add(this.gebDatumPicker);
             this.Controls.Add(this.lbPGebDatum);
             this.Controls.Add(this.btnPPreview);
@@ -192,7 +198,7 @@
         private System.Windows.Forms.Button btnPPreview;
         private System.Windows.Forms.Label lbPGebDatum;
         private System.Windows.Forms.DateTimePicker gebDatumPicker;
-        private System.Windows.Forms.Label lbPGeschlecht;
-        private System.Windows.Forms.TextBox tboxPGeschlecht;
+        private System.Windows.Forms.RadioButton rMänlich;
+        private System.Windows.Forms.RadioButton rWeiblich;
     }
 }

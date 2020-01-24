@@ -29,9 +29,11 @@ namespace verwaltung
         {
             var vName = tboxPVorname.Text;
             var nName = tboxPNachname.Text;
-            var geschlecht = tboxPGeschlecht.Text;
             var geburtsdatum = gebDatumPicker.Value;
-            var neuPatient = new Patient(vName, nName, geburtsdatum, geschlecht);
+            if (rMänlich.Checked) pGeschlecht = "Mänlich";
+            else if (rWeiblich.Checked) pGeschlecht = "Weiblich";
+            else pGeschlecht = "Nicht verfügbar";
+            var neuPatient = new Patient(vName, nName, geburtsdatum, pGeschlecht);
 
             pName = neuPatient.Name;
             pVorname = neuPatient.Vorname;
