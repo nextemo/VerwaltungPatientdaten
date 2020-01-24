@@ -28,49 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbPVorname = new System.Windows.Forms.Label();
+            this.lbPNachname = new System.Windows.Forms.Label();
             this.btnPSpeichern = new System.Windows.Forms.Button();
             this.btnPSpeichernZurück = new System.Windows.Forms.Button();
             this.btnPZurück = new System.Windows.Forms.Button();
-            this.tboxVorname = new System.Windows.Forms.TextBox();
-            this.tboxNachname = new System.Windows.Forms.TextBox();
+            this.tboxPVorname = new System.Windows.Forms.TextBox();
+            this.tboxPNachname = new System.Windows.Forms.TextBox();
             this.btnPPreview = new System.Windows.Forms.Button();
+            this.lbPGebDatum = new System.Windows.Forms.Label();
+            this.gebDatumPicker = new System.Windows.Forms.DateTimePicker();
+            this.lbPGeschlecht = new System.Windows.Forms.Label();
+            this.tboxPGeschlecht = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // lbPVorname
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Neuer Patient";
+            this.lbPVorname.AutoSize = true;
+            this.lbPVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPVorname.Location = new System.Drawing.Point(270, 134);
+            this.lbPVorname.Name = "lbPVorname";
+            this.lbPVorname.Size = new System.Drawing.Size(107, 26);
+            this.lbPVorname.TabIndex = 1;
+            this.lbPVorname.Text = "Vorname:";
             // 
-            // label2
+            // lbPNachname
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Vorname:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 102);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nachname:";
+            this.lbPNachname.AutoSize = true;
+            this.lbPNachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPNachname.Location = new System.Drawing.Point(253, 179);
+            this.lbPNachname.Name = "lbPNachname";
+            this.lbPNachname.Size = new System.Drawing.Size(124, 26);
+            this.lbPNachname.TabIndex = 2;
+            this.lbPNachname.Text = "Nachname:";
             // 
             // btnPSpeichern
             // 
-            this.btnPSpeichern.Location = new System.Drawing.Point(12, 397);
+            this.btnPSpeichern.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPSpeichern.Location = new System.Drawing.Point(383, 329);
             this.btnPSpeichern.Name = "btnPSpeichern";
-            this.btnPSpeichern.Size = new System.Drawing.Size(75, 23);
+            this.btnPSpeichern.Size = new System.Drawing.Size(126, 35);
             this.btnPSpeichern.TabIndex = 3;
             this.btnPSpeichern.Text = "Speichern";
             this.btnPSpeichern.UseVisualStyleBackColor = true;
@@ -78,60 +75,104 @@
             // 
             // btnPSpeichernZurück
             // 
-            this.btnPSpeichernZurück.Location = new System.Drawing.Point(104, 397);
+            this.btnPSpeichernZurück.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPSpeichernZurück.Location = new System.Drawing.Point(552, 329);
             this.btnPSpeichernZurück.Name = "btnPSpeichernZurück";
-            this.btnPSpeichernZurück.Size = new System.Drawing.Size(122, 23);
+            this.btnPSpeichernZurück.Size = new System.Drawing.Size(229, 35);
             this.btnPSpeichernZurück.TabIndex = 4;
             this.btnPSpeichernZurück.Text = "Speicher und Zurück";
             this.btnPSpeichernZurück.UseVisualStyleBackColor = true;
             // 
             // btnPZurück
             // 
-            this.btnPZurück.Location = new System.Drawing.Point(6, 2);
+            this.btnPZurück.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPZurück.Location = new System.Drawing.Point(12, 12);
             this.btnPZurück.Name = "btnPZurück";
-            this.btnPZurück.Size = new System.Drawing.Size(75, 23);
+            this.btnPZurück.Size = new System.Drawing.Size(97, 35);
             this.btnPZurück.TabIndex = 5;
             this.btnPZurück.Text = "Zurück";
             this.btnPZurück.UseVisualStyleBackColor = true;
             this.btnPZurück.Click += new System.EventHandler(this.btnPZurück_Click);
             // 
-            // tboxVorname
+            // tboxPVorname
             // 
-            this.tboxVorname.Location = new System.Drawing.Point(82, 74);
-            this.tboxVorname.Name = "tboxVorname";
-            this.tboxVorname.Size = new System.Drawing.Size(100, 20);
-            this.tboxVorname.TabIndex = 6;
+            this.tboxPVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxPVorname.Location = new System.Drawing.Point(383, 128);
+            this.tboxPVorname.Name = "tboxPVorname";
+            this.tboxPVorname.Size = new System.Drawing.Size(398, 35);
+            this.tboxPVorname.TabIndex = 6;
             // 
-            // tboxNachname
+            // tboxPNachname
             // 
-            this.tboxNachname.Location = new System.Drawing.Point(82, 99);
-            this.tboxNachname.Name = "tboxNachname";
-            this.tboxNachname.Size = new System.Drawing.Size(100, 20);
-            this.tboxNachname.TabIndex = 7;
+            this.tboxPNachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxPNachname.Location = new System.Drawing.Point(383, 173);
+            this.tboxPNachname.Name = "tboxPNachname";
+            this.tboxPNachname.Size = new System.Drawing.Size(398, 35);
+            this.tboxPNachname.TabIndex = 7;
             // 
             // btnPPreview
             // 
-            this.btnPPreview.Location = new System.Drawing.Point(550, 397);
+            this.btnPPreview.Location = new System.Drawing.Point(911, 549);
             this.btnPPreview.Name = "btnPPreview";
             this.btnPPreview.Size = new System.Drawing.Size(75, 23);
             this.btnPPreview.TabIndex = 8;
             this.btnPPreview.Text = "Preview";
             this.btnPPreview.UseVisualStyleBackColor = true;
+            this.btnPPreview.Click += new System.EventHandler(this.btnPPreview_Click);
+            // 
+            // lbPGebDatum
+            // 
+            this.lbPGebDatum.AutoSize = true;
+            this.lbPGebDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPGebDatum.Location = new System.Drawing.Point(221, 218);
+            this.lbPGebDatum.Name = "lbPGebDatum";
+            this.lbPGebDatum.Size = new System.Drawing.Size(156, 26);
+            this.lbPGebDatum.TabIndex = 9;
+            this.lbPGebDatum.Text = "Geburtsdatum:";
+            // 
+            // gebDatumPicker
+            // 
+            this.gebDatumPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gebDatumPicker.Location = new System.Drawing.Point(383, 218);
+            this.gebDatumPicker.Name = "gebDatumPicker";
+            this.gebDatumPicker.Size = new System.Drawing.Size(398, 35);
+            this.gebDatumPicker.TabIndex = 10;
+            // 
+            // lbPGeschlecht
+            // 
+            this.lbPGeschlecht.AutoSize = true;
+            this.lbPGeschlecht.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPGeschlecht.Location = new System.Drawing.Point(250, 274);
+            this.lbPGeschlecht.Name = "lbPGeschlecht";
+            this.lbPGeschlecht.Size = new System.Drawing.Size(127, 26);
+            this.lbPGeschlecht.TabIndex = 12;
+            this.lbPGeschlecht.Text = "Geschlecht:";
+            // 
+            // tboxPGeschlecht
+            // 
+            this.tboxPGeschlecht.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxPGeschlecht.Location = new System.Drawing.Point(383, 268);
+            this.tboxPGeschlecht.Name = "tboxPGeschlecht";
+            this.tboxPGeschlecht.Size = new System.Drawing.Size(398, 35);
+            this.tboxPGeschlecht.TabIndex = 14;
             // 
             // NeuPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1025, 599);
+            this.Controls.Add(this.tboxPGeschlecht);
+            this.Controls.Add(this.lbPGeschlecht);
+            this.Controls.Add(this.gebDatumPicker);
+            this.Controls.Add(this.lbPGebDatum);
             this.Controls.Add(this.btnPPreview);
-            this.Controls.Add(this.tboxNachname);
-            this.Controls.Add(this.tboxVorname);
+            this.Controls.Add(this.tboxPNachname);
+            this.Controls.Add(this.tboxPVorname);
             this.Controls.Add(this.btnPZurück);
             this.Controls.Add(this.btnPSpeichernZurück);
             this.Controls.Add(this.btnPSpeichern);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbPNachname);
+            this.Controls.Add(this.lbPVorname);
             this.Name = "NeuPatient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Neu Patient ";
@@ -141,15 +182,17 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbPVorname;
+        private System.Windows.Forms.Label lbPNachname;
         private System.Windows.Forms.Button btnPSpeichern;
         private System.Windows.Forms.Button btnPSpeichernZurück;
         private System.Windows.Forms.Button btnPZurück;
-        private System.Windows.Forms.TextBox tboxVorname;
-        private System.Windows.Forms.TextBox tboxNachname;
+        private System.Windows.Forms.TextBox tboxPVorname;
+        private System.Windows.Forms.TextBox tboxPNachname;
         private System.Windows.Forms.Button btnPPreview;
+        private System.Windows.Forms.Label lbPGebDatum;
+        private System.Windows.Forms.DateTimePicker gebDatumPicker;
+        private System.Windows.Forms.Label lbPGeschlecht;
+        private System.Windows.Forms.TextBox tboxPGeschlecht;
     }
 }

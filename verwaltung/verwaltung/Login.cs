@@ -17,11 +17,6 @@ namespace verwaltung
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string password = "test"; //check password
@@ -37,6 +32,11 @@ namespace verwaltung
                 this.Hide();
                 mainForm.Show();
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            tboxPassword.PasswordChar = '*';
         }
     }
 }

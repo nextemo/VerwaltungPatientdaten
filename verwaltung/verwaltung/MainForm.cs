@@ -25,7 +25,7 @@ namespace verwaltung
 
         private void btnPatientBearb_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnSuchen_Click(object sender, EventArgs e)
