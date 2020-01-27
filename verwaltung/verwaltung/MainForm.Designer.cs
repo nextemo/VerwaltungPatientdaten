@@ -38,7 +38,7 @@
             // tSearch
             // 
             this.tSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tSearch.Location = new System.Drawing.Point(675, 19);
+            this.tSearch.Location = new System.Drawing.Point(675, 14);
             this.tSearch.Name = "tSearch";
             this.tSearch.Size = new System.Drawing.Size(239, 32);
             this.tSearch.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             this.lSearch.AutoSize = true;
             this.lSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lSearch.Location = new System.Drawing.Point(507, 22);
+            this.lSearch.Location = new System.Drawing.Point(507, 17);
             this.lSearch.Name = "lSearch";
             this.lSearch.Size = new System.Drawing.Size(162, 26);
             this.lSearch.TabIndex = 1;
@@ -56,7 +56,7 @@
             // btnNeuPatient
             // 
             this.btnNeuPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNeuPatient.Location = new System.Drawing.Point(12, 17);
+            this.btnNeuPatient.Location = new System.Drawing.Point(12, 12);
             this.btnNeuPatient.Name = "btnNeuPatient";
             this.btnNeuPatient.Size = new System.Drawing.Size(159, 35);
             this.btnNeuPatient.TabIndex = 2;
@@ -67,7 +67,7 @@
             // btnPatientBearb
             // 
             this.btnPatientBearb.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatientBearb.Location = new System.Drawing.Point(228, 17);
+            this.btnPatientBearb.Location = new System.Drawing.Point(228, 12);
             this.btnPatientBearb.Name = "btnPatientBearb";
             this.btnPatientBearb.Size = new System.Drawing.Size(219, 35);
             this.btnPatientBearb.TabIndex = 3;
@@ -78,7 +78,7 @@
             // btnSuchen
             // 
             this.btnSuchen.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuchen.Location = new System.Drawing.Point(920, 17);
+            this.btnSuchen.Location = new System.Drawing.Point(920, 12);
             this.btnSuchen.Name = "btnSuchen";
             this.btnSuchen.Size = new System.Drawing.Size(93, 35);
             this.btnSuchen.TabIndex = 4;

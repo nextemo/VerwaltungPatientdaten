@@ -40,11 +40,18 @@ namespace verwaltung
             pGebDatum = neuPatient.Geburtsdatum.ToShortDateString();
             pGeschlecht = neuPatient.Geschlecht;
             pAlter = neuPatient.Alter.ToString();
+
+            resetNeuPatientForm();
         }
 
         private void btnPPreview_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Vorname: {pVorname} {Environment.NewLine}Name: {pName} { Environment.NewLine}Geburtsdatum: {pGebDatum}{Environment.NewLine}Geschlecht: {pGeschlecht}");
+            MessageBox.Show($"Vorname: {pVorname} {Environment.NewLine}Name: {pName} { Environment.NewLine}Geburtsdatum: {pGebDatum}{Environment.NewLine}Geschlecht: {pGeschlecht}{Environment.NewLine}Alter: {pAlter}");
+        }
+
+        void resetNeuPatientForm() {
+            tboxPNachname.Clear();
+            tboxPVorname.Clear();
         }
     }
 }

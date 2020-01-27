@@ -15,12 +15,14 @@ namespace verwaltung
         public MainForm()
         {
             InitializeComponent();
+            
         }
 
         private void btnNeuPatient_Click(object sender, EventArgs e)
         {
-            NeuPatient neuPatient = new NeuPatient();
-            neuPatient.Show();
+            //NeuPatient neuPatient = new NeuPatient();
+            //neuPatient.Show();
+
         }
 
         private void btnPatientBearb_Click(object sender, EventArgs e)
