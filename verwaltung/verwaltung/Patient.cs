@@ -13,6 +13,8 @@ namespace verwaltung
         private DateTime geburtsDatum;
         private int alter;
         private string geschlecht;
+        //private int telNum;
+        //private string email;
 
         public Patient(string vorname, string name, DateTime gebDatum, string geschlecht)
         {

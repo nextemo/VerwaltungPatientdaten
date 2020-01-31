@@ -33,6 +33,7 @@
             this.btnNeuPatient = new System.Windows.Forms.Button();
             this.btnPatientBearb = new System.Windows.Forms.Button();
             this.btnSuchen = new System.Windows.Forms.Button();
+            this.newPatient1 = new verwaltung.NewPatient();
             this.SuspendLayout();
             // 
             // tSearch
@@ -86,11 +87,19 @@
             this.btnSuchen.UseVisualStyleBackColor = true;
             this.btnSuchen.Click += new System.EventHandler(this.btnSuchen_Click);
             // 
+            // newPatient1
+            // 
+            this.newPatient1.Location = new System.Drawing.Point(228, 175);
+            this.newPatient1.Name = "newPatient1";
+            this.newPatient1.Size = new System.Drawing.Size(593, 262);
+            this.newPatient1.TabIndex = 6;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 599);
+            this.Controls.Add(this.newPatient1);
             this.Controls.Add(this.btnSuchen);
             this.Controls.Add(this.btnPatientBearb);
             this.Controls.Add(this.btnNeuPatient);
@@ -99,6 +108,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +121,6 @@
         private System.Windows.Forms.Button btnNeuPatient;
         private System.Windows.Forms.Button btnPatientBearb;
         private System.Windows.Forms.Button btnSuchen;
+        private NewPatient newPatient1;
     }
 }

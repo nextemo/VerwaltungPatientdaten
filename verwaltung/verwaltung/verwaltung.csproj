@@ -70,6 +70,12 @@
     <Compile Include="NeuPatient.Designer.cs">
       <DependentUpon>NeuPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewPatient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewPatient.Designer.cs">
+      <DependentUpon>NewPatient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Patient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NeuPatient.resx">
       <DependentUpon>NeuPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPatient.resx">
+      <DependentUpon>NewPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

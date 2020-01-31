@@ -22,7 +22,7 @@ namespace verwaltung
         {
             //NeuPatient neuPatient = new NeuPatient();
             //neuPatient.Show();
-
+            newPatient1.Show();
         }
 
         private void btnPatientBearb_Click(object sender, EventArgs e)
@@ -33,6 +33,11 @@ namespace verwaltung
         private void btnSuchen_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            newPatient1.Hide();
         }
     }
 }

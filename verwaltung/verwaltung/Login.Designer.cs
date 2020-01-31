@@ -67,7 +67,7 @@
             this.lbUsername.AutoSize = true;
             this.lbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUsername.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lbUsername.Location = new System.Drawing.Point(60, 48);
+            this.lbUsername.Location = new System.Drawing.Point(65, 48);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(97, 24);
             this.lbUsername.TabIndex = 3;
@@ -78,7 +78,7 @@
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPassword.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lbPassword.Location = new System.Drawing.Point(60, 146);
+            this.lbPassword.Location = new System.Drawing.Point(65, 146);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(92, 24);
             this.lbPassword.TabIndex = 4;
