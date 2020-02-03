@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPSpeichern = new System.Windows.Forms.Button();
             this.rWeiblich = new System.Windows.Forms.RadioButton();
             this.rMänlich = new System.Windows.Forms.RadioButton();
             this.gebDatumPicker = new System.Windows.Forms.DateTimePicker();
@@ -40,15 +40,16 @@
             this.lbPVorname = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // btnPSpeichern
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(396, 208);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 35);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Speichern";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPSpeichern.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPSpeichern.Location = new System.Drawing.Point(396, 208);
+            this.btnPSpeichern.Name = "btnPSpeichern";
+            this.btnPSpeichern.Size = new System.Drawing.Size(126, 35);
+            this.btnPSpeichern.TabIndex = 36;
+            this.btnPSpeichern.Text = "Speichern";
+            this.btnPSpeichern.UseVisualStyleBackColor = true;
+            this.btnPSpeichern.Click += new System.EventHandler(this.btnPSpeichern_Click);
             // 
             // rWeiblich
             // 
@@ -143,7 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPSpeichern);
             this.Controls.Add(this.rWeiblich);
             this.Controls.Add(this.rMänlich);
             this.Controls.Add(this.gebDatumPicker);
@@ -162,7 +163,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPSpeichern;
         private System.Windows.Forms.RadioButton rWeiblich;
         private System.Windows.Forms.RadioButton rMänlich;
         private System.Windows.Forms.DateTimePicker gebDatumPicker;

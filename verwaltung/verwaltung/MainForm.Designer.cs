@@ -33,7 +33,9 @@
             this.btnNeuPatient = new System.Windows.Forms.Button();
             this.btnPatientBearb = new System.Windows.Forms.Button();
             this.btnSuchen = new System.Windows.Forms.Button();
+            this.newPatient = new verwaltung.NewPatient();
             this.newPatient1 = new verwaltung.NewPatient();
+            this.listOfPatient = new verwaltung.ListOfPatient();
             this.SuspendLayout();
             // 
             // tSearch
@@ -87,19 +89,34 @@
             this.btnSuchen.UseVisualStyleBackColor = true;
             this.btnSuchen.Click += new System.EventHandler(this.btnSuchen_Click);
             // 
+            // newPatient
+            // 
+            this.newPatient.Location = new System.Drawing.Point(216, 116);
+            this.newPatient.Name = "newPatient";
+            this.newPatient.Size = new System.Drawing.Size(578, 254);
+            this.newPatient.TabIndex = 5;
+            // 
             // newPatient1
             // 
-            this.newPatient1.Location = new System.Drawing.Point(228, 175);
+            this.newPatient1.Location = new System.Drawing.Point(212, 175);
             this.newPatient1.Name = "newPatient1";
             this.newPatient1.Size = new System.Drawing.Size(593, 262);
             this.newPatient1.TabIndex = 6;
+            // 
+            // listOfPatient
+            // 
+            this.listOfPatient.Location = new System.Drawing.Point(158, 83);
+            this.listOfPatient.Name = "listOfPatient";
+            this.listOfPatient.Size = new System.Drawing.Size(727, 448);
+            this.listOfPatient.TabIndex = 6;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 599);
-            this.Controls.Add(this.newPatient1);
+            this.Controls.Add(this.listOfPatient);
+            this.Controls.Add(this.newPatient);
             this.Controls.Add(this.btnSuchen);
             this.Controls.Add(this.btnPatientBearb);
             this.Controls.Add(this.btnNeuPatient);
@@ -122,5 +139,7 @@
         private System.Windows.Forms.Button btnPatientBearb;
         private System.Windows.Forms.Button btnSuchen;
         private NewPatient newPatient1;
+        private NewPatient newPatient;
+        private ListOfPatient listOfPatient;
     }
 }
