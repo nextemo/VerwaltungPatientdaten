@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Data.SQLite;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
 
 namespace verwaltung
 {
-    public partial class ListOfPatient : UserControl
+    public partial class Patientliste : Form
     {
         SQLiteConnection con = new SQLiteConnection("Data Source = C:/sqlite/Patient.db; Version = 3;");
         int id = 0;
@@ -23,36 +23,46 @@ namespace verwaltung
         int ankunft = 6;
         int auskunft = 7;
         int position;
-        public ListOfPatient()
+        int count;
+        public Patientliste()
         {
             InitializeComponent();
             con.Open();
             position = 1;
-        }
 
-        private void ListOfPatient_Load(object sender, EventArgs e)
-        {
-            loadPatient();
+            getTotalRows();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            position++;
-            loadPatient();
+            if (position >= count) return;
+            else {
+                position++;
+                loadPatient();
+            }
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            position--;
-            loadPatient(); 
+
+            if (position == 1)
+            {
+                return;
+            }
+            else {
+                position--;
+                loadPatient();
+            }
+            
         }
 
-        void loadPatient() {
+        void loadPatient()
+        {
             SQLiteCommand command;
             command = con.CreateCommand();
             command.CommandText = $"SELECT * FROM PatientDB WHERE ID = {position}";
             SQLiteDataReader reader = command.ExecuteReader();
-            
+
 
             while (reader.Read())
             {
@@ -64,12 +74,29 @@ namespace verwaltung
                 tboxAnkunft.Text = reader.GetString(ankunft);
             }
         }
-        void readOnlyTboxes() {
+        void readOnlyTboxes()
+        {
             tboxAnkunft.ReadOnly = true;
             tboxGDatum.ReadOnly = true;
             tboxGeschlecht.ReadOnly = true;
             tboxName.ReadOnly = true;
             tboxVorname.ReadOnly = true;
+        }
+
+        void getTotalRows() {
+            SQLiteCommand command;
+            command = con.CreateCommand();
+            command.CommandText = $"SELECT COUNT(*) FROM PatientDB";
+            SQLiteDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                count = reader.GetInt32(0);
+            }
+        }
+
+        private void Patientliste_Load(object sender, EventArgs e)
+        {
+            loadPatient();
         }
     }
 }

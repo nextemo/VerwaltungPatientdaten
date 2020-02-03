@@ -25,8 +25,8 @@ namespace verwaltung
 
         private void btnPatientBearb_Click(object sender, EventArgs e)
         {
-
-            listOfPatient.Show();
+            Patientliste patientliste = new Patientliste();
+            patientliste.Show();
         }
 
         private void btnSuchen_Click(object sender, EventArgs e)
@@ -37,7 +37,6 @@ namespace verwaltung
         private void MainForm_Load(object sender, EventArgs e)
         {
             newPatient.Hide();
-            listOfPatient.Hide();
         }
     }
 }

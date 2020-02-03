@@ -34,34 +34,35 @@
             this.btnPatientBearb = new System.Windows.Forms.Button();
             this.btnSuchen = new System.Windows.Forms.Button();
             this.newPatient = new verwaltung.NewPatient();
-            this.newPatient1 = new verwaltung.NewPatient();
-            this.listOfPatient = new verwaltung.ListOfPatient();
             this.SuspendLayout();
             // 
             // tSearch
             // 
             this.tSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tSearch.Location = new System.Drawing.Point(675, 14);
+            this.tSearch.Location = new System.Drawing.Point(900, 17);
+            this.tSearch.Margin = new System.Windows.Forms.Padding(4);
             this.tSearch.Name = "tSearch";
-            this.tSearch.Size = new System.Drawing.Size(239, 32);
+            this.tSearch.Size = new System.Drawing.Size(317, 38);
             this.tSearch.TabIndex = 0;
             // 
             // lSearch
             // 
             this.lSearch.AutoSize = true;
             this.lSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lSearch.Location = new System.Drawing.Point(507, 17);
+            this.lSearch.Location = new System.Drawing.Point(676, 21);
+            this.lSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lSearch.Name = "lSearch";
-            this.lSearch.Size = new System.Drawing.Size(162, 26);
+            this.lSearch.Size = new System.Drawing.Size(202, 31);
             this.lSearch.TabIndex = 1;
             this.lSearch.Text = "Patientensuche";
             // 
             // btnNeuPatient
             // 
             this.btnNeuPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNeuPatient.Location = new System.Drawing.Point(12, 12);
+            this.btnNeuPatient.Location = new System.Drawing.Point(16, 15);
+            this.btnNeuPatient.Margin = new System.Windows.Forms.Padding(4);
             this.btnNeuPatient.Name = "btnNeuPatient";
-            this.btnNeuPatient.Size = new System.Drawing.Size(159, 35);
+            this.btnNeuPatient.Size = new System.Drawing.Size(212, 43);
             this.btnNeuPatient.TabIndex = 2;
             this.btnNeuPatient.Text = "Neuer Patient";
             this.btnNeuPatient.UseVisualStyleBackColor = true;
@@ -70,20 +71,22 @@
             // btnPatientBearb
             // 
             this.btnPatientBearb.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatientBearb.Location = new System.Drawing.Point(228, 12);
+            this.btnPatientBearb.Location = new System.Drawing.Point(304, 15);
+            this.btnPatientBearb.Margin = new System.Windows.Forms.Padding(4);
             this.btnPatientBearb.Name = "btnPatientBearb";
-            this.btnPatientBearb.Size = new System.Drawing.Size(219, 35);
+            this.btnPatientBearb.Size = new System.Drawing.Size(292, 43);
             this.btnPatientBearb.TabIndex = 3;
-            this.btnPatientBearb.Text = "Patient bearbeiten";
+            this.btnPatientBearb.Text = "Patientliste";
             this.btnPatientBearb.UseVisualStyleBackColor = true;
             this.btnPatientBearb.Click += new System.EventHandler(this.btnPatientBearb_Click);
             // 
             // btnSuchen
             // 
             this.btnSuchen.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuchen.Location = new System.Drawing.Point(920, 12);
+            this.btnSuchen.Location = new System.Drawing.Point(1227, 15);
+            this.btnSuchen.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuchen.Name = "btnSuchen";
-            this.btnSuchen.Size = new System.Drawing.Size(93, 35);
+            this.btnSuchen.Size = new System.Drawing.Size(124, 43);
             this.btnSuchen.TabIndex = 4;
             this.btnSuchen.Text = "suchen";
             this.btnSuchen.UseVisualStyleBackColor = true;
@@ -91,37 +94,24 @@
             // 
             // newPatient
             // 
-            this.newPatient.Location = new System.Drawing.Point(216, 116);
+            this.newPatient.Location = new System.Drawing.Point(304, 191);
+            this.newPatient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.newPatient.Name = "newPatient";
-            this.newPatient.Size = new System.Drawing.Size(578, 254);
+            this.newPatient.Size = new System.Drawing.Size(771, 313);
             this.newPatient.TabIndex = 5;
-            // 
-            // newPatient1
-            // 
-            this.newPatient1.Location = new System.Drawing.Point(212, 175);
-            this.newPatient1.Name = "newPatient1";
-            this.newPatient1.Size = new System.Drawing.Size(593, 262);
-            this.newPatient1.TabIndex = 6;
-            // 
-            // listOfPatient
-            // 
-            this.listOfPatient.Location = new System.Drawing.Point(158, 83);
-            this.listOfPatient.Name = "listOfPatient";
-            this.listOfPatient.Size = new System.Drawing.Size(727, 448);
-            this.listOfPatient.TabIndex = 6;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 599);
-            this.Controls.Add(this.listOfPatient);
+            this.ClientSize = new System.Drawing.Size(1367, 737);
             this.Controls.Add(this.newPatient);
             this.Controls.Add(this.btnSuchen);
             this.Controls.Add(this.btnPatientBearb);
             this.Controls.Add(this.btnNeuPatient);
             this.Controls.Add(this.lSearch);
             this.Controls.Add(this.tSearch);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
@@ -138,8 +128,6 @@
         private System.Windows.Forms.Button btnNeuPatient;
         private System.Windows.Forms.Button btnPatientBearb;
         private System.Windows.Forms.Button btnSuchen;
-        private NewPatient newPatient1;
         private NewPatient newPatient;
-        private ListOfPatient listOfPatient;
     }
 }

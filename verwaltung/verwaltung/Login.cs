@@ -31,6 +31,8 @@ namespace verwaltung
                 MainForm mainForm = new MainForm();
                 this.Hide();
                 mainForm.Show();
+                //TestForm testForm = new TestForm();
+                //testForm.Show();
             }
         }
 
