@@ -1,0 +1,235 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SQLite;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace verwaltung
+{
+    public partial class TabForm : Form
+    {
+        string pName, pVorname, pGeschlecht, pEmail;
+        DateTime pGebDatum;
+        int pAlter, pNummer;
+        SQLiteConnection con = new SQLiteConnection("Data Source = C:/sqlite/Patient.db; Version = 3;");
+
+        int id = 0;
+        int vorname = 1;
+        int name = 2;
+        int geburtsdatum = 3;
+        int geschlecht = 4;
+        int alter = 5;
+        int ankunft = 6;
+        int auskunft = 7;
+        int nummer = 8;
+        int email = 9;
+        int position;
+        int count;
+        public TabForm()
+        {
+            InitializeComponent();
+            con.Open();
+            getFirstID();
+            getTotalRows();
+            loadPatient();
+        }
+
+        private void btnPSpeichern_Click(object sender, EventArgs e)
+        {
+            var vName = tboxPVorname.Text;
+            var nName = tboxPNachname.Text;
+            var geburtsdatum = gebDatumPicker.Value;
+            if (rMänlich.Checked) pGeschlecht = "Mänlich";
+            else if (rWeiblich.Checked) pGeschlecht = "Weiblich";
+            else pGeschlecht = "Not available";
+            var nummer = int.Parse(tboxPNumber.Text);
+            var email = tboxPEmail.Text;
+            var neuPatient = new Patient(vName, nName, geburtsdatum, pGeschlecht, email, nummer);
+
+            pName = neuPatient.Name;
+            pVorname = neuPatient.Vorname;
+            pGebDatum = neuPatient.Geburtsdatum;
+            pGeschlecht = neuPatient.Geschlecht;
+            pAlter = neuPatient.Alter;
+            pNummer = neuPatient.Nummer;
+            pEmail = neuPatient.Email;
+
+            DialogResult preview = MessageBox.Show($"Vorname: {pVorname} {Environment.NewLine}Name: {pName} { Environment.NewLine}Geburtsdatum: {pGebDatum.ToShortDateString()}{Environment.NewLine}Geschlecht: {pGeschlecht}{Environment.NewLine}Alter: {pAlter}{Environment.NewLine}Tel. Nummer: {pNummer.ToString()}{Environment.NewLine}Email: {pEmail}", "Preview", MessageBoxButtons.OKCancel);
+
+            if (preview == DialogResult.OK)
+            {
+                tboxClear();
+                SQLiteCommand sqlite_cmd;
+                sqlite_cmd = con.CreateCommand();
+                sqlite_cmd.CommandText = $"INSERT INTO PatientDB (Vorname, Name, Geburtsdatum, Geschlecht, Age, Ankunft, Auskunft, Nummer, Email) VALUES('{pVorname}', '{pName}', '{pGebDatum.ToShortDateString()}', '{pGeschlecht}', {pAlter}, '{DateTime.UtcNow}', 'Null', {pNummer}, '{pEmail}');";
+                sqlite_cmd.ExecuteNonQuery();
+            }
+        }
+
+        void tboxClear()
+        {
+            tboxPVorname.Clear();
+            tboxPNachname.Clear();
+            tboxPEmail.Clear();
+            tboxPNumber.Clear();
+        }
+
+        public void getFirstID()
+        {
+            SQLiteCommand command;
+            command = con.CreateCommand();
+            command.CommandText = $"SELECT * FROM PatientDB ";
+            SQLiteDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                position = reader.GetInt32(0);
+            }
+        }
+
+        public void loadPatient()
+        {
+            readOnlyTboxes();
+            SQLiteCommand command;
+            command = con.CreateCommand();
+            command.CommandText = $"SELECT * FROM PatientDB WHERE ID = {position}";
+            SQLiteDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                tboxVorname.Text = reader.GetString(vorname);
+                tboxName.Text = reader.GetString(name);
+                tboxGDatum.Text = reader.GetString(geburtsdatum);
+                tboxGeschlecht.Text = reader.GetString(geschlecht);
+                tboxNummer.Text = reader.GetString(nummer);
+                tboxEmail.Text = reader.GetString(email);
+                tboxAnkunft.Text = reader.GetString(ankunft);
+            }
+        }
+        void readOnlyTboxes()
+        {
+            tboxAnkunft.ReadOnly = true;
+            tboxGDatum.ReadOnly = true;
+            tboxGeschlecht.ReadOnly = true;
+            tboxName.ReadOnly = true;
+            tboxVorname.ReadOnly = true;
+            tboxEmail.ReadOnly = true;
+            tboxNummer.ReadOnly = true;
+        }
+
+        void disableReadOnly()
+        {
+            tboxAnkunft.ReadOnly = false;
+            tboxGDatum.ReadOnly = false;
+            tboxGeschlecht.ReadOnly = false;
+            tboxName.ReadOnly = false;
+            tboxVorname.ReadOnly = false;
+            tboxEmail.ReadOnly = false;
+            tboxNummer.ReadOnly = false;
+        }
+
+        void getTotalRows()
+        {
+            SQLiteCommand command;
+            command = con.CreateCommand();
+            command.CommandText = $"SELECT COUNT(*) FROM PatientDB";
+            SQLiteDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                count = reader.GetInt32(0);
+            }
+        }
+
+        private void Tab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getFirstID();
+            getTotalRows();
+            loadPatient();
+        }
+
+        private void tSearch_TextChanged(object sender, EventArgs e)
+        {
+            SQLiteCommand command;
+            command = con.CreateCommand();
+            command.CommandText = $"SELECT * FROM PatientDB WHERE Vorname || Name || Geburtsdatum || ID || Geschlecht || Ankunft || Age LIKE '%{tSearch.Text}%'";
+            SQLiteDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                position = reader.GetInt32(id);
+                loadPatient();
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (btnUpdate.Text == "Speichern")
+            {
+                readOnlyTboxes();
+                btnUpdate.Text = "Update";
+            }
+            else if (btnPrevious.BackColor == Color.Red && btnPrevious.ForeColor == Color.White)
+            {
+                btnPrevious.BackColor = Color.Transparent;
+                btnPrevious.ForeColor = Color.Black;
+                position++;
+                loadPatient();
+            }
+            else if (position >= count) { btnNext.BackColor = Color.Red; btnNext.ForeColor = Color.White; }
+            else
+            {
+                position++;
+                loadPatient();
+            }
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (btnUpdate.Text == "Speichern")
+            {
+                readOnlyTboxes();
+                btnUpdate.Text = "Update";
+            }
+            else if (btnNext.BackColor == Color.Red && btnNext.ForeColor == Color.White)
+            {
+                btnNext.BackColor = Color.Transparent;
+                btnNext.ForeColor = Color.Black;
+                position--;
+                loadPatient();
+            }
+            else if (position == 1) { btnPrevious.BackColor = Color.Red; btnPrevious.ForeColor = Color.White; return; }
+            else
+            {
+                position--;
+                loadPatient();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (btnUpdate.Text == "Speichern")
+            {
+                readOnlyTboxes();
+                updateEntry(tboxVorname.Text, tboxName.Text, tboxGDatum.Text, tboxGeschlecht.Text, tboxAnkunft.Text, tboxNummer.Text, tboxEmail.Text);
+                btnUpdate.Text = "Update";
+            }
+            else
+            {
+                disableReadOnly();
+                btnUpdate.Text = "Speichern";
+            }
+        }
+
+        void updateEntry(string vorname, string name, string geburtsDatum, string geschlecht, string ankunft, string nummer, string email)
+        {
+            SQLiteCommand sqlite_cmd;
+            sqlite_cmd = con.CreateCommand();
+            sqlite_cmd.CommandText = $"UPDATE PatientDB SET Vorname = '{vorname}', Name = '{name}', Geburtsdatum = '{geburtsDatum}', Geschlecht = '{geschlecht}', Ankunft = '{ankunft}', Auskunft = 'Null', Nummer = '{nummer}', Email = '{email}' WHERE ID = {position};";
+            sqlite_cmd.ExecuteNonQuery();
+        }
+    }
+}

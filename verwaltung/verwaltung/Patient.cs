@@ -13,10 +13,10 @@ namespace verwaltung
         private DateTime geburtsDatum;
         private int alter;
         private string geschlecht;
-        //private int telNum;
-        //private string email;
+        private int telNum;
+        private string email;
 
-        public Patient(string vorname, string name, DateTime gebDatum, string geschlecht)
+        public Patient(string vorname, string name, DateTime gebDatum, string geschlecht, string email, int nummer)
         {
             this.vorname = vorname;
             this.name = name;
@@ -24,6 +24,8 @@ namespace verwaltung
             this.geschlecht = geschlecht;
             int yearNow = DateTime.Now.Year;
             alter = yearNow - gebDatum.Year;
+            this.email = email;
+            this.telNum = nummer;
         }
 
         public string Vorname{
@@ -53,6 +55,18 @@ namespace verwaltung
         {
             get { return geschlecht; }
             set { geschlecht = value; }
+        }
+
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+
+        public int Nummer
+        {
+            get { return telNum; }
+            set { telNum = value; }
         }
     }
 }

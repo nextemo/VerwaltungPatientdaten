@@ -14,10 +14,9 @@ namespace verwaltung
 {
     public partial class NewPatient : UserControl
     {
-        string pName, pVorname;
+        string pName, pVorname, pGeschlecht, pEmail;
         DateTime pGebDatum;
-        int pAlter;
-        string pGeschlecht;
+        int pAlter, pNummer;
 
         SQLiteConnection con = new SQLiteConnection("Data Source = C:/sqlite/Patient.db; Version = 3;");
         public NewPatient()
@@ -30,6 +29,8 @@ namespace verwaltung
             this.Hide();
             this.tboxPVorname.Clear();
             this.tboxPNachname.Clear();
+            MainForm mainForm = new MainForm();
+            mainForm.loadPatient();
         }
 
         private void btnPSpeichern_Click(object sender, EventArgs e)
@@ -40,27 +41,36 @@ namespace verwaltung
             if (rMänlich.Checked) pGeschlecht = "Mänlich";
             else if (rWeiblich.Checked) pGeschlecht = "Weiblich";
             else pGeschlecht = "Not available";
-            var neuPatient = new Patient(vName, nName, geburtsdatum, pGeschlecht);
+            var nummer = Convert.ToInt32(tboxTelpNumber.Text);
+            var email = tboxEmail.Text;
+            var neuPatient = new Patient(vName, nName, geburtsdatum, pGeschlecht, email, nummer);
 
             pName = neuPatient.Name;
             pVorname = neuPatient.Vorname;
             pGebDatum = neuPatient.Geburtsdatum;
             pGeschlecht = neuPatient.Geschlecht;
             pAlter = neuPatient.Alter;
+            pNummer = neuPatient.Nummer;
+            pEmail = neuPatient.Email;
 
-            DialogResult preview = MessageBox.Show($"Vorname: {pVorname} {Environment.NewLine}Name: {pName} { Environment.NewLine}Geburtsdatum: {pGebDatum.ToShortDateString()}{Environment.NewLine}Geschlecht: {pGeschlecht}{Environment.NewLine}Alter: {pAlter}", "Preview", MessageBoxButtons.OKCancel);
+            DialogResult preview = MessageBox.Show($"Vorname: {pVorname} {Environment.NewLine}Name: {pName} { Environment.NewLine}Geburtsdatum: {pGebDatum.ToShortDateString()}{Environment.NewLine}Geschlecht: {pGeschlecht}{Environment.NewLine}Alter: {pAlter}{Environment.NewLine}Tel. Nummer: {pNummer.ToString()}{Environment.NewLine}Email: {pEmail}", "Preview", MessageBoxButtons.OKCancel);
 
             if (preview == DialogResult.OK) {
-                this.tboxPVorname.Clear();
-                this.tboxPNachname.Clear();
-
+                tboxClear();
                 con.Open();
                 SQLiteCommand sqlite_cmd;
                 sqlite_cmd = con.CreateCommand();
-                sqlite_cmd.CommandText = $"INSERT INTO PatientDB (Vorname, Name, Geburtsdatum, Geschlecht, Age, Ankunft, Auskunft) VALUES('{pVorname}', '{pName}', '{pGebDatum.ToLongDateString()}', '{pGeschlecht}', {pAlter}, '{DateTime.UtcNow}', 'Null');";
+                sqlite_cmd.CommandText = $"INSERT INTO PatientDB (Vorname, Name, Geburtsdatum, Geschlecht, Age, Ankunft, Auskunft, Nummer, Email) VALUES('{pVorname}', '{pName}', '{pGebDatum.ToShortDateString()}', '{pGeschlecht}', {pAlter}, '{DateTime.UtcNow}', 'Null', {pNummer}, '{pEmail}');";
                 sqlite_cmd.ExecuteNonQuery();
             }
             con.Close();
+        }
+
+        void tboxClear() {
+            tboxPVorname.Clear();
+            tboxPNachname.Clear();
+            tboxEmail.Clear();
+            tboxTelpNumber.Clear();
         }
     }
 }
