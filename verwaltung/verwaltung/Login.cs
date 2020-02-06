@@ -51,7 +51,7 @@ namespace verwaltung
         {
             if (e.KeyCode == Keys.Escape)
             {
-                Environment.Exit(1);
+                Environment.Exit(0);
             }
         }
     }
