@@ -47,11 +47,16 @@ namespace verwaltung
             }
         }
 
-        private void Login_KeyDown(object sender, KeyEventArgs e)// Funktioniert noch nicht.
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void btnLogout_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
-                Environment.Exit(1);
+                Environment.Exit(0);
             }
         }
     }

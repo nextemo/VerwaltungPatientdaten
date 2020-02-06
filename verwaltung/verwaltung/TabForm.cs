@@ -55,7 +55,7 @@ namespace verwaltung
             }
             catch
             {
-                MessageBox.Show("Telefon-Nummer darf nur Nummern enthalten!");
+                MessageBox.Show("Telefon-Nummer darf nur Nummern enthalten!", "Actung!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -64,15 +64,13 @@ namespace verwaltung
             //update the Values
             vName = vName.Replace("  ", " ");
             nName = nName.Replace("  ", " ");
-            Regex re = new Regex(@"\d");
-            string regnummer = nummer.ToString();
             try
             {
                 System.Net.Mail.MailAddress m = new System.Net.Mail.MailAddress(email);
             }
             catch
             {
-                MessageBox.Show("Mail-Addresse nicht valide!");
+                MessageBox.Show("Mail-Addresse nicht valide!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             
@@ -267,7 +265,9 @@ namespace verwaltung
                 btnPreviousColorChanged();
             }
             else if (e.KeyCode == Keys.Escape) {
-                Environment.Exit(0);
+                Login login = new Login();
+                login.Show();
+                this.Hide();
             }
             else return;
         }
