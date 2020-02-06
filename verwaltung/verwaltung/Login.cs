@@ -17,6 +17,7 @@ namespace verwaltung
         public Login()
         {
             InitializeComponent();
+            tboxPassword.PasswordChar = '*';
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -40,17 +41,20 @@ namespace verwaltung
                 this.Hide();
             }
         }
-        private void Login_Load(object sender, EventArgs e)
-        {
-            tboxPassword.PasswordChar = '*';
-            tboxPassword.Focus();
-        }
 
         private void tboxPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) {
                 e.SuppressKeyPress = true;
                 login();      
+            }
+        }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)// Funktioniert noch nicht.
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Environment.Exit(1);
             }
         }
     }

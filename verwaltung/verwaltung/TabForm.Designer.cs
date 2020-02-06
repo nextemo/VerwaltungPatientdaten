@@ -186,7 +186,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(553, 517);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(168, 43);
+            this.btnUpdate.Size = new System.Drawing.Size(168, 57);
             this.btnUpdate.TabIndex = 55;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -241,12 +241,12 @@
             // 
             this.lbAnkunft.AutoSize = true;
             this.lbAnkunft.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAnkunft.Location = new System.Drawing.Point(120, 452);
+            this.lbAnkunft.Location = new System.Drawing.Point(22, 452);
             this.lbAnkunft.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAnkunft.Name = "lbAnkunft";
-            this.lbAnkunft.Size = new System.Drawing.Size(107, 31);
+            this.lbAnkunft.Size = new System.Drawing.Size(202, 31);
             this.lbAnkunft.TabIndex = 49;
-            this.lbAnkunft.Text = "Ankunft";
+            this.lbAnkunft.Text = "Angemeldet am";
             // 
             // lbGeschlecht
             // 
@@ -272,11 +272,12 @@
             // 
             // btnPrevious
             // 
+            this.btnPrevious.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.Location = new System.Drawing.Point(317, 517);
             this.btnPrevious.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(75, 43);
+            this.btnPrevious.Size = new System.Drawing.Size(75, 57);
             this.btnPrevious.TabIndex = 46;
             this.btnPrevious.Text = "🡄";
             this.btnPrevious.UseVisualStyleBackColor = true;
@@ -288,7 +289,7 @@
             this.btnNext.Location = new System.Drawing.Point(411, 517);
             this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 43);
+            this.btnNext.Size = new System.Drawing.Size(75, 57);
             this.btnNext.TabIndex = 45;
             this.btnNext.Text = "🡆 ";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -386,7 +387,7 @@
             this.btnPSpeichern.Location = new System.Drawing.Point(423, 466);
             this.btnPSpeichern.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPSpeichern.Name = "btnPSpeichern";
-            this.btnPSpeichern.Size = new System.Drawing.Size(168, 43);
+            this.btnPSpeichern.Size = new System.Drawing.Size(168, 57);
             this.btnPSpeichern.TabIndex = 64;
             this.btnPSpeichern.Text = "Speichern";
             this.btnPSpeichern.UseVisualStyleBackColor = true;

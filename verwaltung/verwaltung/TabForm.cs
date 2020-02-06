@@ -16,7 +16,7 @@ namespace verwaltung
         string pName, pVorname, pGeschlecht, pEmail;
         DateTime pGebDatum;
         int pAlter, pNummer;
-        SQLiteConnection con = new SQLiteConnection("Data Source = C:/sqlite/Patient.db; Version = 3;");
+        SQLiteConnection con = new SQLiteConnection("Data Source = C:/Users/jhoni.dewa/Desktop/Patient.db; Version = 3;");
 
         int id = 0;
         int vorname = 1;
@@ -227,6 +227,9 @@ namespace verwaltung
                     loadPatient();
                 }
             }
+            else if (e.KeyCode == Keys.Escape) {
+                Environment.Exit(0);
+            }
             else return;
         }
 
@@ -257,7 +260,7 @@ namespace verwaltung
         {
             SQLiteCommand sqlite_cmd;
             sqlite_cmd = con.CreateCommand();
-            sqlite_cmd.CommandText = $"UPDATE PatientDB SET Vorname = '{vorname}', Name = '{name}', Geburtsdatum = '{geburtsDatum}', Geschlecht = '{geschlecht}', Angemeldet = '{ankunft}', Abgemeldet = 'Null', Nummer = '{nummer}', Email = '{email}' WHERE ID = {position};";
+            sqlite_cmd.CommandText = $"UPDATE PatientDB SET Vorname = '{vorname}', Name = '{name}', Geburtsdatum = '{geburtsDatum}', Geschlecht = '{geschlecht}', Angemeldet = '{ankunft}', Abgemeldet = '{null}', Nummer = '{nummer}', Email = '{email}' WHERE ID = {position};";
             sqlite_cmd.ExecuteNonQuery();
         }
 
