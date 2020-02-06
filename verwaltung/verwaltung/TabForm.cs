@@ -241,6 +241,13 @@ namespace verwaltung
             else return;
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
         void disableReadOnly()
         {
             tboxAngemeldet.ReadOnly = false;
