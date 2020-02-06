@@ -24,8 +24,8 @@ namespace verwaltung
         int geburtsdatum = 3;
         int geschlecht = 4;
         int alter = 5;
-        int ankunft = 6;
-        int auskunft = 7;
+        int angemeldet = 6;
+        int abgemeldet = 7;
         int nummer = 8;
         int email = 9;
         int position;
@@ -66,11 +66,71 @@ namespace verwaltung
                 tboxClear();
                 SQLiteCommand sqlite_cmd;
                 sqlite_cmd = con.CreateCommand();
-                sqlite_cmd.CommandText = $"INSERT INTO PatientDB (Vorname, Name, Geburtsdatum, Geschlecht, Age, Ankunft, Auskunft, Nummer, Email) VALUES('{pVorname}', '{pName}', '{pGebDatum.ToShortDateString()}', '{pGeschlecht}', {pAlter}, '{DateTime.UtcNow}', 'Null', {pNummer}, '{pEmail}');";
+                sqlite_cmd.CommandText = $"INSERT INTO PatientDB (Vorname, Name, Geburtsdatum, Geschlecht, Age, Angemeldet, Abgemeldet, Nummer, Email) VALUES('{pVorname}', '{pName}', '{pGebDatum.ToShortDateString()}', '{pGeschlecht}', {pAlter}, '{DateTime.UtcNow}', '{null}', {pNummer}, '{pEmail}');";
                 sqlite_cmd.ExecuteNonQuery();
             }
         }
 
+
+
+        private void tSearch_TextChanged(object sender, EventArgs e)
+        {
+            SQLiteCommand command;
+            command = con.CreateCommand();
+            command.CommandText = $"SELECT * FROM PatientDB WHERE Vorname || Name || Geburtsdatum || ID || Geschlecht || Angemeldet || Age LIKE '%{tSearch.Text}%'";
+            SQLiteDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                position = reader.GetInt32(id);
+                loadPatient();
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (btnUpdate.Text == "Speichern")
+            {
+                readOnlyTboxes();
+                btnUpdate.Text = "Update";
+            }
+            else if (btnNext.BackColor == Color.Red && btnNext.ForeColor == Color.White)
+            {
+                btnNext.BackColor = Color.Transparent;
+                btnNext.ForeColor = Color.Black;
+                position--;
+                loadPatient();
+            }
+            else if (position == 1) { btnPrevious.BackColor = Color.Red; btnPrevious.ForeColor = Color.White; return; }
+            else
+            {
+                position--;
+                loadPatient();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (btnUpdate.Text == "Speichern")
+            {
+                readOnlyTboxes();
+                updateEntry(tboxVorname.Text, tboxName.Text, tboxGDatum.Text, tboxGeschlecht.Text, tboxAngemeldet.Text, tboxNummer.Text, tboxEmail.Text);
+                btnUpdate.Text = "Update";
+            }
+            else
+            {
+                disableReadOnly();
+                btnUpdate.Text = "Speichern";
+            }
+        }
+
+     
+
+        //########################################################################### METHODE ##############################################################################
         void tboxClear()
         {
             tboxPVorname.Clear();
@@ -108,12 +168,12 @@ namespace verwaltung
                 tboxGeschlecht.Text = reader.GetString(geschlecht);
                 tboxNummer.Text = reader.GetString(nummer);
                 tboxEmail.Text = reader.GetString(email);
-                tboxAnkunft.Text = reader.GetString(ankunft);
+                tboxAngemeldet.Text = reader.GetString(angemeldet);
             }
-        }
+        }//LOAD THE LIST OF PATIENT
         void readOnlyTboxes()
         {
-            tboxAnkunft.ReadOnly = true;
+            tboxAngemeldet.ReadOnly = true;
             tboxGDatum.ReadOnly = true;
             tboxGeschlecht.ReadOnly = true;
             tboxName.ReadOnly = true;
@@ -122,9 +182,57 @@ namespace verwaltung
             tboxNummer.ReadOnly = true;
         }
 
+        private void Tab_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
+            {
+                e.SuppressKeyPress = true;
+                if (btnUpdate.Text == "Speichern")
+                {
+                    readOnlyTboxes();
+                    btnUpdate.Text = "Update";
+                }
+                else if (btnPrevious.BackColor == Color.Red && btnPrevious.ForeColor == Color.White)
+                {
+                    btnPrevious.BackColor = Color.Transparent;
+                    btnPrevious.ForeColor = Color.Black;
+                    position++;
+                    loadPatient();
+                }
+                else if (position >= count) { btnNext.BackColor = Color.Red; btnNext.ForeColor = Color.White; }
+                else
+                {
+                    position++;
+                    loadPatient();
+                }
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                if (btnUpdate.Text == "Speichern")
+                {
+                    readOnlyTboxes();
+                    btnUpdate.Text = "Update";
+                }
+                else if (btnNext.BackColor == Color.Red && btnNext.ForeColor == Color.White)
+                {
+                    btnNext.BackColor = Color.Transparent;
+                    btnNext.ForeColor = Color.Black;
+                    position--;
+                    loadPatient();
+                }
+                else if (position == 1) { btnPrevious.BackColor = Color.Red; btnPrevious.ForeColor = Color.White; return; }
+                else
+                {
+                    position--;
+                    loadPatient();
+                }
+            }
+            else return;
+        }
+
         void disableReadOnly()
         {
-            tboxAnkunft.ReadOnly = false;
+            tboxAngemeldet.ReadOnly = false;
             tboxGDatum.ReadOnly = false;
             tboxGeschlecht.ReadOnly = false;
             tboxName.ReadOnly = false;
@@ -145,91 +253,19 @@ namespace verwaltung
             }
         }
 
+        void updateEntry(string vorname, string name, string geburtsDatum, string geschlecht, string ankunft, string nummer, string email)//UPDATE DATA
+        {
+            SQLiteCommand sqlite_cmd;
+            sqlite_cmd = con.CreateCommand();
+            sqlite_cmd.CommandText = $"UPDATE PatientDB SET Vorname = '{vorname}', Name = '{name}', Geburtsdatum = '{geburtsDatum}', Geschlecht = '{geschlecht}', Angemeldet = '{ankunft}', Abgemeldet = 'Null', Nummer = '{nummer}', Email = '{email}' WHERE ID = {position};";
+            sqlite_cmd.ExecuteNonQuery();
+        }
+
         private void Tab_SelectedIndexChanged(object sender, EventArgs e)
         {
             getFirstID();
             getTotalRows();
             loadPatient();
-        }
-
-        private void tSearch_TextChanged(object sender, EventArgs e)
-        {
-            SQLiteCommand command;
-            command = con.CreateCommand();
-            command.CommandText = $"SELECT * FROM PatientDB WHERE Vorname || Name || Geburtsdatum || ID || Geschlecht || Ankunft || Age LIKE '%{tSearch.Text}%'";
-            SQLiteDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                position = reader.GetInt32(id);
-                loadPatient();
-            }
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            if (btnUpdate.Text == "Speichern")
-            {
-                readOnlyTboxes();
-                btnUpdate.Text = "Update";
-            }
-            else if (btnPrevious.BackColor == Color.Red && btnPrevious.ForeColor == Color.White)
-            {
-                btnPrevious.BackColor = Color.Transparent;
-                btnPrevious.ForeColor = Color.Black;
-                position++;
-                loadPatient();
-            }
-            else if (position >= count) { btnNext.BackColor = Color.Red; btnNext.ForeColor = Color.White; }
-            else
-            {
-                position++;
-                loadPatient();
-            }
-        }
-
-        private void btnPrevious_Click(object sender, EventArgs e)
-        {
-            if (btnUpdate.Text == "Speichern")
-            {
-                readOnlyTboxes();
-                btnUpdate.Text = "Update";
-            }
-            else if (btnNext.BackColor == Color.Red && btnNext.ForeColor == Color.White)
-            {
-                btnNext.BackColor = Color.Transparent;
-                btnNext.ForeColor = Color.Black;
-                position--;
-                loadPatient();
-            }
-            else if (position == 1) { btnPrevious.BackColor = Color.Red; btnPrevious.ForeColor = Color.White; return; }
-            else
-            {
-                position--;
-                loadPatient();
-            }
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (btnUpdate.Text == "Speichern")
-            {
-                readOnlyTboxes();
-                updateEntry(tboxVorname.Text, tboxName.Text, tboxGDatum.Text, tboxGeschlecht.Text, tboxAnkunft.Text, tboxNummer.Text, tboxEmail.Text);
-                btnUpdate.Text = "Update";
-            }
-            else
-            {
-                disableReadOnly();
-                btnUpdate.Text = "Speichern";
-            }
-        }
-
-        void updateEntry(string vorname, string name, string geburtsDatum, string geschlecht, string ankunft, string nummer, string email)
-        {
-            SQLiteCommand sqlite_cmd;
-            sqlite_cmd = con.CreateCommand();
-            sqlite_cmd.CommandText = $"UPDATE PatientDB SET Vorname = '{vorname}', Name = '{name}', Geburtsdatum = '{geburtsDatum}', Geschlecht = '{geschlecht}', Ankunft = '{ankunft}', Auskunft = 'Null', Nummer = '{nummer}', Email = '{email}' WHERE ID = {position};";
-            sqlite_cmd.ExecuteNonQuery();
         }
     }
 }

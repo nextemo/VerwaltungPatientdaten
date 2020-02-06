@@ -43,7 +43,7 @@ namespace verwaltung
         private void Login_Load(object sender, EventArgs e)
         {
             tboxPassword.PasswordChar = '*';
-            tboxPassword.Focused.Equals(true);
+            tboxPassword.Focus();
         }
 
         private void tboxPassword_KeyDown(object sender, KeyEventArgs e)

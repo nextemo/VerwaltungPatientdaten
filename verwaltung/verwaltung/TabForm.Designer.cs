@@ -30,12 +30,14 @@
         {
             this.Tab = new System.Windows.Forms.TabControl();
             this.ListOfPatient = new System.Windows.Forms.TabPage();
+            this.lSearch = new System.Windows.Forms.Label();
+            this.tSearch = new System.Windows.Forms.TextBox();
             this.tboxEmail = new System.Windows.Forms.TextBox();
             this.tboxNummer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbNummer = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.tboxAnkunft = new System.Windows.Forms.TextBox();
+            this.tboxAngemeldet = new System.Windows.Forms.TextBox();
             this.tboxGeschlecht = new System.Windows.Forms.TextBox();
             this.tboxGDatum = new System.Windows.Forms.TextBox();
             this.tboxName = new System.Windows.Forms.TextBox();
@@ -61,11 +63,11 @@
             this.tboxPVorname = new System.Windows.Forms.TextBox();
             this.lbPNachname = new System.Windows.Forms.Label();
             this.lbPVorname = new System.Windows.Forms.Label();
-            this.lSearch = new System.Windows.Forms.Label();
-            this.tSearch = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Tab.SuspendLayout();
             this.ListOfPatient.SuspendLayout();
             this.NewPatient.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Tab
@@ -73,16 +75,18 @@
             this.Tab.Controls.Add(this.ListOfPatient);
             this.Tab.Controls.Add(this.NewPatient);
             this.Tab.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tab.Location = new System.Drawing.Point(11, 10);
-            this.Tab.Margin = new System.Windows.Forms.Padding(2);
+            this.Tab.Location = new System.Drawing.Point(15, 12);
+            this.Tab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Tab.Name = "Tab";
             this.Tab.SelectedIndex = 0;
-            this.Tab.Size = new System.Drawing.Size(1072, 612);
+            this.Tab.Size = new System.Drawing.Size(1429, 753);
             this.Tab.TabIndex = 0;
             this.Tab.SelectedIndexChanged += new System.EventHandler(this.Tab_SelectedIndexChanged);
+            this.Tab.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tab_KeyDown);
             // 
             // ListOfPatient
             // 
+            this.ListOfPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ListOfPatient.Controls.Add(this.lSearch);
             this.ListOfPatient.Controls.Add(this.tSearch);
             this.ListOfPatient.Controls.Add(this.tboxEmail);
@@ -90,7 +94,7 @@
             this.ListOfPatient.Controls.Add(this.label1);
             this.ListOfPatient.Controls.Add(this.lbNummer);
             this.ListOfPatient.Controls.Add(this.btnUpdate);
-            this.ListOfPatient.Controls.Add(this.tboxAnkunft);
+            this.ListOfPatient.Controls.Add(this.tboxAngemeldet);
             this.ListOfPatient.Controls.Add(this.tboxGeschlecht);
             this.ListOfPatient.Controls.Add(this.tboxGDatum);
             this.ListOfPatient.Controls.Add(this.tboxName);
@@ -102,38 +106,64 @@
             this.ListOfPatient.Controls.Add(this.btnNext);
             this.ListOfPatient.Controls.Add(this.lbName);
             this.ListOfPatient.Controls.Add(this.lbVorname);
-            this.ListOfPatient.Location = new System.Drawing.Point(4, 34);
-            this.ListOfPatient.Margin = new System.Windows.Forms.Padding(2);
+            this.ListOfPatient.Controls.Add(this.pictureBox1);
+            this.ListOfPatient.Location = new System.Drawing.Point(4, 40);
+            this.ListOfPatient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ListOfPatient.Name = "ListOfPatient";
-            this.ListOfPatient.Padding = new System.Windows.Forms.Padding(2);
-            this.ListOfPatient.Size = new System.Drawing.Size(1064, 574);
+            this.ListOfPatient.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ListOfPatient.Size = new System.Drawing.Size(1421, 709);
             this.ListOfPatient.TabIndex = 0;
             this.ListOfPatient.Text = "Patient";
             this.ListOfPatient.UseVisualStyleBackColor = true;
             // 
+            // lSearch
+            // 
+            this.lSearch.AutoSize = true;
+            this.lSearch.BackColor = System.Drawing.Color.Transparent;
+            this.lSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lSearch.Location = new System.Drawing.Point(855, 22);
+            this.lSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lSearch.Name = "lSearch";
+            this.lSearch.Size = new System.Drawing.Size(202, 31);
+            this.lSearch.TabIndex = 61;
+            this.lSearch.Text = "Patientensuche";
+            // 
+            // tSearch
+            // 
+            this.tSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tSearch.Location = new System.Drawing.Point(1079, 18);
+            this.tSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tSearch.Name = "tSearch";
+            this.tSearch.Size = new System.Drawing.Size(317, 38);
+            this.tSearch.TabIndex = 60;
+            this.tSearch.TextChanged += new System.EventHandler(this.tSearch_TextChanged);
+            // 
             // tboxEmail
             // 
             this.tboxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxEmail.Location = new System.Drawing.Point(188, 271);
+            this.tboxEmail.Location = new System.Drawing.Point(251, 389);
+            this.tboxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tboxEmail.Name = "tboxEmail";
-            this.tboxEmail.Size = new System.Drawing.Size(398, 35);
+            this.tboxEmail.Size = new System.Drawing.Size(529, 41);
             this.tboxEmail.TabIndex = 59;
             // 
             // tboxNummer
             // 
             this.tboxNummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxNummer.Location = new System.Drawing.Point(188, 224);
+            this.tboxNummer.Location = new System.Drawing.Point(251, 331);
+            this.tboxNummer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tboxNummer.Name = "tboxNummer";
-            this.tboxNummer.Size = new System.Drawing.Size(398, 35);
+            this.tboxNummer.Size = new System.Drawing.Size(529, 41);
             this.tboxNummer.TabIndex = 58;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(107, 276);
+            this.label1.Location = new System.Drawing.Point(143, 395);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 26);
+            this.label1.Size = new System.Drawing.Size(81, 31);
             this.label1.TabIndex = 57;
             this.label1.Text = "Email";
             // 
@@ -141,70 +171,80 @@
             // 
             this.lbNummer.AutoSize = true;
             this.lbNummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNummer.Location = new System.Drawing.Point(43, 227);
+            this.lbNummer.Location = new System.Drawing.Point(57, 335);
+            this.lbNummer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNummer.Name = "lbNummer";
-            this.lbNummer.Size = new System.Drawing.Size(138, 26);
+            this.lbNummer.Size = new System.Drawing.Size(170, 31);
             this.lbNummer.TabIndex = 56;
             this.lbNummer.Text = "Tel. Nummer";
             // 
             // btnUpdate
             // 
+            this.btnUpdate.AllowDrop = true;
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(415, 375);
+            this.btnUpdate.Location = new System.Drawing.Point(553, 517);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(126, 35);
+            this.btnUpdate.Size = new System.Drawing.Size(168, 43);
             this.btnUpdate.TabIndex = 55;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // tboxAnkunft
+            // tboxAngemeldet
             // 
-            this.tboxAnkunft.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxAnkunft.Location = new System.Drawing.Point(188, 317);
-            this.tboxAnkunft.Name = "tboxAnkunft";
-            this.tboxAnkunft.Size = new System.Drawing.Size(398, 35);
-            this.tboxAnkunft.TabIndex = 54;
+            this.tboxAngemeldet.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxAngemeldet.Location = new System.Drawing.Point(251, 446);
+            this.tboxAngemeldet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tboxAngemeldet.Name = "tboxAngemeldet";
+            this.tboxAngemeldet.Size = new System.Drawing.Size(529, 41);
+            this.tboxAngemeldet.TabIndex = 54;
             // 
             // tboxGeschlecht
             // 
             this.tboxGeschlecht.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxGeschlecht.Location = new System.Drawing.Point(188, 175);
+            this.tboxGeschlecht.Location = new System.Drawing.Point(251, 271);
+            this.tboxGeschlecht.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tboxGeschlecht.Name = "tboxGeschlecht";
-            this.tboxGeschlecht.Size = new System.Drawing.Size(398, 35);
+            this.tboxGeschlecht.Size = new System.Drawing.Size(529, 41);
             this.tboxGeschlecht.TabIndex = 53;
             // 
             // tboxGDatum
             // 
             this.tboxGDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxGDatum.Location = new System.Drawing.Point(188, 125);
+            this.tboxGDatum.Location = new System.Drawing.Point(251, 209);
+            this.tboxGDatum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tboxGDatum.Name = "tboxGDatum";
-            this.tboxGDatum.Size = new System.Drawing.Size(398, 35);
+            this.tboxGDatum.Size = new System.Drawing.Size(529, 41);
             this.tboxGDatum.TabIndex = 52;
             // 
             // tboxName
             // 
             this.tboxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxName.Location = new System.Drawing.Point(188, 81);
+            this.tboxName.Location = new System.Drawing.Point(251, 155);
+            this.tboxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tboxName.Name = "tboxName";
-            this.tboxName.Size = new System.Drawing.Size(398, 35);
+            this.tboxName.Size = new System.Drawing.Size(529, 41);
             this.tboxName.TabIndex = 51;
             // 
             // tboxVorname
             // 
             this.tboxVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxVorname.Location = new System.Drawing.Point(188, 36);
+            this.tboxVorname.Location = new System.Drawing.Point(251, 100);
+            this.tboxVorname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tboxVorname.Name = "tboxVorname";
-            this.tboxVorname.Size = new System.Drawing.Size(398, 35);
+            this.tboxVorname.Size = new System.Drawing.Size(529, 41);
             this.tboxVorname.TabIndex = 50;
             // 
             // lbAnkunft
             // 
             this.lbAnkunft.AutoSize = true;
             this.lbAnkunft.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAnkunft.Location = new System.Drawing.Point(90, 322);
+            this.lbAnkunft.Location = new System.Drawing.Point(120, 452);
+            this.lbAnkunft.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAnkunft.Name = "lbAnkunft";
-            this.lbAnkunft.Size = new System.Drawing.Size(86, 26);
+            this.lbAnkunft.Size = new System.Drawing.Size(107, 31);
             this.lbAnkunft.TabIndex = 49;
             this.lbAnkunft.Text = "Ankunft";
             // 
@@ -212,9 +252,10 @@
             // 
             this.lbGeschlecht.AutoSize = true;
             this.lbGeschlecht.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGeschlecht.Location = new System.Drawing.Point(57, 180);
+            this.lbGeschlecht.Location = new System.Drawing.Point(76, 277);
+            this.lbGeschlecht.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbGeschlecht.Name = "lbGeschlecht";
-            this.lbGeschlecht.Size = new System.Drawing.Size(121, 26);
+            this.lbGeschlecht.Size = new System.Drawing.Size(151, 31);
             this.lbGeschlecht.TabIndex = 48;
             this.lbGeschlecht.Text = "Geschlecht";
             // 
@@ -222,18 +263,20 @@
             // 
             this.lbGeburtsdatum.AutoSize = true;
             this.lbGeburtsdatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGeburtsdatum.Location = new System.Drawing.Point(31, 130);
+            this.lbGeburtsdatum.Location = new System.Drawing.Point(41, 215);
+            this.lbGeburtsdatum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbGeburtsdatum.Name = "lbGeburtsdatum";
-            this.lbGeburtsdatum.Size = new System.Drawing.Size(150, 26);
+            this.lbGeburtsdatum.Size = new System.Drawing.Size(186, 31);
             this.lbGeburtsdatum.TabIndex = 47;
             this.lbGeburtsdatum.Text = "Geburtsdatum";
             // 
             // btnPrevious
             // 
             this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevious.Location = new System.Drawing.Point(238, 375);
+            this.btnPrevious.Location = new System.Drawing.Point(317, 517);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(56, 35);
+            this.btnPrevious.Size = new System.Drawing.Size(75, 43);
             this.btnPrevious.TabIndex = 46;
             this.btnPrevious.Text = "🡄";
             this.btnPrevious.UseVisualStyleBackColor = true;
@@ -242,9 +285,10 @@
             // btnNext
             // 
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(308, 375);
+            this.btnNext.Location = new System.Drawing.Point(411, 517);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(56, 35);
+            this.btnNext.Size = new System.Drawing.Size(75, 43);
             this.btnNext.TabIndex = 45;
             this.btnNext.Text = "🡆 ";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -254,9 +298,10 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(62, 85);
+            this.lbName.Location = new System.Drawing.Point(83, 160);
+            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(118, 26);
+            this.lbName.Size = new System.Drawing.Size(145, 31);
             this.lbName.TabIndex = 44;
             this.lbName.Text = "Nachname";
             // 
@@ -264,9 +309,10 @@
             // 
             this.lbVorname.AutoSize = true;
             this.lbVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVorname.Location = new System.Drawing.Point(78, 41);
+            this.lbVorname.Location = new System.Drawing.Point(104, 106);
+            this.lbVorname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbVorname.Name = "lbVorname";
-            this.lbVorname.Size = new System.Drawing.Size(101, 26);
+            this.lbVorname.Size = new System.Drawing.Size(123, 31);
             this.lbVorname.TabIndex = 43;
             this.lbVorname.Text = "Vorname";
             // 
@@ -285,11 +331,11 @@
             this.NewPatient.Controls.Add(this.tboxPVorname);
             this.NewPatient.Controls.Add(this.lbPNachname);
             this.NewPatient.Controls.Add(this.lbPVorname);
-            this.NewPatient.Location = new System.Drawing.Point(4, 34);
-            this.NewPatient.Margin = new System.Windows.Forms.Padding(2);
+            this.NewPatient.Location = new System.Drawing.Point(4, 40);
+            this.NewPatient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NewPatient.Name = "NewPatient";
-            this.NewPatient.Padding = new System.Windows.Forms.Padding(2);
-            this.NewPatient.Size = new System.Drawing.Size(1064, 574);
+            this.NewPatient.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NewPatient.Size = new System.Drawing.Size(1421, 709);
             this.NewPatient.TabIndex = 1;
             this.NewPatient.Text = "Neu Patient ";
             this.NewPatient.UseVisualStyleBackColor = true;
@@ -298,9 +344,10 @@
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(110, 229);
+            this.lbEmail.Location = new System.Drawing.Point(147, 337);
+            this.lbEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(68, 26);
+            this.lbEmail.Size = new System.Drawing.Size(81, 31);
             this.lbEmail.TabIndex = 68;
             this.lbEmail.Text = "Email";
             // 
@@ -308,34 +355,38 @@
             // 
             this.lbTelpNum.AutoSize = true;
             this.lbTelpNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTelpNum.Location = new System.Drawing.Point(44, 180);
+            this.lbTelpNum.Location = new System.Drawing.Point(59, 277);
+            this.lbTelpNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTelpNum.Name = "lbTelpNum";
-            this.lbTelpNum.Size = new System.Drawing.Size(138, 26);
+            this.lbTelpNum.Size = new System.Drawing.Size(170, 31);
             this.lbTelpNum.TabIndex = 67;
             this.lbTelpNum.Text = "Tel. Nummer";
             // 
             // tboxPEmail
             // 
             this.tboxPEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPEmail.Location = new System.Drawing.Point(188, 224);
+            this.tboxPEmail.Location = new System.Drawing.Point(251, 331);
+            this.tboxPEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tboxPEmail.Name = "tboxPEmail";
-            this.tboxPEmail.Size = new System.Drawing.Size(398, 35);
+            this.tboxPEmail.Size = new System.Drawing.Size(529, 41);
             this.tboxPEmail.TabIndex = 66;
             // 
             // tboxPNumber
             // 
             this.tboxPNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPNumber.Location = new System.Drawing.Point(188, 175);
+            this.tboxPNumber.Location = new System.Drawing.Point(251, 271);
+            this.tboxPNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tboxPNumber.Name = "tboxPNumber";
-            this.tboxPNumber.Size = new System.Drawing.Size(398, 35);
+            this.tboxPNumber.Size = new System.Drawing.Size(529, 41);
             this.tboxPNumber.TabIndex = 65;
             // 
             // btnPSpeichern
             // 
             this.btnPSpeichern.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPSpeichern.Location = new System.Drawing.Point(317, 334);
+            this.btnPSpeichern.Location = new System.Drawing.Point(423, 466);
+            this.btnPSpeichern.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPSpeichern.Name = "btnPSpeichern";
-            this.btnPSpeichern.Size = new System.Drawing.Size(126, 35);
+            this.btnPSpeichern.Size = new System.Drawing.Size(168, 43);
             this.btnPSpeichern.TabIndex = 64;
             this.btnPSpeichern.Text = "Speichern";
             this.btnPSpeichern.UseVisualStyleBackColor = true;
@@ -345,9 +396,10 @@
             // 
             this.rWeiblich.AutoSize = true;
             this.rWeiblich.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rWeiblich.Location = new System.Drawing.Point(414, 267);
+            this.rWeiblich.Location = new System.Drawing.Point(552, 384);
+            this.rWeiblich.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rWeiblich.Name = "rWeiblich";
-            this.rWeiblich.Size = new System.Drawing.Size(113, 30);
+            this.rWeiblich.Size = new System.Drawing.Size(137, 35);
             this.rWeiblich.TabIndex = 63;
             this.rWeiblich.TabStop = true;
             this.rWeiblich.Text = "Weiblich";
@@ -357,9 +409,10 @@
             // 
             this.rMänlich.AutoSize = true;
             this.rMänlich.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rMänlich.Location = new System.Drawing.Point(259, 267);
+            this.rMänlich.Location = new System.Drawing.Point(345, 384);
+            this.rMänlich.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rMänlich.Name = "rMänlich";
-            this.rMänlich.Size = new System.Drawing.Size(105, 30);
+            this.rMänlich.Size = new System.Drawing.Size(128, 35);
             this.rMänlich.TabIndex = 62;
             this.rMänlich.TabStop = true;
             this.rMänlich.Text = "Mänlich";
@@ -368,44 +421,49 @@
             // gebDatumPicker
             // 
             this.gebDatumPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gebDatumPicker.Location = new System.Drawing.Point(188, 126);
+            this.gebDatumPicker.Location = new System.Drawing.Point(251, 210);
+            this.gebDatumPicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gebDatumPicker.Name = "gebDatumPicker";
-            this.gebDatumPicker.Size = new System.Drawing.Size(398, 35);
+            this.gebDatumPicker.Size = new System.Drawing.Size(529, 41);
             this.gebDatumPicker.TabIndex = 61;
             // 
             // lbPGebDatum
             // 
             this.lbPGebDatum.AutoSize = true;
             this.lbPGebDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPGebDatum.Location = new System.Drawing.Point(32, 131);
+            this.lbPGebDatum.Location = new System.Drawing.Point(43, 217);
+            this.lbPGebDatum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPGebDatum.Name = "lbPGebDatum";
-            this.lbPGebDatum.Size = new System.Drawing.Size(150, 26);
+            this.lbPGebDatum.Size = new System.Drawing.Size(186, 31);
             this.lbPGebDatum.TabIndex = 60;
             this.lbPGebDatum.Text = "Geburtsdatum";
             // 
             // tboxPNachname
             // 
             this.tboxPNachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPNachname.Location = new System.Drawing.Point(188, 81);
+            this.tboxPNachname.Location = new System.Drawing.Point(251, 155);
+            this.tboxPNachname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tboxPNachname.Name = "tboxPNachname";
-            this.tboxPNachname.Size = new System.Drawing.Size(398, 35);
+            this.tboxPNachname.Size = new System.Drawing.Size(529, 41);
             this.tboxPNachname.TabIndex = 59;
             // 
             // tboxPVorname
             // 
             this.tboxPVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPVorname.Location = new System.Drawing.Point(188, 36);
+            this.tboxPVorname.Location = new System.Drawing.Point(251, 100);
+            this.tboxPVorname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tboxPVorname.Name = "tboxPVorname";
-            this.tboxPVorname.Size = new System.Drawing.Size(398, 35);
+            this.tboxPVorname.Size = new System.Drawing.Size(529, 41);
             this.tboxPVorname.TabIndex = 58;
             // 
             // lbPNachname
             // 
             this.lbPNachname.AutoSize = true;
             this.lbPNachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPNachname.Location = new System.Drawing.Point(62, 86);
+            this.lbPNachname.Location = new System.Drawing.Point(83, 161);
+            this.lbPNachname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPNachname.Name = "lbPNachname";
-            this.lbPNachname.Size = new System.Drawing.Size(118, 26);
+            this.lbPNachname.Size = new System.Drawing.Size(145, 31);
             this.lbPNachname.TabIndex = 56;
             this.lbPNachname.Text = "Nachname";
             // 
@@ -413,38 +471,30 @@
             // 
             this.lbPVorname.AutoSize = true;
             this.lbPVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPVorname.Location = new System.Drawing.Point(79, 41);
+            this.lbPVorname.Location = new System.Drawing.Point(105, 106);
+            this.lbPVorname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPVorname.Name = "lbPVorname";
-            this.lbPVorname.Size = new System.Drawing.Size(101, 26);
+            this.lbPVorname.Size = new System.Drawing.Size(123, 31);
             this.lbPVorname.TabIndex = 55;
             this.lbPVorname.Text = "Vorname";
             // 
-            // lSearch
+            // pictureBox1
             // 
-            this.lSearch.AutoSize = true;
-            this.lSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lSearch.Location = new System.Drawing.Point(615, 42);
-            this.lSearch.Name = "lSearch";
-            this.lSearch.Size = new System.Drawing.Size(162, 26);
-            this.lSearch.TabIndex = 61;
-            this.lSearch.Text = "Patientensuche";
-            // 
-            // tSearch
-            // 
-            this.tSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tSearch.Location = new System.Drawing.Point(778, 39);
-            this.tSearch.Name = "tSearch";
-            this.tSearch.Size = new System.Drawing.Size(239, 32);
-            this.tSearch.TabIndex = 60;
-            this.tSearch.TextChanged += new System.EventHandler(this.tSearch_TextChanged);
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1408, 698);
+            this.pictureBox1.TabIndex = 62;
+            this.pictureBox1.TabStop = false;
             // 
             // TabForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 633);
+            this.ClientSize = new System.Drawing.Size(1459, 779);
             this.Controls.Add(this.Tab);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TabForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TestForm";
@@ -453,6 +503,7 @@
             this.ListOfPatient.PerformLayout();
             this.NewPatient.ResumeLayout(false);
             this.NewPatient.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -480,7 +531,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbNummer;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox tboxAnkunft;
+        private System.Windows.Forms.TextBox tboxAngemeldet;
         private System.Windows.Forms.TextBox tboxGeschlecht;
         private System.Windows.Forms.TextBox tboxGDatum;
         private System.Windows.Forms.TextBox tboxName;
@@ -494,5 +545,6 @@
         private System.Windows.Forms.Label lbVorname;
         private System.Windows.Forms.Label lSearch;
         private System.Windows.Forms.TextBox tSearch;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

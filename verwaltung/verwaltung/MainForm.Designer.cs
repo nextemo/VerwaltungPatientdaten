@@ -264,7 +264,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 599);
-            this.Controls.Add(this.newPatient1);
             this.Controls.Add(this.tboxEmail);
             this.Controls.Add(this.tboxNummer);
             this.Controls.Add(this.lbEmail);
