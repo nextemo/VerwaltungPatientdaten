@@ -6,6 +6,7 @@ using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -48,9 +49,39 @@ namespace verwaltung
             if (rMänlich.Checked) pGeschlecht = "Mänlich";
             else if (rWeiblich.Checked) pGeschlecht = "Weiblich";
             else pGeschlecht = "Not available";
-            var nummer = int.Parse(tboxPNumber.Text);
+            try
+            {
+                var nummer = int.Parse(tboxPNumber.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Telefon-Nummer darf nur Nummern enthalten!");
+                return;
+            }
+
             var email = tboxPEmail.Text;
+
+            //update the Values
+            vName = vName.Replace("  ", " ");
+            nName = nName.Replace("  ", " ");
+            Regex re = new Regex(@"\d");
+            string regnummer = nummer.ToString();
+            try
+            {
+                System.Net.Mail.MailAddress m = new System.Net.Mail.MailAddress(email);
+            }
+            catch
+            {
+                MessageBox.Show("Mail-Addresse nicht valide!");
+                return;
+            }
+            
+
+
+            //neuer Patient
             var neuPatient = new Patient(vName, nName, geburtsdatum, pGeschlecht, email, nummer);
+
+
 
             pName = neuPatient.Name;
             pVorname = neuPatient.Vorname;
