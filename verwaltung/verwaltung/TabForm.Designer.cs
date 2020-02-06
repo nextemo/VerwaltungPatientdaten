@@ -94,7 +94,6 @@
             // ListOfPatient
             // 
             this.ListOfPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ListOfPatient.Controls.Add(this.btnLogout);
             this.ListOfPatient.Controls.Add(this.lSearch);
             this.ListOfPatient.Controls.Add(this.tSearch);
             this.ListOfPatient.Controls.Add(this.tboxEmail);
@@ -473,12 +472,13 @@
             // 
             this.btnLogout.AllowDrop = true;
             this.btnLogout.BackColor = System.Drawing.Color.Red;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(5, 533);
+            this.btnLogout.Location = new System.Drawing.Point(995, -12);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(88, 36);
+            this.btnLogout.Size = new System.Drawing.Size(88, 48);
             this.btnLogout.TabIndex = 64;
             this.btnLogout.Text = "LOGOUT";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -489,7 +489,7 @@
             this.picBoxMedicalTeam.BackColor = System.Drawing.Color.Transparent;
             this.picBoxMedicalTeam.BackgroundImage = global::verwaltung.Properties.Resources.medicalTeam;
             this.picBoxMedicalTeam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxMedicalTeam.Location = new System.Drawing.Point(415, 454);
+            this.picBoxMedicalTeam.Location = new System.Drawing.Point(-15, 462);
             this.picBoxMedicalTeam.Name = "picBoxMedicalTeam";
             this.picBoxMedicalTeam.Size = new System.Drawing.Size(326, 141);
             this.picBoxMedicalTeam.TabIndex = 63;
@@ -531,7 +531,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(1094, 633);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.Tab);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TabForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
