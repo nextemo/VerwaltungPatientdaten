@@ -33,9 +33,6 @@ namespace verwaltung
             }
             else
             {
-                //MainForm mainForm = new MainForm();
-                //this.Hide();
-                //mainForm.Show();
                 TabForm testForm = new TabForm();
                 testForm.Show();
                 this.Hide();

@@ -39,9 +39,10 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(127, 384);
+            this.btnLogin.Location = new System.Drawing.Point(116, 346);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(171, 46);
             this.btnLogin.TabIndex = 0;
@@ -52,7 +53,7 @@
             // tboxPassword
             // 
             this.tboxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPassword.Location = new System.Drawing.Point(62, 321);
+            this.tboxPassword.Location = new System.Drawing.Point(51, 283);
             this.tboxPassword.Name = "tboxPassword";
             this.tboxPassword.Size = new System.Drawing.Size(302, 35);
             this.tboxPassword.TabIndex = 2;
@@ -62,8 +63,8 @@
             // 
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPassword.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lbPassword.Location = new System.Drawing.Point(64, 294);
+            this.lbPassword.ForeColor = System.Drawing.Color.Teal;
+            this.lbPassword.Location = new System.Drawing.Point(248, 272);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(92, 24);
             this.lbPassword.TabIndex = 4;
@@ -72,9 +73,10 @@
             // lbProgramName
             // 
             this.lbProgramName.AutoSize = true;
+            this.lbProgramName.BackColor = System.Drawing.Color.Wheat;
             this.lbProgramName.Font = new System.Drawing.Font("Microsoft Tai Le", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbProgramName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbProgramName.Location = new System.Drawing.Point(46, 216);
+            this.lbProgramName.ForeColor = System.Drawing.Color.Teal;
+            this.lbProgramName.Location = new System.Drawing.Point(35, 216);
             this.lbProgramName.Name = "lbProgramName";
             this.lbProgramName.Size = new System.Drawing.Size(340, 45);
             this.lbProgramName.TabIndex = 5;
@@ -83,7 +85,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::verwaltung.Properties.Resources.Logofinal;
-            this.pictureBox1.Location = new System.Drawing.Point(108, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(101, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(208, 210);
             this.pictureBox1.TabIndex = 6;
@@ -93,12 +95,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 463);
-            this.Controls.Add(this.pictureBox1);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(412, 428);
             this.Controls.Add(this.lbProgramName);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.tboxPassword);
             this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

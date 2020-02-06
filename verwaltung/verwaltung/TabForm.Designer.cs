@@ -63,15 +63,18 @@
             this.tboxPVorname = new System.Windows.Forms.TextBox();
             this.lbPNachname = new System.Windows.Forms.Label();
             this.lbPVorname = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.picBoxMedicalTeam = new System.Windows.Forms.PictureBox();
             this.picBoxPatient = new System.Windows.Forms.PictureBox();
             this.picBoxNeuPatient = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Tab.SuspendLayout();
             this.ListOfPatient.SuspendLayout();
             this.NewPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMedicalTeam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxNeuPatient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Tab
@@ -80,7 +83,7 @@
             this.Tab.Controls.Add(this.NewPatient);
             this.Tab.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tab.Location = new System.Drawing.Point(11, 10);
-            this.Tab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tab.Margin = new System.Windows.Forms.Padding(2);
             this.Tab.Name = "Tab";
             this.Tab.SelectedIndex = 0;
             this.Tab.Size = new System.Drawing.Size(1072, 612);
@@ -91,6 +94,7 @@
             // ListOfPatient
             // 
             this.ListOfPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ListOfPatient.Controls.Add(this.btnLogout);
             this.ListOfPatient.Controls.Add(this.lSearch);
             this.ListOfPatient.Controls.Add(this.tSearch);
             this.ListOfPatient.Controls.Add(this.tboxEmail);
@@ -115,9 +119,9 @@
             this.ListOfPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListOfPatient.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ListOfPatient.Location = new System.Drawing.Point(4, 34);
-            this.ListOfPatient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ListOfPatient.Margin = new System.Windows.Forms.Padding(2);
             this.ListOfPatient.Name = "ListOfPatient";
-            this.ListOfPatient.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ListOfPatient.Padding = new System.Windows.Forms.Padding(2);
             this.ListOfPatient.Size = new System.Drawing.Size(1064, 574);
             this.ListOfPatient.TabIndex = 0;
             this.ListOfPatient.Text = "Patient";
@@ -183,6 +187,7 @@
             // 
             this.btnUpdate.AllowDrop = true;
             this.btnUpdate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(415, 420);
@@ -266,6 +271,7 @@
             // btnPrevious
             // 
             this.btnPrevious.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnPrevious.Location = new System.Drawing.Point(188, 420);
@@ -279,6 +285,7 @@
             // btnNext
             // 
             this.btnNext.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
             this.btnNext.Location = new System.Drawing.Point(285, 420);
@@ -324,11 +331,12 @@
             this.NewPatient.Controls.Add(this.tboxPVorname);
             this.NewPatient.Controls.Add(this.lbPNachname);
             this.NewPatient.Controls.Add(this.lbPVorname);
+            this.NewPatient.Controls.Add(this.pictureBox1);
             this.NewPatient.Controls.Add(this.picBoxNeuPatient);
             this.NewPatient.Location = new System.Drawing.Point(4, 34);
-            this.NewPatient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NewPatient.Margin = new System.Windows.Forms.Padding(2);
             this.NewPatient.Name = "NewPatient";
-            this.NewPatient.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NewPatient.Padding = new System.Windows.Forms.Padding(2);
             this.NewPatient.Size = new System.Drawing.Size(1064, 574);
             this.NewPatient.TabIndex = 1;
             this.NewPatient.Text = "Neu Patient ";
@@ -461,12 +469,27 @@
             this.lbPVorname.TabIndex = 55;
             this.lbPVorname.Text = "Vorname";
             // 
+            // btnLogout
+            // 
+            this.btnLogout.AllowDrop = true;
+            this.btnLogout.BackColor = System.Drawing.Color.Red;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(5, 533);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(88, 36);
+            this.btnLogout.TabIndex = 64;
+            this.btnLogout.Text = "LOGOUT";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // picBoxMedicalTeam
             // 
             this.picBoxMedicalTeam.BackColor = System.Drawing.Color.Transparent;
             this.picBoxMedicalTeam.BackgroundImage = global::verwaltung.Properties.Resources.medicalTeam;
             this.picBoxMedicalTeam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxMedicalTeam.Location = new System.Drawing.Point(-10, 457);
+            this.picBoxMedicalTeam.Location = new System.Drawing.Point(415, 454);
             this.picBoxMedicalTeam.Name = "picBoxMedicalTeam";
             this.picBoxMedicalTeam.Size = new System.Drawing.Size(326, 141);
             this.picBoxMedicalTeam.TabIndex = 63;
@@ -493,16 +516,26 @@
             this.picBoxNeuPatient.TabIndex = 69;
             this.picBoxNeuPatient.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::verwaltung.Properties.Resources.Medical;
+            this.pictureBox1.Location = new System.Drawing.Point(-15, 310);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(397, 259);
+            this.pictureBox1.TabIndex = 70;
+            this.pictureBox1.TabStop = false;
+            // 
             // TabForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(1094, 633);
             this.Controls.Add(this.Tab);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TabForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TestForm";
+            this.Text = "PATIENT VERWALTUNG";
             this.Tab.ResumeLayout(false);
             this.ListOfPatient.ResumeLayout(false);
             this.ListOfPatient.PerformLayout();
@@ -511,6 +544,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMedicalTeam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPatient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxNeuPatient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -555,5 +589,7 @@
         private System.Windows.Forms.PictureBox picBoxPatient;
         private System.Windows.Forms.PictureBox picBoxNeuPatient;
         private System.Windows.Forms.PictureBox picBoxMedicalTeam;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
