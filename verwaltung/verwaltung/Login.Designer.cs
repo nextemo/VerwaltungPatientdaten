@@ -37,10 +37,9 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(211, 272);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogin.Location = new System.Drawing.Point(149, 373);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(168, 57);
+            this.btnLogin.Size = new System.Drawing.Size(126, 46);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -49,10 +48,9 @@
             // tboxPassword
             // 
             this.tboxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPassword.Location = new System.Drawing.Point(93, 187);
-            this.tboxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxPassword.Location = new System.Drawing.Point(61, 304);
             this.tboxPassword.Name = "tboxPassword";
-            this.tboxPassword.Size = new System.Drawing.Size(401, 41);
+            this.tboxPassword.Size = new System.Drawing.Size(302, 35);
             this.tboxPassword.TabIndex = 2;
             this.tboxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tboxPassword_KeyDown);
             // 
@@ -61,10 +59,9 @@
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPassword.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lbPassword.Location = new System.Drawing.Point(96, 154);
-            this.lbPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPassword.Location = new System.Drawing.Point(63, 277);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(120, 29);
+            this.lbPassword.Size = new System.Drawing.Size(92, 24);
             this.lbPassword.TabIndex = 4;
             this.lbPassword.Text = "Password";
             // 
@@ -73,23 +70,21 @@
             this.lbProgramName.AutoSize = true;
             this.lbProgramName.Font = new System.Drawing.Font("Microsoft Tai Le", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbProgramName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbProgramName.Location = new System.Drawing.Point(72, 58);
-            this.lbProgramName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbProgramName.Location = new System.Drawing.Point(45, 199);
             this.lbProgramName.Name = "lbProgramName";
-            this.lbProgramName.Size = new System.Drawing.Size(426, 56);
+            this.lbProgramName.Size = new System.Drawing.Size(340, 45);
             this.lbProgramName.TabIndex = 5;
             this.lbProgramName.Text = "Patient Verwaltung";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 394);
+            this.ClientSize = new System.Drawing.Size(433, 463);
             this.Controls.Add(this.lbProgramName);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.tboxPassword);
             this.Controls.Add(this.btnLogin);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
