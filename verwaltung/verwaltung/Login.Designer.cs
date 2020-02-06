@@ -32,6 +32,8 @@
             this.tboxPassword = new System.Windows.Forms.TextBox();
             this.lbPassword = new System.Windows.Forms.Label();
             this.lbProgramName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -78,11 +80,21 @@
             this.lbProgramName.TabIndex = 5;
             this.lbProgramName.Text = "Patient Verwaltung";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::verwaltung.Properties.Resources.Logofinal;
+            this.pictureBox1.Location = new System.Drawing.Point(108, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(208, 210);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 463);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbProgramName);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.tboxPassword);
@@ -91,6 +103,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,6 +115,7 @@
         private System.Windows.Forms.TextBox tboxPassword;
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.Label lbProgramName;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
