@@ -72,8 +72,6 @@ namespace verwaltung
             }
         }
 
-
-
         private void tSearch_TextChanged(object sender, EventArgs e)
         {
             SQLiteCommand command;
@@ -89,24 +87,7 @@ namespace verwaltung
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (btnUpdate.Text == "Speichern")
-            {
-                readOnlyTboxes();
-                btnUpdate.Text = "Update";
-            }
-            else if (btnPrevious.BackColor == Color.Red && btnPrevious.ForeColor == Color.White)
-            {
-                btnPrevious.BackColor = Color.Transparent;
-                btnPrevious.ForeColor = Color.Black;
-                position++;
-                loadPatient();
-            }
-            else if (position >= count) { btnNext.BackColor = Color.Red; btnNext.ForeColor = Color.White; }
-            else
-            {
-                position++;
-                loadPatient();
-            }
+            btnNextColorChanged();
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -118,8 +99,8 @@ namespace verwaltung
             }
             else if (btnNext.BackColor == Color.Red && btnNext.ForeColor == Color.White)
             {
-                btnNext.BackColor = Color.Transparent;
-                btnNext.ForeColor = Color.Black;
+                btnNext.BackColor = Color.DodgerBlue;
+                btnNext.ForeColor = Color.White;
                 position--;
                 loadPatient();
             }
@@ -146,9 +127,52 @@ namespace verwaltung
             }
         }
 
-     
+
 
         //########################################################################### METHODE ##############################################################################
+
+        void btnNextColorChanged() {
+            if (btnUpdate.Text == "Speichern")
+            {
+                readOnlyTboxes();
+                btnUpdate.Text = "Update";
+            }
+            else if (btnPrevious.BackColor == Color.Red && btnPrevious.ForeColor == Color.White)
+            {
+                btnPrevious.BackColor = Color.DodgerBlue;
+                btnPrevious.ForeColor = Color.White;
+                position++;
+                loadPatient();
+            }
+            else if (position >= count) { btnNext.BackColor = Color.Red; btnNext.ForeColor = Color.White; }
+            else
+            {
+                position++;
+                loadPatient();
+            }
+        }
+
+        void btnPreviousColorChanged() {
+            if (btnUpdate.Text == "Speichern")
+            {
+                readOnlyTboxes();
+                btnUpdate.Text = "Update";
+            }
+            else if (btnNext.BackColor == Color.Red && btnNext.ForeColor == Color.White)
+            {
+                btnNext.BackColor = Color.DodgerBlue;
+                btnNext.ForeColor = Color.White;
+                position--;
+                loadPatient();
+            }
+            else if (position == 1) { btnPrevious.BackColor = Color.Red; btnPrevious.ForeColor = Color.White; return; }
+            else
+            {
+                position--;
+                loadPatient();
+            }
+        }
+
         void tboxClear()
         {
             tboxPVorname.Clear();
@@ -200,50 +224,16 @@ namespace verwaltung
             tboxNummer.ReadOnly = true;
         }
 
-        private void Tab_KeyDown(object sender, KeyEventArgs e)
+        private void Tab_KeyDown(object sender, KeyEventArgs e)//Arrow keys
         {
             if (e.KeyCode == Keys.Right)
             {
                 e.SuppressKeyPress = true;
-                if (btnUpdate.Text == "Speichern")
-                {
-                    readOnlyTboxes();
-                    btnUpdate.Text = "Update";
-                }
-                else if (btnPrevious.BackColor == Color.Red && btnPrevious.ForeColor == Color.White)
-                {
-                    btnPrevious.BackColor = Color.Transparent;
-                    btnPrevious.ForeColor = Color.Black;
-                    position++;
-                    loadPatient();
-                }
-                else if (position >= count) { btnNext.BackColor = Color.Red; btnNext.ForeColor = Color.White; }
-                else
-                {
-                    position++;
-                    loadPatient();
-                }
+                btnNextColorChanged();
             }
             else if (e.KeyCode == Keys.Left)
             {
-                if (btnUpdate.Text == "Speichern")
-                {
-                    readOnlyTboxes();
-                    btnUpdate.Text = "Update";
-                }
-                else if (btnNext.BackColor == Color.Red && btnNext.ForeColor == Color.White)
-                {
-                    btnNext.BackColor = Color.Transparent;
-                    btnNext.ForeColor = Color.Black;
-                    position--;
-                    loadPatient();
-                }
-                else if (position == 1) { btnPrevious.BackColor = Color.Red; btnPrevious.ForeColor = Color.White; return; }
-                else
-                {
-                    position--;
-                    loadPatient();
-                }
+                btnPreviousColorChanged();
             }
             else if (e.KeyCode == Keys.Escape) {
                 Environment.Exit(0);
@@ -282,7 +272,7 @@ namespace verwaltung
             sqlite_cmd.ExecuteNonQuery();
         }
 
-        private void Tab_SelectedIndexChanged(object sender, EventArgs e)
+        private void Tab_SelectedIndexChanged(object sender, EventArgs e)//So called reload database
         {
             getFirstID();
             getTotalRows();
