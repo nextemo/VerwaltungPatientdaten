@@ -89,7 +89,24 @@ namespace verwaltung
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-
+            if (btnUpdate.Text == "Speichern")
+            {
+                readOnlyTboxes();
+                btnUpdate.Text = "Update";
+            }
+            else if (btnPrevious.BackColor == Color.Red && btnPrevious.ForeColor == Color.White)
+            {
+                btnPrevious.BackColor = Color.Transparent;
+                btnPrevious.ForeColor = Color.Black;
+                position++;
+                loadPatient();
+            }
+            else if (position >= count) { btnNext.BackColor = Color.Red; btnNext.ForeColor = Color.White; }
+            else
+            {
+                position++;
+                loadPatient();
+            }
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)

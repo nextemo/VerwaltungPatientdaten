@@ -37,7 +37,7 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(149, 373);
+            this.btnLogin.Location = new System.Drawing.Point(150, 390);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(126, 46);
             this.btnLogin.TabIndex = 0;
@@ -48,7 +48,7 @@
             // tboxPassword
             // 
             this.tboxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPassword.Location = new System.Drawing.Point(61, 304);
+            this.tboxPassword.Location = new System.Drawing.Point(62, 321);
             this.tboxPassword.Name = "tboxPassword";
             this.tboxPassword.Size = new System.Drawing.Size(302, 35);
             this.tboxPassword.TabIndex = 2;
@@ -59,7 +59,7 @@
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPassword.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lbPassword.Location = new System.Drawing.Point(63, 277);
+            this.lbPassword.Location = new System.Drawing.Point(64, 294);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(92, 24);
             this.lbPassword.TabIndex = 4;
@@ -70,7 +70,7 @@
             this.lbProgramName.AutoSize = true;
             this.lbProgramName.Font = new System.Drawing.Font("Microsoft Tai Le", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbProgramName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbProgramName.Location = new System.Drawing.Point(45, 199);
+            this.lbProgramName.Location = new System.Drawing.Point(46, 216);
             this.lbProgramName.Name = "lbProgramName";
             this.lbProgramName.Size = new System.Drawing.Size(340, 45);
             this.lbProgramName.TabIndex = 5;
