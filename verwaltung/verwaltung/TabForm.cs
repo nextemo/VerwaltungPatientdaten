@@ -16,7 +16,8 @@ namespace verwaltung
         string pName, pVorname, pGeschlecht, pEmail;
         DateTime pGebDatum;
         int pAlter, pNummer;
-        SQLiteConnection con = new SQLiteConnection("Data Source = C:/Users/jhoni.dewa/Desktop/Patient.db; Version = 3;");
+        static string path = System.IO.Directory.GetCurrentDirectory();
+        SQLiteConnection con = new SQLiteConnection($"Data Source = {path}/Patient.db; Version = 3;");
 
         int id = 0;
         int vorname = 1;
