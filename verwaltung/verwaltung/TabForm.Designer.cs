@@ -31,27 +31,31 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TabForm));
             this.Tab = new System.Windows.Forms.TabControl();
             this.ListOfPatient = new System.Windows.Forms.TabPage();
-            this.lSearch = new System.Windows.Forms.Label();
-            this.tSearch = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tboxEmail = new System.Windows.Forms.TextBox();
             this.tboxNummer = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbNummer = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.tboxAngemeldet = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.tboxGeschlecht = new System.Windows.Forms.TextBox();
             this.tboxGDatum = new System.Windows.Forms.TextBox();
             this.tboxName = new System.Windows.Forms.TextBox();
             this.tboxVorname = new System.Windows.Forms.TextBox();
-            this.lbAnkunft = new System.Windows.Forms.Label();
+            this.lSearch = new System.Windows.Forms.Label();
+            this.panelLabel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbNummer = new System.Windows.Forms.Label();
             this.lbGeschlecht = new System.Windows.Forms.Label();
             this.lbGeburtsdatum = new System.Windows.Forms.Label();
-            this.btnPrevious = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
             this.lbName = new System.Windows.Forms.Label();
             this.lbVorname = new System.Windows.Forms.Label();
-            this.picBoxMedicalTeam = new System.Windows.Forms.PictureBox();
+            this.lbAnkunft = new System.Windows.Forms.Label();
+            this.tSearch = new System.Windows.Forms.TextBox();
             this.picBoxPatient = new System.Windows.Forms.PictureBox();
+            this.picBoxMedicalTeam = new System.Windows.Forms.PictureBox();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.panelShadow = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.NewPatient = new System.Windows.Forms.TabPage();
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbTelpNum = new System.Windows.Forms.Label();
@@ -66,13 +70,20 @@
             this.tboxPVorname = new System.Windows.Forms.TextBox();
             this.lbPNachname = new System.Windows.Forms.Label();
             this.lbPVorname = new System.Windows.Forms.Label();
+            this.pShadow1 = new System.Windows.Forms.Panel();
+            this.pShadow2 = new System.Windows.Forms.Panel();
+            this.pShadow3 = new System.Windows.Forms.Panel();
+            this.pShadow4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picBoxNeuPatient = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.Tab.SuspendLayout();
             this.ListOfPatient.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxMedicalTeam)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panelLabel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPatient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxMedicalTeam)).BeginInit();
             this.NewPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxNeuPatient)).BeginInit();
@@ -97,27 +108,16 @@
             // ListOfPatient
             // 
             this.ListOfPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ListOfPatient.Controls.Add(this.panel1);
             this.ListOfPatient.Controls.Add(this.lSearch);
+            this.ListOfPatient.Controls.Add(this.panelLabel);
             this.ListOfPatient.Controls.Add(this.tSearch);
-            this.ListOfPatient.Controls.Add(this.tboxEmail);
-            this.ListOfPatient.Controls.Add(this.tboxNummer);
-            this.ListOfPatient.Controls.Add(this.label1);
-            this.ListOfPatient.Controls.Add(this.lbNummer);
-            this.ListOfPatient.Controls.Add(this.btnUpdate);
-            this.ListOfPatient.Controls.Add(this.tboxAngemeldet);
-            this.ListOfPatient.Controls.Add(this.tboxGeschlecht);
-            this.ListOfPatient.Controls.Add(this.tboxGDatum);
-            this.ListOfPatient.Controls.Add(this.tboxName);
-            this.ListOfPatient.Controls.Add(this.tboxVorname);
-            this.ListOfPatient.Controls.Add(this.lbAnkunft);
-            this.ListOfPatient.Controls.Add(this.lbGeschlecht);
-            this.ListOfPatient.Controls.Add(this.lbGeburtsdatum);
+            this.ListOfPatient.Controls.Add(this.picBoxPatient);
+            this.ListOfPatient.Controls.Add(this.picBoxMedicalTeam);
             this.ListOfPatient.Controls.Add(this.btnPrevious);
             this.ListOfPatient.Controls.Add(this.btnNext);
-            this.ListOfPatient.Controls.Add(this.lbName);
-            this.ListOfPatient.Controls.Add(this.lbVorname);
-            this.ListOfPatient.Controls.Add(this.picBoxMedicalTeam);
-            this.ListOfPatient.Controls.Add(this.picBoxPatient);
+            this.ListOfPatient.Controls.Add(this.panelShadow);
+            this.ListOfPatient.Controls.Add(this.panel2);
             this.ListOfPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListOfPatient.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ListOfPatient.Location = new System.Drawing.Point(4, 34);
@@ -128,6 +128,103 @@
             this.ListOfPatient.TabIndex = 0;
             this.ListOfPatient.Text = "Patient";
             this.ListOfPatient.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.tboxEmail);
+            this.panel1.Controls.Add(this.tboxNummer);
+            this.panel1.Controls.Add(this.tboxAngemeldet);
+            this.panel1.Controls.Add(this.btnUpdate);
+            this.panel1.Controls.Add(this.tboxGeschlecht);
+            this.panel1.Controls.Add(this.tboxGDatum);
+            this.panel1.Controls.Add(this.tboxName);
+            this.panel1.Controls.Add(this.tboxVorname);
+            this.panel1.Location = new System.Drawing.Point(261, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(302, 398);
+            this.panel1.TabIndex = 65;
+            // 
+            // tboxEmail
+            // 
+            this.tboxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tboxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxEmail.Location = new System.Drawing.Point(12, 260);
+            this.tboxEmail.Name = "tboxEmail";
+            this.tboxEmail.Size = new System.Drawing.Size(279, 28);
+            this.tboxEmail.TabIndex = 59;
+            // 
+            // tboxNummer
+            // 
+            this.tboxNummer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tboxNummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxNummer.Location = new System.Drawing.Point(12, 213);
+            this.tboxNummer.Name = "tboxNummer";
+            this.tboxNummer.Size = new System.Drawing.Size(279, 28);
+            this.tboxNummer.TabIndex = 58;
+            // 
+            // tboxAngemeldet
+            // 
+            this.tboxAngemeldet.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tboxAngemeldet.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxAngemeldet.Location = new System.Drawing.Point(12, 306);
+            this.tboxAngemeldet.Name = "tboxAngemeldet";
+            this.tboxAngemeldet.Size = new System.Drawing.Size(279, 28);
+            this.tboxAngemeldet.TabIndex = 54;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.AllowDrop = true;
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnUpdate.Location = new System.Drawing.Point(121, 340);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(165, 46);
+            this.btnUpdate.TabIndex = 55;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.MouseHover += new System.EventHandler(this.btnUpdate_MouseHover);
+            // 
+            // tboxGeschlecht
+            // 
+            this.tboxGeschlecht.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tboxGeschlecht.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxGeschlecht.Location = new System.Drawing.Point(12, 164);
+            this.tboxGeschlecht.Name = "tboxGeschlecht";
+            this.tboxGeschlecht.Size = new System.Drawing.Size(279, 28);
+            this.tboxGeschlecht.TabIndex = 53;
+            // 
+            // tboxGDatum
+            // 
+            this.tboxGDatum.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tboxGDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxGDatum.Location = new System.Drawing.Point(12, 114);
+            this.tboxGDatum.Name = "tboxGDatum";
+            this.tboxGDatum.Size = new System.Drawing.Size(279, 28);
+            this.tboxGDatum.TabIndex = 52;
+            // 
+            // tboxName
+            // 
+            this.tboxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tboxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxName.Location = new System.Drawing.Point(12, 70);
+            this.tboxName.Name = "tboxName";
+            this.tboxName.Size = new System.Drawing.Size(279, 28);
+            this.tboxName.TabIndex = 51;
+            // 
+            // tboxVorname
+            // 
+            this.tboxVorname.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tboxVorname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tboxVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxVorname.Location = new System.Drawing.Point(12, 25);
+            this.tboxVorname.Name = "tboxVorname";
+            this.tboxVorname.Size = new System.Drawing.Size(279, 28);
+            this.tboxVorname.TabIndex = 50;
             // 
             // lSearch
             // 
@@ -140,36 +237,26 @@
             this.lSearch.TabIndex = 61;
             this.lSearch.Text = "Patientensuche";
             // 
-            // tSearch
+            // panelLabel
             // 
-            this.tSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tSearch.Location = new System.Drawing.Point(809, 15);
-            this.tSearch.Name = "tSearch";
-            this.tSearch.Size = new System.Drawing.Size(239, 32);
-            this.tSearch.TabIndex = 60;
-            this.tSearch.TextChanged += new System.EventHandler(this.tSearch_TextChanged);
-            // 
-            // tboxEmail
-            // 
-            this.tboxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxEmail.Location = new System.Drawing.Point(188, 316);
-            this.tboxEmail.Name = "tboxEmail";
-            this.tboxEmail.Size = new System.Drawing.Size(398, 35);
-            this.tboxEmail.TabIndex = 59;
-            // 
-            // tboxNummer
-            // 
-            this.tboxNummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxNummer.Location = new System.Drawing.Point(188, 269);
-            this.tboxNummer.Name = "tboxNummer";
-            this.tboxNummer.Size = new System.Drawing.Size(398, 35);
-            this.tboxNummer.TabIndex = 58;
+            this.panelLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLabel.Controls.Add(this.label1);
+            this.panelLabel.Controls.Add(this.lbNummer);
+            this.panelLabel.Controls.Add(this.lbGeschlecht);
+            this.panelLabel.Controls.Add(this.lbGeburtsdatum);
+            this.panelLabel.Controls.Add(this.lbName);
+            this.panelLabel.Controls.Add(this.lbVorname);
+            this.panelLabel.Controls.Add(this.lbAnkunft);
+            this.panelLabel.Location = new System.Drawing.Point(55, 15);
+            this.panelLabel.Name = "panelLabel";
+            this.panelLabel.Size = new System.Drawing.Size(207, 398);
+            this.panelLabel.TabIndex = 64;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(107, 321);
+            this.label1.Location = new System.Drawing.Point(136, 260);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 26);
             this.label1.TabIndex = 57;
@@ -179,82 +266,17 @@
             // 
             this.lbNummer.AutoSize = true;
             this.lbNummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNummer.Location = new System.Drawing.Point(43, 272);
+            this.lbNummer.Location = new System.Drawing.Point(66, 213);
             this.lbNummer.Name = "lbNummer";
             this.lbNummer.Size = new System.Drawing.Size(138, 26);
             this.lbNummer.TabIndex = 56;
             this.lbNummer.Text = "Tel. Nummer";
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.AllowDrop = true;
-            this.btnUpdate.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(415, 420);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(171, 46);
-            this.btnUpdate.TabIndex = 55;
-            this.btnUpdate.Text = "UPDATE";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // tboxAngemeldet
-            // 
-            this.tboxAngemeldet.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxAngemeldet.Location = new System.Drawing.Point(188, 362);
-            this.tboxAngemeldet.Name = "tboxAngemeldet";
-            this.tboxAngemeldet.Size = new System.Drawing.Size(398, 35);
-            this.tboxAngemeldet.TabIndex = 54;
-            // 
-            // tboxGeschlecht
-            // 
-            this.tboxGeschlecht.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxGeschlecht.Location = new System.Drawing.Point(188, 220);
-            this.tboxGeschlecht.Name = "tboxGeschlecht";
-            this.tboxGeschlecht.Size = new System.Drawing.Size(398, 35);
-            this.tboxGeschlecht.TabIndex = 53;
-            // 
-            // tboxGDatum
-            // 
-            this.tboxGDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxGDatum.Location = new System.Drawing.Point(188, 170);
-            this.tboxGDatum.Name = "tboxGDatum";
-            this.tboxGDatum.Size = new System.Drawing.Size(398, 35);
-            this.tboxGDatum.TabIndex = 52;
-            // 
-            // tboxName
-            // 
-            this.tboxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxName.Location = new System.Drawing.Point(188, 126);
-            this.tboxName.Name = "tboxName";
-            this.tboxName.Size = new System.Drawing.Size(398, 35);
-            this.tboxName.TabIndex = 51;
-            // 
-            // tboxVorname
-            // 
-            this.tboxVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxVorname.Location = new System.Drawing.Point(188, 81);
-            this.tboxVorname.Name = "tboxVorname";
-            this.tboxVorname.Size = new System.Drawing.Size(398, 35);
-            this.tboxVorname.TabIndex = 50;
-            // 
-            // lbAnkunft
-            // 
-            this.lbAnkunft.AutoSize = true;
-            this.lbAnkunft.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAnkunft.Location = new System.Drawing.Point(16, 367);
-            this.lbAnkunft.Name = "lbAnkunft";
-            this.lbAnkunft.Size = new System.Drawing.Size(166, 26);
-            this.lbAnkunft.TabIndex = 49;
-            this.lbAnkunft.Text = "Angemeldet am";
-            // 
             // lbGeschlecht
             // 
             this.lbGeschlecht.AutoSize = true;
             this.lbGeschlecht.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGeschlecht.Location = new System.Drawing.Point(57, 225);
+            this.lbGeschlecht.Location = new System.Drawing.Point(83, 164);
             this.lbGeschlecht.Name = "lbGeschlecht";
             this.lbGeschlecht.Size = new System.Drawing.Size(121, 26);
             this.lbGeschlecht.TabIndex = 48;
@@ -264,45 +286,17 @@
             // 
             this.lbGeburtsdatum.AutoSize = true;
             this.lbGeburtsdatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGeburtsdatum.Location = new System.Drawing.Point(31, 175);
+            this.lbGeburtsdatum.Location = new System.Drawing.Point(54, 114);
             this.lbGeburtsdatum.Name = "lbGeburtsdatum";
             this.lbGeburtsdatum.Size = new System.Drawing.Size(150, 26);
             this.lbGeburtsdatum.TabIndex = 47;
             this.lbGeburtsdatum.Text = "Geburtsdatum";
             // 
-            // btnPrevious
-            // 
-            this.btnPrevious.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevious.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPrevious.Location = new System.Drawing.Point(188, 420);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(91, 46);
-            this.btnPrevious.TabIndex = 46;
-            this.btnPrevious.Text = "🡄";
-            this.btnPrevious.UseVisualStyleBackColor = false;
-            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
-            // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(285, 420);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(91, 46);
-            this.btnNext.TabIndex = 45;
-            this.btnNext.Text = "🡆 ";
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
             // lbName
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(62, 130);
+            this.lbName.Location = new System.Drawing.Point(86, 70);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(118, 26);
             this.lbName.TabIndex = 44;
@@ -312,16 +306,46 @@
             // 
             this.lbVorname.AutoSize = true;
             this.lbVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVorname.Location = new System.Drawing.Point(78, 86);
+            this.lbVorname.Location = new System.Drawing.Point(103, 25);
             this.lbVorname.Name = "lbVorname";
             this.lbVorname.Size = new System.Drawing.Size(101, 26);
             this.lbVorname.TabIndex = 43;
             this.lbVorname.Text = "Vorname";
             // 
+            // lbAnkunft
+            // 
+            this.lbAnkunft.AutoSize = true;
+            this.lbAnkunft.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAnkunft.Location = new System.Drawing.Point(38, 306);
+            this.lbAnkunft.Name = "lbAnkunft";
+            this.lbAnkunft.Size = new System.Drawing.Size(166, 26);
+            this.lbAnkunft.TabIndex = 49;
+            this.lbAnkunft.Text = "Angemeldet am";
+            // 
+            // tSearch
+            // 
+            this.tSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tSearch.Location = new System.Drawing.Point(809, 15);
+            this.tSearch.Name = "tSearch";
+            this.tSearch.Size = new System.Drawing.Size(239, 32);
+            this.tSearch.TabIndex = 60;
+            this.tSearch.TextChanged += new System.EventHandler(this.tSearch_TextChanged);
+            // 
+            // picBoxPatient
+            // 
+            this.picBoxPatient.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxPatient.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxPatient.BackgroundImage")));
+            this.picBoxPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxPatient.Location = new System.Drawing.Point(617, 186);
+            this.picBoxPatient.Name = "picBoxPatient";
+            this.picBoxPatient.Size = new System.Drawing.Size(435, 420);
+            this.picBoxPatient.TabIndex = 62;
+            this.picBoxPatient.TabStop = false;
+            // 
             // picBoxMedicalTeam
             // 
             this.picBoxMedicalTeam.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxMedicalTeam.BackgroundImage = global::verwaltung.Properties.Resources.medicalTeam;
+            this.picBoxMedicalTeam.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxMedicalTeam.BackgroundImage")));
             this.picBoxMedicalTeam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picBoxMedicalTeam.Location = new System.Drawing.Point(-15, 455);
             this.picBoxMedicalTeam.Name = "picBoxMedicalTeam";
@@ -329,16 +353,51 @@
             this.picBoxMedicalTeam.TabIndex = 63;
             this.picBoxMedicalTeam.TabStop = false;
             // 
-            // picBoxPatient
+            // btnPrevious
             // 
-            this.picBoxPatient.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxPatient.BackgroundImage = global::verwaltung.Properties.Resources.background;
-            this.picBoxPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxPatient.Location = new System.Drawing.Point(298, 112);
-            this.picBoxPatient.Name = "picBoxPatient";
-            this.picBoxPatient.Size = new System.Drawing.Size(1056, 567);
-            this.picBoxPatient.TabIndex = 62;
-            this.picBoxPatient.TabStop = false;
+            this.btnPrevious.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrevious.FlatAppearance.BorderSize = 0;
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnPrevious.Location = new System.Drawing.Point(12, 27);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(37, 46);
+            this.btnPrevious.TabIndex = 46;
+            this.btnPrevious.Text = "🡄";
+            this.btnPrevious.UseVisualStyleBackColor = false;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.Transparent;
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnNext.Location = new System.Drawing.Point(569, 27);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(37, 46);
+            this.btnNext.TabIndex = 45;
+            this.btnNext.Text = "🡆 ";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // panelShadow
+            // 
+            this.panelShadow.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelShadow.Location = new System.Drawing.Point(59, 23);
+            this.panelShadow.Name = "panelShadow";
+            this.panelShadow.Size = new System.Drawing.Size(508, 395);
+            this.panelShadow.TabIndex = 66;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Location = new System.Drawing.Point(815, 18);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(236, 33);
+            this.panel2.TabIndex = 67;
             // 
             // NewPatient
             // 
@@ -355,6 +414,11 @@
             this.NewPatient.Controls.Add(this.tboxPVorname);
             this.NewPatient.Controls.Add(this.lbPNachname);
             this.NewPatient.Controls.Add(this.lbPVorname);
+            this.NewPatient.Controls.Add(this.pShadow1);
+            this.NewPatient.Controls.Add(this.pShadow2);
+            this.NewPatient.Controls.Add(this.pShadow3);
+            this.NewPatient.Controls.Add(this.pShadow4);
+            this.NewPatient.Controls.Add(this.panel3);
             this.NewPatient.Controls.Add(this.pictureBox1);
             this.NewPatient.Controls.Add(this.picBoxNeuPatient);
             this.NewPatient.Location = new System.Drawing.Point(4, 34);
@@ -404,10 +468,12 @@
             // 
             // btnPSpeichern
             // 
-            this.btnPSpeichern.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnPSpeichern.BackColor = System.Drawing.Color.Transparent;
+            this.btnPSpeichern.FlatAppearance.BorderSize = 0;
+            this.btnPSpeichern.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPSpeichern.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPSpeichern.ForeColor = System.Drawing.Color.White;
-            this.btnPSpeichern.Location = new System.Drawing.Point(308, 372);
+            this.btnPSpeichern.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnPSpeichern.Location = new System.Drawing.Point(308, 348);
             this.btnPSpeichern.Name = "btnPSpeichern";
             this.btnPSpeichern.Size = new System.Drawing.Size(171, 46);
             this.btnPSpeichern.TabIndex = 64;
@@ -493,22 +559,63 @@
             this.lbPVorname.TabIndex = 55;
             this.lbPVorname.Text = "Vorname";
             // 
+            // pShadow1
+            // 
+            this.pShadow1.BackColor = System.Drawing.Color.Gainsboro;
+            this.pShadow1.Location = new System.Drawing.Point(193, 86);
+            this.pShadow1.Name = "pShadow1";
+            this.pShadow1.Size = new System.Drawing.Size(396, 33);
+            this.pShadow1.TabIndex = 71;
+            // 
+            // pShadow2
+            // 
+            this.pShadow2.BackColor = System.Drawing.Color.Gainsboro;
+            this.pShadow2.Location = new System.Drawing.Point(193, 131);
+            this.pShadow2.Name = "pShadow2";
+            this.pShadow2.Size = new System.Drawing.Size(396, 34);
+            this.pShadow2.TabIndex = 72;
+            // 
+            // pShadow3
+            // 
+            this.pShadow3.BackColor = System.Drawing.Color.Gainsboro;
+            this.pShadow3.Location = new System.Drawing.Point(193, 176);
+            this.pShadow3.Name = "pShadow3";
+            this.pShadow3.Size = new System.Drawing.Size(396, 34);
+            this.pShadow3.TabIndex = 73;
+            // 
+            // pShadow4
+            // 
+            this.pShadow4.BackColor = System.Drawing.Color.Gainsboro;
+            this.pShadow4.Location = new System.Drawing.Point(193, 225);
+            this.pShadow4.Name = "pShadow4";
+            this.pShadow4.Size = new System.Drawing.Size(396, 34);
+            this.pShadow4.TabIndex = 74;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.Location = new System.Drawing.Point(193, 274);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(396, 34);
+            this.panel3.TabIndex = 75;
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::verwaltung.Properties.Resources.Medical;
-            this.pictureBox1.Location = new System.Drawing.Point(-15, 337);
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(-4, 379);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(397, 259);
+            this.pictureBox1.Size = new System.Drawing.Size(391, 232);
             this.pictureBox1.TabIndex = 70;
             this.pictureBox1.TabStop = false;
             // 
             // picBoxNeuPatient
             // 
-            this.picBoxNeuPatient.BackgroundImage = global::verwaltung.Properties.Resources.background2;
+            this.picBoxNeuPatient.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxNeuPatient.BackgroundImage")));
             this.picBoxNeuPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxNeuPatient.Location = new System.Drawing.Point(254, 31);
+            this.picBoxNeuPatient.Location = new System.Drawing.Point(520, 37);
             this.picBoxNeuPatient.Name = "picBoxNeuPatient";
-            this.picBoxNeuPatient.Size = new System.Drawing.Size(1054, 564);
+            this.picBoxNeuPatient.Size = new System.Drawing.Size(554, 535);
             this.picBoxNeuPatient.TabIndex = 69;
             this.picBoxNeuPatient.TabStop = false;
             // 
@@ -548,8 +655,12 @@
             this.Tab.ResumeLayout(false);
             this.ListOfPatient.ResumeLayout(false);
             this.ListOfPatient.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxMedicalTeam)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panelLabel.ResumeLayout(false);
+            this.panelLabel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPatient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxMedicalTeam)).EndInit();
             this.NewPatient.ResumeLayout(false);
             this.NewPatient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -576,23 +687,6 @@
         private System.Windows.Forms.TextBox tboxPVorname;
         private System.Windows.Forms.Label lbPNachname;
         private System.Windows.Forms.Label lbPVorname;
-        private System.Windows.Forms.TextBox tboxEmail;
-        private System.Windows.Forms.TextBox tboxNummer;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbNummer;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox tboxAngemeldet;
-        private System.Windows.Forms.TextBox tboxGeschlecht;
-        private System.Windows.Forms.TextBox tboxGDatum;
-        private System.Windows.Forms.TextBox tboxName;
-        private System.Windows.Forms.TextBox tboxVorname;
-        private System.Windows.Forms.Label lbAnkunft;
-        private System.Windows.Forms.Label lbGeschlecht;
-        private System.Windows.Forms.Label lbGeburtsdatum;
-        private System.Windows.Forms.Button btnPrevious;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.Label lbVorname;
         private System.Windows.Forms.Label lSearch;
         private System.Windows.Forms.TextBox tSearch;
         private System.Windows.Forms.PictureBox picBoxPatient;
@@ -600,5 +694,31 @@
         private System.Windows.Forms.PictureBox picBoxMedicalTeam;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox tboxEmail;
+        private System.Windows.Forms.TextBox tboxNummer;
+        private System.Windows.Forms.TextBox tboxAngemeldet;
+        private System.Windows.Forms.TextBox tboxGeschlecht;
+        private System.Windows.Forms.TextBox tboxGDatum;
+        private System.Windows.Forms.TextBox tboxName;
+        private System.Windows.Forms.TextBox tboxVorname;
+        private System.Windows.Forms.Panel panelLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbNummer;
+        private System.Windows.Forms.Label lbGeschlecht;
+        private System.Windows.Forms.Label lbGeburtsdatum;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Label lbVorname;
+        private System.Windows.Forms.Label lbAnkunft;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Panel panelShadow;
+        private System.Windows.Forms.Panel pShadow1;
+        private System.Windows.Forms.Panel pShadow2;
+        private System.Windows.Forms.Panel pShadow3;
+        private System.Windows.Forms.Panel pShadow4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
     }
 }

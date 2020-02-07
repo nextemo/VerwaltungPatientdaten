@@ -36,16 +36,19 @@
             this.picBoxLogo = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panelLogin = new System.Windows.Forms.Panel();
+            this.pShadowPass = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
+            this.panelLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(116, 346);
+            this.btnLogin.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnLogin.Location = new System.Drawing.Point(113, 372);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(171, 46);
             this.btnLogin.TabIndex = 0;
@@ -56,7 +59,7 @@
             // tboxPassword
             // 
             this.tboxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPassword.Location = new System.Drawing.Point(51, 283);
+            this.tboxPassword.Location = new System.Drawing.Point(51, 333);
             this.tboxPassword.Name = "tboxPassword";
             this.tboxPassword.Size = new System.Drawing.Size(302, 35);
             this.tboxPassword.TabIndex = 2;
@@ -67,7 +70,7 @@
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPassword.ForeColor = System.Drawing.Color.Teal;
-            this.lbPassword.Location = new System.Drawing.Point(248, 272);
+            this.lbPassword.Location = new System.Drawing.Point(248, 321);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(92, 24);
             this.lbPassword.TabIndex = 4;
@@ -79,7 +82,7 @@
             this.lbProgramName.BackColor = System.Drawing.Color.Wheat;
             this.lbProgramName.Font = new System.Drawing.Font("Microsoft Tai Le", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbProgramName.ForeColor = System.Drawing.Color.Teal;
-            this.lbProgramName.Location = new System.Drawing.Point(35, 216);
+            this.lbProgramName.Location = new System.Drawing.Point(35, 266);
             this.lbProgramName.Name = "lbProgramName";
             this.lbProgramName.Size = new System.Drawing.Size(340, 45);
             this.lbProgramName.TabIndex = 5;
@@ -87,8 +90,9 @@
             // 
             // picBoxLogo
             // 
-            this.picBoxLogo.BackgroundImage = global::verwaltung.Properties.Resources.Logofinal;
-            this.picBoxLogo.Location = new System.Drawing.Point(101, 18);
+            this.picBoxLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxLogo.BackgroundImage")));
+            this.picBoxLogo.InitialImage = null;
+            this.picBoxLogo.Location = new System.Drawing.Point(101, 68);
             this.picBoxLogo.Name = "picBoxLogo";
             this.picBoxLogo.Size = new System.Drawing.Size(208, 210);
             this.picBoxLogo.TabIndex = 6;
@@ -114,10 +118,20 @@
             // panelLogin
             // 
             this.panelLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLogin.Controls.Add(this.btnLogin);
             this.panelLogin.Location = new System.Drawing.Point(1, 1);
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(410, 426);
             this.panelLogin.TabIndex = 66;
+            // 
+            // pShadowPass
+            // 
+            this.pShadowPass.BackColor = System.Drawing.Color.Gainsboro;
+            this.pShadowPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pShadowPass.Location = new System.Drawing.Point(55, 339);
+            this.pShadowPass.Name = "pShadowPass";
+            this.pShadowPass.Size = new System.Drawing.Size(302, 33);
+            this.pShadowPass.TabIndex = 67;
             // 
             // Login
             // 
@@ -129,8 +143,8 @@
             this.Controls.Add(this.lbProgramName);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.tboxPassword);
-            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.picBoxLogo);
+            this.Controls.Add(this.pShadowPass);
             this.Controls.Add(this.panelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -138,6 +152,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
+            this.panelLogin.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,6 +167,7 @@
         private System.Windows.Forms.PictureBox picBoxLogo;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel panelLogin;
+        private System.Windows.Forms.Panel pShadowPass;
     }
 }
 

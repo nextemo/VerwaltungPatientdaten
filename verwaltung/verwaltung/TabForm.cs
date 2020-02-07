@@ -16,6 +16,7 @@ namespace verwaltung
     {
         static string path = System.IO.Directory.GetCurrentDirectory();
         SQLiteConnection con = new SQLiteConnection($"Data Source = {path}/Patient.db; Version = 3;");//database initialize
+        Font fontFamily = new Font("Microsoft Tai Le", 18, FontStyle.Bold);
 
         string pName, pVorname, pGeschlecht, pEmail;
         DateTime pGebDatum;
@@ -40,9 +41,11 @@ namespace verwaltung
             getFirstID();
             getTotalRows();
             loadPatient();
+            tboxStyle(Color.Beige, Color.Teal);
+            buttonStyle();
         }
 
-        private void btnPSpeichern_Click(object sender, EventArgs e)
+        private void btnPSpeichern_Click(object sender, EventArgs e)// save the entered data
         {
             var vName = tboxPVorname.Text;
             var nName = tboxPNachname.Text;
@@ -71,7 +74,7 @@ namespace verwaltung
             }
             catch
             {
-                MessageBox.Show("Mail-Addresse nicht valide!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Mail-Addresse ist nicht gültig!", "Actung!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             
@@ -123,16 +126,16 @@ namespace verwaltung
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (btnUpdate.Text == "Speichern")
+            if (btnUpdate.Text == "SPEICHERN")
             {
                 readOnlyTboxes();
                 updateEntry(tboxVorname.Text, tboxName.Text, tboxGDatum.Text, tboxGeschlecht.Text, tboxAngemeldet.Text, tboxNummer.Text, tboxEmail.Text);
-                btnUpdate.Text = "Update";
+                btnUpdate.Text = "UPDATE";
             }
             else
             {
                 disableReadOnly();
-                btnUpdate.Text = "Speichern";
+                btnUpdate.Text = "SPEICHERN";
             }
         }
 
@@ -163,7 +166,7 @@ namespace verwaltung
             this.Hide();
         }
 
-        private void TabForm_MouseDown(object sender, MouseEventArgs e)//form moveable
+        private void TabForm_MouseDown(object sender, MouseEventArgs e)//to make form moveable
         {
             _mouseLoc = e.Location;
         }
@@ -180,20 +183,78 @@ namespace verwaltung
 
         //########################################################################### METHODE ##############################################################################
 
+        void buttonStyle() {
+            btnUpdate.Font = fontFamily;
+            btnPSpeichern.Font = fontFamily;
+
+            btnUpdate.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnUpdate.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnUpdate.FlatAppearance.BorderColor = Color.White;
+
+            btnNext.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnNext.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnNext.FlatAppearance.BorderColor = Color.White;
+
+            btnPrevious.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnPrevious.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnPrevious.FlatAppearance.BorderColor = Color.White;
+
+            btnPSpeichern.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnPSpeichern.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnPSpeichern.FlatAppearance.BorderColor = Color.White;
+        }
+        
+        void tboxStyle(Color backColor, Color textColor) {//textboxes style
+            tboxVorname.BackColor = backColor;
+            tboxVorname.ForeColor = textColor;
+            tboxVorname.Font = fontFamily;
+            //tboxVorname.TextAlign = HorizontalAlignment.Center;
+
+            tboxName.BackColor = backColor;
+            tboxName.ForeColor = textColor;
+            tboxName.Font = fontFamily;
+            //tboxName.TextAlign = HorizontalAlignment.Center;
+
+            tboxGDatum.BackColor = backColor;
+            tboxGDatum.ForeColor = textColor;
+            tboxGDatum.Font = fontFamily;
+            //tboxGDatum.TextAlign = HorizontalAlignment.Center;
+
+            tboxGeschlecht.BackColor = backColor;
+            tboxGeschlecht.ForeColor = textColor;
+            tboxGeschlecht.Font = fontFamily;
+            //tboxGeschlecht.TextAlign = HorizontalAlignment.Center;
+
+            tboxNummer.BackColor = backColor;
+            tboxNummer.ForeColor = textColor;
+            tboxNummer.Font = fontFamily;
+            //tboxNummer.TextAlign = HorizontalAlignment.Center;
+
+            tboxEmail.BackColor = backColor;
+            tboxEmail.ForeColor = textColor;
+            tboxEmail.Font = fontFamily;
+            //tboxEmail.TextAlign = HorizontalAlignment.Center;
+
+            tboxAngemeldet.BackColor = backColor;
+            tboxAngemeldet.ForeColor = textColor;
+            tboxAngemeldet.Font = fontFamily;
+            //tboxAngemeldet.TextAlign = HorizontalAlignment.Center;
+        }
+
+
         void btnNextColorChanged() {
-            if (btnUpdate.Text == "Speichern")
+            if (btnUpdate.Text == "SPEICHERN")
             {
                 readOnlyTboxes();
-                btnUpdate.Text = "Update";
+                btnUpdate.Text = "UPDATE";
             }
-            else if (btnPrevious.BackColor == Color.Red && btnPrevious.ForeColor == Color.White)
+            else if (btnPrevious.ForeColor == Color.Red)
             {
-                btnPrevious.BackColor = Color.DodgerBlue;
-                btnPrevious.ForeColor = Color.White;
+                btnPrevious.ForeColor = Color.DodgerBlue;
                 position++;
                 loadPatient();
             }
-            else if (position >= count) { btnNext.BackColor = Color.Red; btnNext.ForeColor = Color.White; }
+            else if (position >= count) { btnNext.ForeColor = Color.Red; return; }
             else
             {
                 position++;
@@ -207,14 +268,13 @@ namespace verwaltung
                 readOnlyTboxes();
                 btnUpdate.Text = "Update";
             }
-            else if (btnNext.BackColor == Color.Red && btnNext.ForeColor == Color.White)
+            else if (btnNext.ForeColor == Color.Red)
             {
-                btnNext.BackColor = Color.DodgerBlue;
-                btnNext.ForeColor = Color.White;
+                btnNext.ForeColor = Color.DodgerBlue;
                 position--;
                 loadPatient();
             }
-            else if (position == 1) { btnPrevious.BackColor = Color.Red; btnPrevious.ForeColor = Color.White; return; }
+            else if (position == 1) { btnPrevious.ForeColor = Color.Red; return; }
             else
             {
                 position--;
@@ -228,7 +288,7 @@ namespace verwaltung
             tboxPNachname.Clear();
             tboxPEmail.Clear();
             tboxPNumber.Clear();
-        }
+        }//clear values in the textboxes 
 
         public void getFirstID()//getting the first ID of the first row
         {
@@ -271,6 +331,11 @@ namespace verwaltung
             tboxVorname.ReadOnly = true;
             tboxEmail.ReadOnly = true;
             tboxNummer.ReadOnly = true;
+        }
+
+        private void btnUpdate_MouseHover(object sender, EventArgs e)
+        {
+            btnUpdate.BackColor = Color.Transparent;
         }
 
         void disableReadOnly()

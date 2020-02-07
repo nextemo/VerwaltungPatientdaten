@@ -14,10 +14,15 @@ namespace verwaltung
     public partial class Login : Form
     {
         SQLiteConnection con = new SQLiteConnection("Data Source = C:/sqlite/Patient.db; Version = 3;");
+        Font fontFamily = new Font("Microsoft Tai Le", 18, FontStyle.Bold);
         public Login()
         {
             InitializeComponent();
             tboxPassword.PasswordChar = '*';
+            btnLogin.Font = fontFamily;
+            btnLogin.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnLogin.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnLogin.FlatAppearance.BorderColor = Color.White;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
