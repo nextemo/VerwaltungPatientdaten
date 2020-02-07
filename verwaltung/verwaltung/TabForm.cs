@@ -132,12 +132,14 @@ namespace verwaltung
             if (btnUpdate.Text == "SPEICHERN")
             {
                 readOnlyTboxes();
+                tboxesBorderDisabled();
                 updateEntry(tboxVorname.Text, tboxName.Text, tboxGDatum.Text, tboxGeschlecht.Text, tboxAngemeldet.Text, tboxNummer.Text, tboxEmail.Text);
                 btnUpdate.Text = "UPDATE";
             }
             else
             {
                 disableReadOnly();
+                tboxesBorderApplied();
                 btnUpdate.Text = "SPEICHERN";
             }
         }
@@ -186,6 +188,25 @@ namespace verwaltung
 
         //########################################################################### METHODE ##############################################################################
 
+        void tboxesBorderDisabled() {
+            tboxName.BorderStyle = BorderStyle.None;
+            tboxVorname.BorderStyle = BorderStyle.None;
+            tboxGDatum.BorderStyle = BorderStyle.None;
+            tboxGeschlecht.BorderStyle = BorderStyle.None;
+            tboxNummer.BorderStyle = BorderStyle.None;
+            tboxEmail.BorderStyle = BorderStyle.None;
+            tboxAngemeldet.BorderStyle = BorderStyle.None;
+        }
+
+        void tboxesBorderApplied() {
+            tboxName.BorderStyle = BorderStyle.FixedSingle;
+            tboxVorname.BorderStyle = BorderStyle.FixedSingle;
+            tboxGDatum.BorderStyle = BorderStyle.FixedSingle;
+            tboxGeschlecht.BorderStyle = BorderStyle.FixedSingle;
+            tboxNummer.BorderStyle = BorderStyle.FixedSingle;
+            tboxEmail.BorderStyle = BorderStyle.FixedSingle;
+            tboxAngemeldet.BorderStyle = BorderStyle.FixedSingle;
+        }
         void buttonStyle() {
             btnUpdate.Font = fontFamily;
             btnPSpeichern.Font = fontFamily;
@@ -250,6 +271,7 @@ namespace verwaltung
             if (btnUpdate.Text == "SPEICHERN")
             {
                 readOnlyTboxes();
+                tboxesBorderDisabled();
                 btnUpdate.Text = "UPDATE";
             }
             else if (btnPrevious.ForeColor == Color.Red)
@@ -267,10 +289,11 @@ namespace verwaltung
         }
 
         void btnPreviousColorChanged() {
-            if (btnUpdate.Text == "Speichern")
+            if (btnUpdate.Text == "SPEICHERN")
             {
                 readOnlyTboxes();
-                btnUpdate.Text = "Update";
+                tboxesBorderDisabled();
+                btnUpdate.Text = "UPDATE";
             }
             else if (btnNext.ForeColor == Color.Red)
             {
@@ -335,11 +358,6 @@ namespace verwaltung
             tboxVorname.ReadOnly = true;
             tboxEmail.ReadOnly = true;
             tboxNummer.ReadOnly = true;
-        }
-
-        private void btnUpdate_MouseHover(object sender, EventArgs e)
-        {
-            btnUpdate.BackColor = Color.Transparent;
         }
 
         void disableReadOnly()

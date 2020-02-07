@@ -91,7 +91,7 @@
             // 
             this.Tab.Controls.Add(this.ListOfPatient);
             this.Tab.Controls.Add(this.NewPatient);
-            this.Tab.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tab.Font = new System.Drawing.Font("Microsoft Tai Le", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tab.Location = new System.Drawing.Point(0, 0);
             this.Tab.Margin = new System.Windows.Forms.Padding(2);
             this.Tab.Multiline = true;
@@ -118,11 +118,11 @@
             this.ListOfPatient.Controls.Add(this.panel2);
             this.ListOfPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListOfPatient.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ListOfPatient.Location = new System.Drawing.Point(4, 34);
+            this.ListOfPatient.Location = new System.Drawing.Point(4, 36);
             this.ListOfPatient.Margin = new System.Windows.Forms.Padding(2);
             this.ListOfPatient.Name = "ListOfPatient";
             this.ListOfPatient.Padding = new System.Windows.Forms.Padding(2);
-            this.ListOfPatient.Size = new System.Drawing.Size(1086, 595);
+            this.ListOfPatient.Size = new System.Drawing.Size(1086, 593);
             this.ListOfPatient.TabIndex = 0;
             this.ListOfPatient.Text = "Patient";
             this.ListOfPatient.UseVisualStyleBackColor = true;
@@ -186,7 +186,6 @@
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            this.btnUpdate.MouseHover += new System.EventHandler(this.btnUpdate_MouseHover);
             // 
             // tboxGeschlecht
             // 
@@ -342,10 +341,10 @@
             // 
             this.picBoxPatient.BackColor = System.Drawing.Color.Transparent;
             this.picBoxPatient.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxPatient.BackgroundImage")));
-            this.picBoxPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxPatient.Location = new System.Drawing.Point(617, 186);
+            this.picBoxPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxPatient.Location = new System.Drawing.Point(579, 103);
             this.picBoxPatient.Name = "picBoxPatient";
-            this.picBoxPatient.Size = new System.Drawing.Size(435, 420);
+            this.picBoxPatient.Size = new System.Drawing.Size(493, 505);
             this.picBoxPatient.TabIndex = 62;
             this.picBoxPatient.TabStop = false;
             // 
@@ -427,11 +426,11 @@
             this.NewPatient.Controls.Add(this.pShadow4);
             this.NewPatient.Controls.Add(this.panel3);
             this.NewPatient.Controls.Add(this.picBoxNeuPatient);
-            this.NewPatient.Location = new System.Drawing.Point(4, 34);
+            this.NewPatient.Location = new System.Drawing.Point(4, 36);
             this.NewPatient.Margin = new System.Windows.Forms.Padding(2);
             this.NewPatient.Name = "NewPatient";
             this.NewPatient.Padding = new System.Windows.Forms.Padding(2);
-            this.NewPatient.Size = new System.Drawing.Size(1086, 595);
+            this.NewPatient.Size = new System.Drawing.Size(1086, 593);
             this.NewPatient.TabIndex = 1;
             this.NewPatient.Text = "Neu Patient ";
             this.NewPatient.UseVisualStyleBackColor = true;
@@ -492,10 +491,11 @@
             // rWeiblich
             // 
             this.rWeiblich.AutoSize = true;
-            this.rWeiblich.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rWeiblich.Font = new System.Drawing.Font("Microsoft Tai Le", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rWeiblich.ForeColor = System.Drawing.Color.Fuchsia;
             this.rWeiblich.Location = new System.Drawing.Point(281, 408);
             this.rWeiblich.Name = "rWeiblich";
-            this.rWeiblich.Size = new System.Drawing.Size(113, 30);
+            this.rWeiblich.Size = new System.Drawing.Size(121, 33);
             this.rWeiblich.TabIndex = 63;
             this.rWeiblich.TabStop = true;
             this.rWeiblich.Text = "Weiblich";
@@ -504,10 +504,11 @@
             // rMänlich
             // 
             this.rMänlich.AutoSize = true;
-            this.rMänlich.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rMänlich.Font = new System.Drawing.Font("Microsoft Tai Le", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rMänlich.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.rMänlich.Location = new System.Drawing.Point(126, 408);
             this.rMänlich.Name = "rMänlich";
-            this.rMänlich.Size = new System.Drawing.Size(105, 30);
+            this.rMänlich.Size = new System.Drawing.Size(113, 33);
             this.rMänlich.TabIndex = 62;
             this.rMänlich.TabStop = true;
             this.rMänlich.Text = "Mänlich";
