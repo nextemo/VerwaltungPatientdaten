@@ -50,12 +50,14 @@ namespace verwaltung
             var vName = tboxPVorname.Text;
             var nName = tboxPNachname.Text;
             var geburtsdatum = gebDatumPicker.Value;
+
             if (rMänlich.Checked) pGeschlecht = "Mänlich";
             else if (rWeiblich.Checked) pGeschlecht = "Weiblich";
             else pGeschlecht = "Not available";
+
             try
             {
-                var nummer = int.Parse(tboxPNumber.Text);
+                pNummer = int.Parse(tboxPNumber.Text);
             }
             catch
             {
@@ -68,6 +70,7 @@ namespace verwaltung
             //update the Values
             vName = vName.Replace("  ", " ");
             nName = nName.Replace("  ", " ");
+
             try
             {
                 System.Net.Mail.MailAddress m = new System.Net.Mail.MailAddress(email);
@@ -79,7 +82,7 @@ namespace verwaltung
             }
             
             //neuer Patient
-            var neuPatient = new Patient(vName, nName, geburtsdatum, pGeschlecht, email, nummer);
+            var neuPatient = new Patient(vName, nName, geburtsdatum, pGeschlecht, email, pNummer);
 
             pName = neuPatient.Name;
             pVorname = neuPatient.Vorname;
@@ -190,6 +193,7 @@ namespace verwaltung
             btnUpdate.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnUpdate.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnUpdate.FlatAppearance.BorderColor = Color.White;
+            btnLogout.FlatAppearance.CheckedBackColor = Color.Transparent;
 
             btnNext.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnNext.FlatAppearance.MouseDownBackColor = Color.Transparent;

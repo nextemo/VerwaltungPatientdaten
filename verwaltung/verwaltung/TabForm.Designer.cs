@@ -75,7 +75,6 @@
             this.pShadow3 = new System.Windows.Forms.Panel();
             this.pShadow4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picBoxNeuPatient = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.Tab.SuspendLayout();
@@ -85,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMedicalTeam)).BeginInit();
             this.NewPatient.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxNeuPatient)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,11 +178,12 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnUpdate.Location = new System.Drawing.Point(121, 340);
+            this.btnUpdate.Location = new System.Drawing.Point(132, 350);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(165, 46);
             this.btnUpdate.TabIndex = 55;
             this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             this.btnUpdate.MouseHover += new System.EventHandler(this.btnUpdate_MouseHover);
@@ -231,6 +230,7 @@
             this.lSearch.AutoSize = true;
             this.lSearch.BackColor = System.Drawing.Color.Transparent;
             this.lSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lSearch.ForeColor = System.Drawing.Color.Teal;
             this.lSearch.Location = new System.Drawing.Point(641, 18);
             this.lSearch.Name = "lSearch";
             this.lSearch.Size = new System.Drawing.Size(162, 26);
@@ -256,6 +256,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(136, 260);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 26);
@@ -266,6 +267,7 @@
             // 
             this.lbNummer.AutoSize = true;
             this.lbNummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNummer.ForeColor = System.Drawing.Color.Teal;
             this.lbNummer.Location = new System.Drawing.Point(66, 213);
             this.lbNummer.Name = "lbNummer";
             this.lbNummer.Size = new System.Drawing.Size(138, 26);
@@ -276,6 +278,7 @@
             // 
             this.lbGeschlecht.AutoSize = true;
             this.lbGeschlecht.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGeschlecht.ForeColor = System.Drawing.Color.Teal;
             this.lbGeschlecht.Location = new System.Drawing.Point(83, 164);
             this.lbGeschlecht.Name = "lbGeschlecht";
             this.lbGeschlecht.Size = new System.Drawing.Size(121, 26);
@@ -286,6 +289,7 @@
             // 
             this.lbGeburtsdatum.AutoSize = true;
             this.lbGeburtsdatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGeburtsdatum.ForeColor = System.Drawing.Color.Teal;
             this.lbGeburtsdatum.Location = new System.Drawing.Point(54, 114);
             this.lbGeburtsdatum.Name = "lbGeburtsdatum";
             this.lbGeburtsdatum.Size = new System.Drawing.Size(150, 26);
@@ -296,6 +300,7 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.ForeColor = System.Drawing.Color.Teal;
             this.lbName.Location = new System.Drawing.Point(86, 70);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(118, 26);
@@ -306,6 +311,7 @@
             // 
             this.lbVorname.AutoSize = true;
             this.lbVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVorname.ForeColor = System.Drawing.Color.Teal;
             this.lbVorname.Location = new System.Drawing.Point(103, 25);
             this.lbVorname.Name = "lbVorname";
             this.lbVorname.Size = new System.Drawing.Size(101, 26);
@@ -316,6 +322,7 @@
             // 
             this.lbAnkunft.AutoSize = true;
             this.lbAnkunft.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAnkunft.ForeColor = System.Drawing.Color.Teal;
             this.lbAnkunft.Location = new System.Drawing.Point(38, 306);
             this.lbAnkunft.Name = "lbAnkunft";
             this.lbAnkunft.Size = new System.Drawing.Size(166, 26);
@@ -401,6 +408,9 @@
             // 
             // NewPatient
             // 
+            this.NewPatient.Controls.Add(this.lbPGebDatum);
+            this.NewPatient.Controls.Add(this.lbPNachname);
+            this.NewPatient.Controls.Add(this.lbPVorname);
             this.NewPatient.Controls.Add(this.lbEmail);
             this.NewPatient.Controls.Add(this.lbTelpNum);
             this.NewPatient.Controls.Add(this.tboxPEmail);
@@ -409,17 +419,13 @@
             this.NewPatient.Controls.Add(this.rWeiblich);
             this.NewPatient.Controls.Add(this.rMänlich);
             this.NewPatient.Controls.Add(this.gebDatumPicker);
-            this.NewPatient.Controls.Add(this.lbPGebDatum);
             this.NewPatient.Controls.Add(this.tboxPNachname);
             this.NewPatient.Controls.Add(this.tboxPVorname);
-            this.NewPatient.Controls.Add(this.lbPNachname);
-            this.NewPatient.Controls.Add(this.lbPVorname);
             this.NewPatient.Controls.Add(this.pShadow1);
             this.NewPatient.Controls.Add(this.pShadow2);
             this.NewPatient.Controls.Add(this.pShadow3);
             this.NewPatient.Controls.Add(this.pShadow4);
             this.NewPatient.Controls.Add(this.panel3);
-            this.NewPatient.Controls.Add(this.pictureBox1);
             this.NewPatient.Controls.Add(this.picBoxNeuPatient);
             this.NewPatient.Location = new System.Drawing.Point(4, 34);
             this.NewPatient.Margin = new System.Windows.Forms.Padding(2);
@@ -433,27 +439,29 @@
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(110, 274);
+            this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmail.ForeColor = System.Drawing.Color.Teal;
+            this.lbEmail.Location = new System.Drawing.Point(67, 324);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(68, 26);
+            this.lbEmail.Size = new System.Drawing.Size(57, 24);
             this.lbEmail.TabIndex = 68;
             this.lbEmail.Text = "Email";
             // 
             // lbTelpNum
             // 
             this.lbTelpNum.AutoSize = true;
-            this.lbTelpNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTelpNum.Location = new System.Drawing.Point(44, 225);
+            this.lbTelpNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTelpNum.ForeColor = System.Drawing.Color.Teal;
+            this.lbTelpNum.Location = new System.Drawing.Point(67, 250);
             this.lbTelpNum.Name = "lbTelpNum";
-            this.lbTelpNum.Size = new System.Drawing.Size(138, 26);
+            this.lbTelpNum.Size = new System.Drawing.Size(121, 24);
             this.lbTelpNum.TabIndex = 67;
             this.lbTelpNum.Text = "Tel. Nummer";
             // 
             // tboxPEmail
             // 
             this.tboxPEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPEmail.Location = new System.Drawing.Point(188, 269);
+            this.tboxPEmail.Location = new System.Drawing.Point(59, 341);
             this.tboxPEmail.Name = "tboxPEmail";
             this.tboxPEmail.Size = new System.Drawing.Size(398, 35);
             this.tboxPEmail.TabIndex = 66;
@@ -461,7 +469,7 @@
             // tboxPNumber
             // 
             this.tboxPNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPNumber.Location = new System.Drawing.Point(188, 220);
+            this.tboxPNumber.Location = new System.Drawing.Point(59, 268);
             this.tboxPNumber.Name = "tboxPNumber";
             this.tboxPNumber.Size = new System.Drawing.Size(398, 35);
             this.tboxPNumber.TabIndex = 65;
@@ -473,7 +481,7 @@
             this.btnPSpeichern.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPSpeichern.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPSpeichern.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnPSpeichern.Location = new System.Drawing.Point(308, 348);
+            this.btnPSpeichern.Location = new System.Drawing.Point(167, 461);
             this.btnPSpeichern.Name = "btnPSpeichern";
             this.btnPSpeichern.Size = new System.Drawing.Size(171, 46);
             this.btnPSpeichern.TabIndex = 64;
@@ -485,7 +493,7 @@
             // 
             this.rWeiblich.AutoSize = true;
             this.rWeiblich.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rWeiblich.Location = new System.Drawing.Point(414, 312);
+            this.rWeiblich.Location = new System.Drawing.Point(281, 408);
             this.rWeiblich.Name = "rWeiblich";
             this.rWeiblich.Size = new System.Drawing.Size(113, 30);
             this.rWeiblich.TabIndex = 63;
@@ -497,7 +505,7 @@
             // 
             this.rMänlich.AutoSize = true;
             this.rMänlich.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rMänlich.Location = new System.Drawing.Point(259, 312);
+            this.rMänlich.Location = new System.Drawing.Point(126, 408);
             this.rMänlich.Name = "rMänlich";
             this.rMänlich.Size = new System.Drawing.Size(105, 30);
             this.rMänlich.TabIndex = 62;
@@ -508,7 +516,7 @@
             // gebDatumPicker
             // 
             this.gebDatumPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gebDatumPicker.Location = new System.Drawing.Point(188, 171);
+            this.gebDatumPicker.Location = new System.Drawing.Point(59, 196);
             this.gebDatumPicker.Name = "gebDatumPicker";
             this.gebDatumPicker.Size = new System.Drawing.Size(398, 35);
             this.gebDatumPicker.TabIndex = 61;
@@ -516,17 +524,18 @@
             // lbPGebDatum
             // 
             this.lbPGebDatum.AutoSize = true;
-            this.lbPGebDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPGebDatum.Location = new System.Drawing.Point(32, 176);
+            this.lbPGebDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPGebDatum.ForeColor = System.Drawing.Color.Teal;
+            this.lbPGebDatum.Location = new System.Drawing.Point(67, 178);
             this.lbPGebDatum.Name = "lbPGebDatum";
-            this.lbPGebDatum.Size = new System.Drawing.Size(150, 26);
+            this.lbPGebDatum.Size = new System.Drawing.Size(128, 24);
             this.lbPGebDatum.TabIndex = 60;
             this.lbPGebDatum.Text = "Geburtsdatum";
             // 
             // tboxPNachname
             // 
             this.tboxPNachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPNachname.Location = new System.Drawing.Point(188, 126);
+            this.tboxPNachname.Location = new System.Drawing.Point(59, 122);
             this.tboxPNachname.Name = "tboxPNachname";
             this.tboxPNachname.Size = new System.Drawing.Size(398, 35);
             this.tboxPNachname.TabIndex = 59;
@@ -534,7 +543,7 @@
             // tboxPVorname
             // 
             this.tboxPVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPVorname.Location = new System.Drawing.Point(188, 81);
+            this.tboxPVorname.Location = new System.Drawing.Point(59, 53);
             this.tboxPVorname.Name = "tboxPVorname";
             this.tboxPVorname.Size = new System.Drawing.Size(398, 35);
             this.tboxPVorname.TabIndex = 58;
@@ -542,27 +551,29 @@
             // lbPNachname
             // 
             this.lbPNachname.AutoSize = true;
-            this.lbPNachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPNachname.Location = new System.Drawing.Point(62, 131);
+            this.lbPNachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPNachname.ForeColor = System.Drawing.Color.Teal;
+            this.lbPNachname.Location = new System.Drawing.Point(67, 104);
             this.lbPNachname.Name = "lbPNachname";
-            this.lbPNachname.Size = new System.Drawing.Size(118, 26);
+            this.lbPNachname.Size = new System.Drawing.Size(103, 24);
             this.lbPNachname.TabIndex = 56;
             this.lbPNachname.Text = "Nachname";
             // 
             // lbPVorname
             // 
             this.lbPVorname.AutoSize = true;
-            this.lbPVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPVorname.Location = new System.Drawing.Point(79, 86);
+            this.lbPVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPVorname.ForeColor = System.Drawing.Color.Teal;
+            this.lbPVorname.Location = new System.Drawing.Point(67, 36);
             this.lbPVorname.Name = "lbPVorname";
-            this.lbPVorname.Size = new System.Drawing.Size(101, 26);
+            this.lbPVorname.Size = new System.Drawing.Size(88, 24);
             this.lbPVorname.TabIndex = 55;
             this.lbPVorname.Text = "Vorname";
             // 
             // pShadow1
             // 
             this.pShadow1.BackColor = System.Drawing.Color.Gainsboro;
-            this.pShadow1.Location = new System.Drawing.Point(193, 86);
+            this.pShadow1.Location = new System.Drawing.Point(64, 58);
             this.pShadow1.Name = "pShadow1";
             this.pShadow1.Size = new System.Drawing.Size(396, 33);
             this.pShadow1.TabIndex = 71;
@@ -570,7 +581,7 @@
             // pShadow2
             // 
             this.pShadow2.BackColor = System.Drawing.Color.Gainsboro;
-            this.pShadow2.Location = new System.Drawing.Point(193, 131);
+            this.pShadow2.Location = new System.Drawing.Point(64, 127);
             this.pShadow2.Name = "pShadow2";
             this.pShadow2.Size = new System.Drawing.Size(396, 34);
             this.pShadow2.TabIndex = 72;
@@ -578,7 +589,7 @@
             // pShadow3
             // 
             this.pShadow3.BackColor = System.Drawing.Color.Gainsboro;
-            this.pShadow3.Location = new System.Drawing.Point(193, 176);
+            this.pShadow3.Location = new System.Drawing.Point(64, 201);
             this.pShadow3.Name = "pShadow3";
             this.pShadow3.Size = new System.Drawing.Size(396, 34);
             this.pShadow3.TabIndex = 73;
@@ -586,7 +597,7 @@
             // pShadow4
             // 
             this.pShadow4.BackColor = System.Drawing.Color.Gainsboro;
-            this.pShadow4.Location = new System.Drawing.Point(193, 225);
+            this.pShadow4.Location = new System.Drawing.Point(64, 273);
             this.pShadow4.Name = "pShadow4";
             this.pShadow4.Size = new System.Drawing.Size(396, 34);
             this.pShadow4.TabIndex = 74;
@@ -594,20 +605,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel3.Location = new System.Drawing.Point(193, 274);
+            this.panel3.Location = new System.Drawing.Point(64, 346);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(396, 34);
             this.panel3.TabIndex = 75;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(-4, 379);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(391, 232);
-            this.pictureBox1.TabIndex = 70;
-            this.pictureBox1.TabStop = false;
             // 
             // picBoxNeuPatient
             // 
@@ -663,7 +664,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMedicalTeam)).EndInit();
             this.NewPatient.ResumeLayout(false);
             this.NewPatient.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxNeuPatient)).EndInit();
             this.ResumeLayout(false);
 
@@ -693,7 +693,6 @@
         private System.Windows.Forms.PictureBox picBoxNeuPatient;
         private System.Windows.Forms.PictureBox picBoxMedicalTeam;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox tboxEmail;
         private System.Windows.Forms.TextBox tboxNummer;
