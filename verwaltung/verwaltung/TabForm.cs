@@ -14,12 +14,12 @@ namespace verwaltung
 {
     public partial class TabForm : Form
     {
+        static string path = System.IO.Directory.GetCurrentDirectory();
+        SQLiteConnection con = new SQLiteConnection($"Data Source = {path}/Patient.db; Version = 3;");//database initialize
+
         string pName, pVorname, pGeschlecht, pEmail;
         DateTime pGebDatum;
         int pAlter, pNummer;
-        static string path = System.IO.Directory.GetCurrentDirectory();
-        SQLiteConnection con = new SQLiteConnection($"Data Source = {path}/Patient.db; Version = 3;");
-
         int id = 0;
         int vorname = 1;
         int name = 2;
@@ -32,6 +32,7 @@ namespace verwaltung
         int email = 9;
         int position;
         int count;
+        Point _mouseLoc;
         public TabForm()
         {
             InitializeComponent();
@@ -74,12 +75,8 @@ namespace verwaltung
                 return;
             }
             
-
-
             //neuer Patient
             var neuPatient = new Patient(vName, nName, geburtsdatum, pGeschlecht, email, nummer);
-
-
 
             pName = neuPatient.Name;
             pVorname = neuPatient.Vorname;
@@ -101,7 +98,7 @@ namespace verwaltung
             }
         }
 
-        private void tSearch_TextChanged(object sender, EventArgs e)
+        private void tSearch_TextChanged(object sender, EventArgs e)//search patient
         {
             SQLiteCommand command;
             command = con.CreateCommand();
@@ -121,24 +118,7 @@ namespace verwaltung
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if (btnUpdate.Text == "Speichern")
-            {
-                readOnlyTboxes();
-                btnUpdate.Text = "Update";
-            }
-            else if (btnNext.BackColor == Color.Red && btnNext.ForeColor == Color.White)
-            {
-                btnNext.BackColor = Color.DodgerBlue;
-                btnNext.ForeColor = Color.White;
-                position--;
-                loadPatient();
-            }
-            else if (position == 1) { btnPrevious.BackColor = Color.Red; btnPrevious.ForeColor = Color.White; return; }
-            else
-            {
-                position--;
-                loadPatient();
-            }
+            btnPreviousColorChanged();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -156,7 +136,47 @@ namespace verwaltung
             }
         }
 
+        private void Tab_KeyDown(object sender, KeyEventArgs e)//Arrow keys
+        {
+            if (e.KeyCode == Keys.Right)
+            {
+                e.SuppressKeyPress = true;
+                btnNextColorChanged();
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                btnPreviousColorChanged();
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                Login login = new Login();
+                login.Show();
+                this.Hide();
+            }
+            else return;
+        }
 
+        private void btnLogout_Click(object sender, EventArgs e)//logout or exit button
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void TabForm_MouseDown(object sender, MouseEventArgs e)//form moveable
+        {
+            _mouseLoc = e.Location;
+        }
+
+        private void TabForm_MouseMove(object sender, MouseEventArgs e)//form moveable
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                int dx = e.Location.X - _mouseLoc.X;
+                int dy = e.Location.Y - _mouseLoc.Y;
+                this.Location = new Point(this.Location.X + dx, this.Location.Y + dy);
+            }
+        }
 
         //########################################################################### METHODE ##############################################################################
 
@@ -210,7 +230,7 @@ namespace verwaltung
             tboxPNumber.Clear();
         }
 
-        public void getFirstID()
+        public void getFirstID()//getting the first ID of the first row
         {
             SQLiteCommand command;
             command = con.CreateCommand();
@@ -223,7 +243,7 @@ namespace verwaltung
             }
         }
 
-        public void loadPatient()
+        public void loadPatient()//LOAD THE LIST OF PATIENT
         {
             readOnlyTboxes();
             SQLiteCommand command;
@@ -241,7 +261,7 @@ namespace verwaltung
                 tboxEmail.Text = reader.GetString(email);
                 tboxAngemeldet.Text = reader.GetString(angemeldet);
             }
-        }//LOAD THE LIST OF PATIENT
+        }
         void readOnlyTboxes()
         {
             tboxAngemeldet.ReadOnly = true;
@@ -251,32 +271,6 @@ namespace verwaltung
             tboxVorname.ReadOnly = true;
             tboxEmail.ReadOnly = true;
             tboxNummer.ReadOnly = true;
-        }
-
-        private void Tab_KeyDown(object sender, KeyEventArgs e)//Arrow keys
-        {
-            if (e.KeyCode == Keys.Right)
-            {
-                e.SuppressKeyPress = true;
-                btnNextColorChanged();
-            }
-            else if (e.KeyCode == Keys.Left)
-            {
-                btnPreviousColorChanged();
-            }
-            else if (e.KeyCode == Keys.Escape) {
-                Login login = new Login();
-                login.Show();
-                this.Hide();
-            }
-            else return;
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-            this.Hide();
         }
 
         void disableReadOnly()
@@ -290,7 +284,7 @@ namespace verwaltung
             tboxNummer.ReadOnly = false;
         }
 
-        void getTotalRows()
+        void getTotalRows()//getting total rows available in the database
         {
             SQLiteCommand command;
             command = con.CreateCommand();
@@ -310,7 +304,7 @@ namespace verwaltung
             sqlite_cmd.ExecuteNonQuery();
         }
 
-        private void Tab_SelectedIndexChanged(object sender, EventArgs e)//So called reload database
+        private void Tab_SelectedIndexChanged(object sender, EventArgs e)//database will be reloaded when tabpages change
         {
             getFirstID();
             getTotalRows();

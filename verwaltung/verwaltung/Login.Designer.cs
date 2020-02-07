@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btnLogin = new System.Windows.Forms.Button();
             this.tboxPassword = new System.Windows.Forms.TextBox();
             this.lbPassword = new System.Windows.Forms.Label();
             this.lbProgramName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBoxLogo = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panelLogin = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -84,14 +85,14 @@
             this.lbProgramName.TabIndex = 5;
             this.lbProgramName.Text = "Patient Verwaltung";
             // 
-            // pictureBox1
+            // picBoxLogo
             // 
-            this.pictureBox1.BackgroundImage = global::verwaltung.Properties.Resources.Logofinal;
-            this.pictureBox1.Location = new System.Drawing.Point(101, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 210);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.picBoxLogo.BackgroundImage = global::verwaltung.Properties.Resources.Logofinal;
+            this.picBoxLogo.Location = new System.Drawing.Point(101, 18);
+            this.picBoxLogo.Name = "picBoxLogo";
+            this.picBoxLogo.Size = new System.Drawing.Size(208, 210);
+            this.picBoxLogo.TabIndex = 6;
+            this.picBoxLogo.TabStop = false;
             // 
             // btnLogout
             // 
@@ -113,9 +114,9 @@
             // panelLogin
             // 
             this.panelLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelLogin.Location = new System.Drawing.Point(1, 3);
+            this.panelLogin.Location = new System.Drawing.Point(1, 1);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(410, 421);
+            this.panelLogin.Size = new System.Drawing.Size(410, 426);
             this.panelLogin.TabIndex = 66;
             // 
             // Login
@@ -129,13 +130,14 @@
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.tboxPassword);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picBoxLogo);
             this.Controls.Add(this.panelLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,7 +149,7 @@
         private System.Windows.Forms.TextBox tboxPassword;
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.Label lbProgramName;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBoxLogo;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel panelLogin;
     }

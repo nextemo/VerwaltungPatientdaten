@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TabForm));
             this.Tab = new System.Windows.Forms.TabControl();
             this.ListOfPatient = new System.Windows.Forms.TabPage();
             this.lSearch = new System.Windows.Forms.Label();
@@ -49,6 +50,8 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.lbName = new System.Windows.Forms.Label();
             this.lbVorname = new System.Windows.Forms.Label();
+            this.picBoxMedicalTeam = new System.Windows.Forms.PictureBox();
+            this.picBoxPatient = new System.Windows.Forms.PictureBox();
             this.NewPatient = new System.Windows.Forms.TabPage();
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbTelpNum = new System.Windows.Forms.Label();
@@ -63,18 +66,16 @@
             this.tboxPVorname = new System.Windows.Forms.TextBox();
             this.lbPNachname = new System.Windows.Forms.Label();
             this.lbPVorname = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.picBoxMedicalTeam = new System.Windows.Forms.PictureBox();
-            this.picBoxPatient = new System.Windows.Forms.PictureBox();
-            this.picBoxNeuPatient = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBoxNeuPatient = new System.Windows.Forms.PictureBox();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.Tab.SuspendLayout();
             this.ListOfPatient.SuspendLayout();
-            this.NewPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMedicalTeam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPatient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxNeuPatient)).BeginInit();
+            this.NewPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxNeuPatient)).BeginInit();
             this.SuspendLayout();
             // 
             // Tab
@@ -82,11 +83,13 @@
             this.Tab.Controls.Add(this.ListOfPatient);
             this.Tab.Controls.Add(this.NewPatient);
             this.Tab.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tab.Location = new System.Drawing.Point(11, 10);
+            this.Tab.Location = new System.Drawing.Point(0, 0);
             this.Tab.Margin = new System.Windows.Forms.Padding(2);
+            this.Tab.Multiline = true;
             this.Tab.Name = "Tab";
+            this.Tab.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Tab.SelectedIndex = 0;
-            this.Tab.Size = new System.Drawing.Size(1072, 612);
+            this.Tab.Size = new System.Drawing.Size(1094, 633);
             this.Tab.TabIndex = 0;
             this.Tab.SelectedIndexChanged += new System.EventHandler(this.Tab_SelectedIndexChanged);
             this.Tab.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tab_KeyDown);
@@ -121,7 +124,7 @@
             this.ListOfPatient.Margin = new System.Windows.Forms.Padding(2);
             this.ListOfPatient.Name = "ListOfPatient";
             this.ListOfPatient.Padding = new System.Windows.Forms.Padding(2);
-            this.ListOfPatient.Size = new System.Drawing.Size(1064, 574);
+            this.ListOfPatient.Size = new System.Drawing.Size(1086, 595);
             this.ListOfPatient.TabIndex = 0;
             this.ListOfPatient.Text = "Patient";
             this.ListOfPatient.UseVisualStyleBackColor = true;
@@ -271,7 +274,7 @@
             // 
             this.btnPrevious.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnPrevious.Location = new System.Drawing.Point(188, 420);
             this.btnPrevious.Name = "btnPrevious";
@@ -285,7 +288,7 @@
             // 
             this.btnNext.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
             this.btnNext.Location = new System.Drawing.Point(285, 420);
             this.btnNext.Name = "btnNext";
@@ -315,6 +318,28 @@
             this.lbVorname.TabIndex = 43;
             this.lbVorname.Text = "Vorname";
             // 
+            // picBoxMedicalTeam
+            // 
+            this.picBoxMedicalTeam.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxMedicalTeam.BackgroundImage = global::verwaltung.Properties.Resources.medicalTeam;
+            this.picBoxMedicalTeam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxMedicalTeam.Location = new System.Drawing.Point(-15, 455);
+            this.picBoxMedicalTeam.Name = "picBoxMedicalTeam";
+            this.picBoxMedicalTeam.Size = new System.Drawing.Size(326, 141);
+            this.picBoxMedicalTeam.TabIndex = 63;
+            this.picBoxMedicalTeam.TabStop = false;
+            // 
+            // picBoxPatient
+            // 
+            this.picBoxPatient.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxPatient.BackgroundImage = global::verwaltung.Properties.Resources.background;
+            this.picBoxPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxPatient.Location = new System.Drawing.Point(298, 112);
+            this.picBoxPatient.Name = "picBoxPatient";
+            this.picBoxPatient.Size = new System.Drawing.Size(1056, 567);
+            this.picBoxPatient.TabIndex = 62;
+            this.picBoxPatient.TabStop = false;
+            // 
             // NewPatient
             // 
             this.NewPatient.Controls.Add(this.lbEmail);
@@ -336,7 +361,7 @@
             this.NewPatient.Margin = new System.Windows.Forms.Padding(2);
             this.NewPatient.Name = "NewPatient";
             this.NewPatient.Padding = new System.Windows.Forms.Padding(2);
-            this.NewPatient.Size = new System.Drawing.Size(1064, 574);
+            this.NewPatient.Size = new System.Drawing.Size(1086, 595);
             this.NewPatient.TabIndex = 1;
             this.NewPatient.Text = "Neu Patient ";
             this.NewPatient.UseVisualStyleBackColor = true;
@@ -468,6 +493,25 @@
             this.lbPVorname.TabIndex = 55;
             this.lbPVorname.Text = "Vorname";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::verwaltung.Properties.Resources.Medical;
+            this.pictureBox1.Location = new System.Drawing.Point(-15, 337);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(397, 259);
+            this.pictureBox1.TabIndex = 70;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picBoxNeuPatient
+            // 
+            this.picBoxNeuPatient.BackgroundImage = global::verwaltung.Properties.Resources.background2;
+            this.picBoxNeuPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxNeuPatient.Location = new System.Drawing.Point(254, 31);
+            this.picBoxNeuPatient.Name = "picBoxNeuPatient";
+            this.picBoxNeuPatient.Size = new System.Drawing.Size(1054, 564);
+            this.picBoxNeuPatient.TabIndex = 69;
+            this.picBoxNeuPatient.TabStop = false;
+            // 
             // btnLogout
             // 
             this.btnLogout.AllowDrop = true;
@@ -478,52 +522,11 @@
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Location = new System.Drawing.Point(995, -12);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(88, 48);
+            this.btnLogout.Size = new System.Drawing.Size(88, 41);
             this.btnLogout.TabIndex = 64;
             this.btnLogout.Text = "LOGOUT";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // picBoxMedicalTeam
-            // 
-            this.picBoxMedicalTeam.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxMedicalTeam.BackgroundImage = global::verwaltung.Properties.Resources.medicalTeam;
-            this.picBoxMedicalTeam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxMedicalTeam.Location = new System.Drawing.Point(-15, 462);
-            this.picBoxMedicalTeam.Name = "picBoxMedicalTeam";
-            this.picBoxMedicalTeam.Size = new System.Drawing.Size(326, 141);
-            this.picBoxMedicalTeam.TabIndex = 63;
-            this.picBoxMedicalTeam.TabStop = false;
-            // 
-            // picBoxPatient
-            // 
-            this.picBoxPatient.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxPatient.BackgroundImage = global::verwaltung.Properties.Resources.background;
-            this.picBoxPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxPatient.Location = new System.Drawing.Point(298, 91);
-            this.picBoxPatient.Name = "picBoxPatient";
-            this.picBoxPatient.Size = new System.Drawing.Size(1056, 567);
-            this.picBoxPatient.TabIndex = 62;
-            this.picBoxPatient.TabStop = false;
-            // 
-            // picBoxNeuPatient
-            // 
-            this.picBoxNeuPatient.BackgroundImage = global::verwaltung.Properties.Resources.background2;
-            this.picBoxNeuPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxNeuPatient.Location = new System.Drawing.Point(254, 5);
-            this.picBoxNeuPatient.Name = "picBoxNeuPatient";
-            this.picBoxNeuPatient.Size = new System.Drawing.Size(1054, 564);
-            this.picBoxNeuPatient.TabIndex = 69;
-            this.picBoxNeuPatient.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::verwaltung.Properties.Resources.Medical;
-            this.pictureBox1.Location = new System.Drawing.Point(-15, 310);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(397, 259);
-            this.pictureBox1.TabIndex = 70;
-            this.pictureBox1.TabStop = false;
             // 
             // TabForm
             // 
@@ -534,19 +537,23 @@
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.Tab);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "TabForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PATIENT VERWALTUNG";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabForm_MouseMove);
             this.Tab.ResumeLayout(false);
             this.ListOfPatient.ResumeLayout(false);
             this.ListOfPatient.PerformLayout();
-            this.NewPatient.ResumeLayout(false);
-            this.NewPatient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMedicalTeam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPatient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxNeuPatient)).EndInit();
+            this.NewPatient.ResumeLayout(false);
+            this.NewPatient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxNeuPatient)).EndInit();
             this.ResumeLayout(false);
 
         }
