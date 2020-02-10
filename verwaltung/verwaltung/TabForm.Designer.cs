@@ -186,6 +186,8 @@
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnUpdate_MouseDown);
+            this.btnUpdate.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnUpdate_MouseUp);
             // 
             // tboxGeschlecht
             // 
@@ -342,9 +344,9 @@
             this.picBoxPatient.BackColor = System.Drawing.Color.Transparent;
             this.picBoxPatient.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxPatient.BackgroundImage")));
             this.picBoxPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picBoxPatient.Location = new System.Drawing.Point(626, 196);
+            this.picBoxPatient.Location = new System.Drawing.Point(591, 164);
             this.picBoxPatient.Name = "picBoxPatient";
-            this.picBoxPatient.Size = new System.Drawing.Size(446, 412);
+            this.picBoxPatient.Size = new System.Drawing.Size(477, 459);
             this.picBoxPatient.TabIndex = 62;
             this.picBoxPatient.TabStop = false;
             // 
@@ -373,6 +375,8 @@
             this.btnPrevious.Text = "🡄";
             this.btnPrevious.UseVisualStyleBackColor = false;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            this.btnPrevious.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnPrevious_MouseDown);
+            this.btnPrevious.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnPrevious_MouseUp);
             // 
             // btnNext
             // 
@@ -388,6 +392,8 @@
             this.btnNext.Text = "🡆 ";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.btnNext.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnNext_MouseDown);
+            this.btnNext.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnNext_MouseUp);
             // 
             // panelShadow
             // 
@@ -520,6 +526,8 @@
             this.btnPSpeichern.Text = "SPEICHERN";
             this.btnPSpeichern.UseVisualStyleBackColor = false;
             this.btnPSpeichern.Click += new System.EventHandler(this.btnPSpeichern_Click);
+            this.btnPSpeichern.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnPSpeichern_MouseDown);
+            this.btnPSpeichern.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnPSpeichern_MouseUp);
             // 
             // rWeiblich
             // 

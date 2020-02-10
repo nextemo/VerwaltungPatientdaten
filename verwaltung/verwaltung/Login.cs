@@ -22,6 +22,7 @@ namespace verwaltung
             btnLogin.Font = fontFamily;
             btnLogin.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnLogin.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnLogin.FlatAppearance.CheckedBackColor = Color.Transparent;
             btnLogin.FlatAppearance.BorderColor = Color.White;
         }
 
@@ -63,6 +64,16 @@ namespace verwaltung
             {
                 Environment.Exit(0);
             }
+        }
+
+        private void btnLogin_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnLogin.Location = new Point(114, 373);
+        }
+
+        private void btnLogin_MouseUp(object sender, MouseEventArgs e)
+        {
+            btnLogin.Location = new Point(113, 372);
         }
     }
 }

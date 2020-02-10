@@ -43,6 +43,7 @@ namespace verwaltung
             loadPatient();
             tboxStyle(Color.Beige, Color.Teal);
             buttonStyle();
+            
         }
 
         private void btnPSpeichern_Click(object sender, EventArgs e)// save the entered data
@@ -57,7 +58,7 @@ namespace verwaltung
 
             try
             {
-                pNummer = int.Parse(tboxPNumber.Text);
+                pNummer = Convert.ToInt32(tboxPNumber.Text);
             }
             catch
             {
@@ -128,7 +129,7 @@ namespace verwaltung
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
-        {
+        {            
             if (btnUpdate.Text == "SPEICHERN")
             {
                 readOnlyTboxes();
@@ -214,19 +215,23 @@ namespace verwaltung
             btnUpdate.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnUpdate.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnUpdate.FlatAppearance.BorderColor = Color.White;
-            btnLogout.FlatAppearance.CheckedBackColor = Color.Transparent;
+            btnUpdate.FlatAppearance.CheckedBackColor = Color.Transparent;
 
             btnNext.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnNext.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnNext.FlatAppearance.BorderColor = Color.White;
+            btnNext.FlatAppearance.CheckedBackColor = Color.Transparent;
+
 
             btnPrevious.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnPrevious.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnPrevious.FlatAppearance.BorderColor = Color.White;
+            btnPrevious.FlatAppearance.CheckedBackColor = Color.Transparent;
 
             btnPSpeichern.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnPSpeichern.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnPSpeichern.FlatAppearance.BorderColor = Color.White;
+            btnPSpeichern.FlatAppearance.CheckedBackColor = Color.Transparent;
         }
         
         void tboxStyle(Color backColor, Color textColor) {//textboxes style
@@ -268,6 +273,7 @@ namespace verwaltung
 
 
         void btnNextColorChanged() {
+            btnNext.FindForm();
             if (btnUpdate.Text == "SPEICHERN")
             {
                 readOnlyTboxes();
@@ -290,6 +296,7 @@ namespace verwaltung
         }
 
         void btnPreviousColorChanged() {
+            btnPrevious.FindForm();
             if (btnUpdate.Text == "SPEICHERN")
             {
                 readOnlyTboxes();
@@ -398,6 +405,47 @@ namespace verwaltung
             getFirstID();
             getTotalRows();
             loadPatient();
+        }
+
+        //################################################################## BUTTON PRESSED ANIMATION ################################################################
+        private void btnNext_MouseUp(object sender, MouseEventArgs e)
+        {
+            btnNext.Location = new Point(569, 27);
+        }
+
+        private void btnNext_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnNext.Location = new Point(570, 28);
+        }
+
+        private void btnPrevious_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnPrevious.Location = new Point(13, 28);
+        }
+
+        private void btnPrevious_MouseUp(object sender, MouseEventArgs e)
+        {
+            btnPrevious.Location = new Point(12, 27);
+        }
+
+        private void btnUpdate_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnUpdate.Location = new Point(133, 351);
+        }
+
+        private void btnUpdate_MouseUp(object sender, MouseEventArgs e)
+        {
+            btnUpdate.Location = new Point(132, 350);
+        }
+
+        private void btnPSpeichern_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnPSpeichern.Location = new Point(168, 462);
+        }
+
+        private void btnPSpeichern_MouseUp(object sender, MouseEventArgs e)
+        {
+            btnPSpeichern.Location = new Point(167, 461);
         }
     }
 }
