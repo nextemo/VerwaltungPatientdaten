@@ -57,6 +57,9 @@
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.NewPatient = new System.Windows.Forms.TabPage();
+            this.lbPGebDatum = new System.Windows.Forms.Label();
+            this.lbPNachname = new System.Windows.Forms.Label();
+            this.lbPVorname = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbTelpNum = new System.Windows.Forms.Label();
             this.tboxPEmail = new System.Windows.Forms.TextBox();
@@ -65,11 +68,8 @@
             this.rWeiblich = new System.Windows.Forms.RadioButton();
             this.rMänlich = new System.Windows.Forms.RadioButton();
             this.gebDatumPicker = new System.Windows.Forms.DateTimePicker();
-            this.lbPGebDatum = new System.Windows.Forms.Label();
             this.tboxPNachname = new System.Windows.Forms.TextBox();
             this.tboxPVorname = new System.Windows.Forms.TextBox();
-            this.lbPNachname = new System.Windows.Forms.Label();
-            this.lbPVorname = new System.Windows.Forms.Label();
             this.pShadow1 = new System.Windows.Forms.Panel();
             this.pShadow2 = new System.Windows.Forms.Panel();
             this.pShadow3 = new System.Windows.Forms.Panel();
@@ -341,10 +341,10 @@
             // 
             this.picBoxPatient.BackColor = System.Drawing.Color.Transparent;
             this.picBoxPatient.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxPatient.BackgroundImage")));
-            this.picBoxPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxPatient.Location = new System.Drawing.Point(579, 103);
+            this.picBoxPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picBoxPatient.Location = new System.Drawing.Point(626, 196);
             this.picBoxPatient.Name = "picBoxPatient";
-            this.picBoxPatient.Size = new System.Drawing.Size(493, 505);
+            this.picBoxPatient.Size = new System.Drawing.Size(446, 412);
             this.picBoxPatient.TabIndex = 62;
             this.picBoxPatient.TabStop = false;
             // 
@@ -435,6 +435,39 @@
             this.NewPatient.Text = "Neu Patient ";
             this.NewPatient.UseVisualStyleBackColor = true;
             // 
+            // lbPGebDatum
+            // 
+            this.lbPGebDatum.AutoSize = true;
+            this.lbPGebDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPGebDatum.ForeColor = System.Drawing.Color.Teal;
+            this.lbPGebDatum.Location = new System.Drawing.Point(67, 178);
+            this.lbPGebDatum.Name = "lbPGebDatum";
+            this.lbPGebDatum.Size = new System.Drawing.Size(128, 24);
+            this.lbPGebDatum.TabIndex = 60;
+            this.lbPGebDatum.Text = "Geburtsdatum";
+            // 
+            // lbPNachname
+            // 
+            this.lbPNachname.AutoSize = true;
+            this.lbPNachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPNachname.ForeColor = System.Drawing.Color.Teal;
+            this.lbPNachname.Location = new System.Drawing.Point(67, 104);
+            this.lbPNachname.Name = "lbPNachname";
+            this.lbPNachname.Size = new System.Drawing.Size(103, 24);
+            this.lbPNachname.TabIndex = 56;
+            this.lbPNachname.Text = "Nachname";
+            // 
+            // lbPVorname
+            // 
+            this.lbPVorname.AutoSize = true;
+            this.lbPVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPVorname.ForeColor = System.Drawing.Color.Teal;
+            this.lbPVorname.Location = new System.Drawing.Point(67, 36);
+            this.lbPVorname.Name = "lbPVorname";
+            this.lbPVorname.Size = new System.Drawing.Size(88, 24);
+            this.lbPVorname.TabIndex = 55;
+            this.lbPVorname.Text = "Vorname";
+            // 
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
@@ -522,17 +555,6 @@
             this.gebDatumPicker.Size = new System.Drawing.Size(398, 35);
             this.gebDatumPicker.TabIndex = 61;
             // 
-            // lbPGebDatum
-            // 
-            this.lbPGebDatum.AutoSize = true;
-            this.lbPGebDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPGebDatum.ForeColor = System.Drawing.Color.Teal;
-            this.lbPGebDatum.Location = new System.Drawing.Point(67, 178);
-            this.lbPGebDatum.Name = "lbPGebDatum";
-            this.lbPGebDatum.Size = new System.Drawing.Size(128, 24);
-            this.lbPGebDatum.TabIndex = 60;
-            this.lbPGebDatum.Text = "Geburtsdatum";
-            // 
             // tboxPNachname
             // 
             this.tboxPNachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -548,28 +570,6 @@
             this.tboxPVorname.Name = "tboxPVorname";
             this.tboxPVorname.Size = new System.Drawing.Size(398, 35);
             this.tboxPVorname.TabIndex = 58;
-            // 
-            // lbPNachname
-            // 
-            this.lbPNachname.AutoSize = true;
-            this.lbPNachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPNachname.ForeColor = System.Drawing.Color.Teal;
-            this.lbPNachname.Location = new System.Drawing.Point(67, 104);
-            this.lbPNachname.Name = "lbPNachname";
-            this.lbPNachname.Size = new System.Drawing.Size(103, 24);
-            this.lbPNachname.TabIndex = 56;
-            this.lbPNachname.Text = "Nachname";
-            // 
-            // lbPVorname
-            // 
-            this.lbPVorname.AutoSize = true;
-            this.lbPVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPVorname.ForeColor = System.Drawing.Color.Teal;
-            this.lbPVorname.Location = new System.Drawing.Point(67, 36);
-            this.lbPVorname.Name = "lbPVorname";
-            this.lbPVorname.Size = new System.Drawing.Size(88, 24);
-            this.lbPVorname.TabIndex = 55;
-            this.lbPVorname.Text = "Vorname";
             // 
             // pShadow1
             // 

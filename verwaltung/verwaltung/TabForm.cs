@@ -280,6 +280,7 @@ namespace verwaltung
                 position++;
                 loadPatient();
             }
+            else if(btnNext.ForeColor == Color.Red) return;
             else if (position >= count) { btnNext.ForeColor = Color.Red; return; }
             else
             {
@@ -301,6 +302,7 @@ namespace verwaltung
                 position--;
                 loadPatient();
             }
+            else if (btnPrevious.ForeColor == Color.Red) return;
             else if (position == 1) { btnPrevious.ForeColor = Color.Red; return; }
             else
             {
