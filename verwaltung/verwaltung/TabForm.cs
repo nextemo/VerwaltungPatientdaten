@@ -15,7 +15,7 @@ namespace verwaltung
     public partial class TabForm : Form
     {
         static string path = System.IO.Directory.GetCurrentDirectory();
-        static SQLiteConnection con = new SQLiteConnection($"Data Source = {path}/Patient.db; Version = 3;");//database initialize
+        SQLiteConnection con = new SQLiteConnection($"Data Source = {path}/Patient.db; Version = 3;");//database initialize
         Font fontFamily = new Font("Microsoft Tai Le", 18, FontStyle.Bold);
 
         string pName, pVorname, pGeschlecht, pEmail;
@@ -37,20 +37,13 @@ namespace verwaltung
         public TabForm()
         {
             InitializeComponent();
+            con.Open();
             getFirstID();
             getTotalRows();
             loadPatient();
             tboxStyle(Color.Beige, Color.Teal);
             buttonStyle();
             
-        }
-
-        static SQLiteCommand SQLCommand()
-        {
-            con.Open();
-            SQLiteCommand command;
-            command = con.CreateCommand();
-            return command;
         }
 
         private void btnPSpeichern_Click(object sender, EventArgs e)// save the entered data
@@ -92,7 +85,6 @@ namespace verwaltung
             //neuer Patient
             var neuPatient = new Patient(vName, nName, geburtsdatum, pGeschlecht, email, pNummer);
 
-            //Preview Values
             pName = neuPatient.Name;
             pVorname = neuPatient.Vorname;
             pGebDatum = neuPatient.Geburtsdatum;
@@ -101,32 +93,29 @@ namespace verwaltung
             pNummer = neuPatient.Nummer;
             pEmail = neuPatient.Email;
 
-            //Preview
             DialogResult preview = MessageBox.Show($"Vorname: {pVorname} {Environment.NewLine}Name: {pName} { Environment.NewLine}Geburtsdatum: {pGebDatum.ToShortDateString()}{Environment.NewLine}Geschlecht: {pGeschlecht}{Environment.NewLine}Alter: {pAlter}{Environment.NewLine}Tel. Nummer: {pNummer.ToString()}{Environment.NewLine}Email: {pEmail}", "Preview", MessageBoxButtons.OKCancel);
 
             if (preview == DialogResult.OK)
             {
                 tboxClear();
-                //Insert Into DB
-                SQLiteCommand sqlite_cmd = SQLCommand();
+                SQLiteCommand sqlite_cmd;
+                sqlite_cmd = con.CreateCommand();
                 sqlite_cmd.CommandText = $"INSERT INTO PatientDB (Vorname, Name, Geburtsdatum, Geschlecht, Age, Angemeldet, Abgemeldet, Nummer, Email) VALUES('{pVorname}', '{pName}', '{pGebDatum.ToShortDateString()}', '{pGeschlecht}', {pAlter}, '{DateTime.UtcNow}', '{null}', {pNummer}, '{pEmail}');";
                 sqlite_cmd.ExecuteNonQuery();
-                con.Close();
             }
         }
 
-        
         private void tSearch_TextChanged(object sender, EventArgs e)//search patient
         {
-            SQLiteCommand command = SQLCommand();
-            command.CommandText = $"SELECT * FROM PatientDB WHERE Vorname || Name || Geburtsdatum || ID || Geschlecht || Angemeldet || Age LIKE '%{tSearch.Text}%' Limit 1";
+            SQLiteCommand command;
+            command = con.CreateCommand();
+            command.CommandText = $"SELECT * FROM PatientDB WHERE Vorname || Name || Geburtsdatum || ID || Geschlecht || Angemeldet || Age LIKE '%{tSearch.Text}%'";
             SQLiteDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 position = reader.GetInt32(id);
                 loadPatient();
             }
-            con.Close();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -139,7 +128,6 @@ namespace verwaltung
             btnPreviousColorChanged();
         }
 
-        //Update/Speicher Button
         private void btnUpdate_Click(object sender, EventArgs e)
         {            
             if (btnUpdate.Text == "SPEICHERN")
@@ -284,7 +272,6 @@ namespace verwaltung
         }
 
 
-
         void btnNextColorChanged() {
             btnNext.FindForm();
             if (btnUpdate.Text == "SPEICHERN")
@@ -341,7 +328,8 @@ namespace verwaltung
 
         public void getFirstID()//getting the first ID of the first row
         {
-            SQLiteCommand command = SQLCommand();
+            SQLiteCommand command;
+            command = con.CreateCommand();
             command.CommandText = $"SELECT * FROM PatientDB ";
             SQLiteDataReader reader = command.ExecuteReader();
 
@@ -349,13 +337,13 @@ namespace verwaltung
             {
                 position = reader.GetInt32(0);
             }
-            con.Close();
         }
 
         public void loadPatient()//LOAD THE LIST OF PATIENT
         {
             readOnlyTboxes();
-            SQLiteCommand command = SQLCommand();
+            SQLiteCommand command;
+            command = con.CreateCommand();
             command.CommandText = $"SELECT * FROM PatientDB WHERE ID = {position}";
             SQLiteDataReader reader = command.ExecuteReader();
 
@@ -369,7 +357,6 @@ namespace verwaltung
                 tboxEmail.Text = reader.GetString(email);
                 tboxAngemeldet.Text = reader.GetString(angemeldet);
             }
-            con.Close();
         }
         void readOnlyTboxes()
         {
@@ -395,22 +382,22 @@ namespace verwaltung
 
         void getTotalRows()//getting total rows available in the database
         {
-            SQLiteCommand command = SQLCommand();
+            SQLiteCommand command;
+            command = con.CreateCommand();
             command.CommandText = $"SELECT COUNT(*) FROM PatientDB";
             SQLiteDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 count = reader.GetInt32(0);
             }
-            con.Close();
         }
 
         void updateEntry(string vorname, string name, string geburtsDatum, string geschlecht, string ankunft, string nummer, string email)//UPDATE DATA
         {
-            SQLiteCommand sqlite_cmd = SQLCommand();
+            SQLiteCommand sqlite_cmd;
+            sqlite_cmd = con.CreateCommand();
             sqlite_cmd.CommandText = $"UPDATE PatientDB SET Vorname = '{vorname}', Name = '{name}', Geburtsdatum = '{geburtsDatum}', Geschlecht = '{geschlecht}', Angemeldet = '{ankunft}', Abgemeldet = '{null}', Nummer = '{nummer}', Email = '{email}' WHERE ID = {position};";
             sqlite_cmd.ExecuteNonQuery();
-            con.Close();
         }
 
         private void Tab_SelectedIndexChanged(object sender, EventArgs e)//database will be reloaded when tabpages change

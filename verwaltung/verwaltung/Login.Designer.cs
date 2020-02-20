@@ -152,7 +152,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "5";
+            this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
             this.panelLogin.ResumeLayout(false);
             this.ResumeLayout(false);
