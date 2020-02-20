@@ -77,9 +77,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.picBoxNeuPatient = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.textKrankheit = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbKrankheit = new System.Windows.Forms.Label();
+            this.tboxPKrankheit = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tboxKrankheit = new System.Windows.Forms.TextBox();
             this.Tab.SuspendLayout();
             this.ListOfPatient.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -114,11 +116,11 @@
             this.ListOfPatient.Controls.Add(this.panelLabel);
             this.ListOfPatient.Controls.Add(this.tSearch);
             this.ListOfPatient.Controls.Add(this.picBoxPatient);
-            this.ListOfPatient.Controls.Add(this.picBoxMedicalTeam);
             this.ListOfPatient.Controls.Add(this.btnPrevious);
             this.ListOfPatient.Controls.Add(this.btnNext);
             this.ListOfPatient.Controls.Add(this.panelShadow);
             this.ListOfPatient.Controls.Add(this.panel2);
+            this.ListOfPatient.Controls.Add(this.picBoxMedicalTeam);
             this.ListOfPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListOfPatient.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ListOfPatient.Location = new System.Drawing.Point(4, 36);
@@ -133,6 +135,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.tboxKrankheit);
             this.panel1.Controls.Add(this.tboxEmail);
             this.panel1.Controls.Add(this.tboxNummer);
             this.panel1.Controls.Add(this.tboxAngemeldet);
@@ -143,7 +146,7 @@
             this.panel1.Controls.Add(this.tboxVorname);
             this.panel1.Location = new System.Drawing.Point(261, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(302, 398);
+            this.panel1.Size = new System.Drawing.Size(302, 454);
             this.panel1.TabIndex = 65;
             // 
             // tboxEmail
@@ -181,7 +184,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnUpdate.Location = new System.Drawing.Point(132, 350);
+            this.btnUpdate.Location = new System.Drawing.Point(132, 403);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(165, 46);
             this.btnUpdate.TabIndex = 55;
@@ -244,6 +247,7 @@
             // panelLabel
             // 
             this.panelLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLabel.Controls.Add(this.label2);
             this.panelLabel.Controls.Add(this.label1);
             this.panelLabel.Controls.Add(this.lbNummer);
             this.panelLabel.Controls.Add(this.lbGeschlecht);
@@ -253,7 +257,7 @@
             this.panelLabel.Controls.Add(this.lbAnkunft);
             this.panelLabel.Location = new System.Drawing.Point(55, 15);
             this.panelLabel.Name = "panelLabel";
-            this.panelLabel.Size = new System.Drawing.Size(207, 398);
+            this.panelLabel.Size = new System.Drawing.Size(207, 454);
             this.panelLabel.TabIndex = 64;
             // 
             // label1
@@ -401,9 +405,9 @@
             // panelShadow
             // 
             this.panelShadow.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelShadow.Location = new System.Drawing.Point(59, 23);
+            this.panelShadow.Location = new System.Drawing.Point(59, 21);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(508, 395);
+            this.panelShadow.Size = new System.Drawing.Size(508, 453);
             this.panelShadow.TabIndex = 66;
             // 
             // panel2
@@ -416,8 +420,9 @@
             // 
             // NewPatient
             // 
-            this.NewPatient.Controls.Add(this.label2);
-            this.NewPatient.Controls.Add(this.textKrankheit);
+            this.NewPatient.Controls.Add(this.lbKrankheit);
+            this.NewPatient.Controls.Add(this.tboxPKrankheit);
+            this.NewPatient.Controls.Add(this.panel4);
             this.NewPatient.Controls.Add(this.lbPGebDatum);
             this.NewPatient.Controls.Add(this.lbPNachname);
             this.NewPatient.Controls.Add(this.lbPVorname);
@@ -437,7 +442,6 @@
             this.NewPatient.Controls.Add(this.pShadow4);
             this.NewPatient.Controls.Add(this.panel3);
             this.NewPatient.Controls.Add(this.picBoxNeuPatient);
-            this.NewPatient.Controls.Add(this.panel4);
             this.NewPatient.Location = new System.Drawing.Point(4, 36);
             this.NewPatient.Margin = new System.Windows.Forms.Padding(2);
             this.NewPatient.Name = "NewPatient";
@@ -452,7 +456,7 @@
             this.lbPGebDatum.AutoSize = true;
             this.lbPGebDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPGebDatum.ForeColor = System.Drawing.Color.Teal;
-            this.lbPGebDatum.Location = new System.Drawing.Point(67, 178);
+            this.lbPGebDatum.Location = new System.Drawing.Point(67, 148);
             this.lbPGebDatum.Name = "lbPGebDatum";
             this.lbPGebDatum.Size = new System.Drawing.Size(128, 24);
             this.lbPGebDatum.TabIndex = 60;
@@ -463,7 +467,7 @@
             this.lbPNachname.AutoSize = true;
             this.lbPNachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPNachname.ForeColor = System.Drawing.Color.Teal;
-            this.lbPNachname.Location = new System.Drawing.Point(67, 104);
+            this.lbPNachname.Location = new System.Drawing.Point(67, 74);
             this.lbPNachname.Name = "lbPNachname";
             this.lbPNachname.Size = new System.Drawing.Size(103, 24);
             this.lbPNachname.TabIndex = 56;
@@ -474,7 +478,7 @@
             this.lbPVorname.AutoSize = true;
             this.lbPVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPVorname.ForeColor = System.Drawing.Color.Teal;
-            this.lbPVorname.Location = new System.Drawing.Point(67, 36);
+            this.lbPVorname.Location = new System.Drawing.Point(67, 6);
             this.lbPVorname.Name = "lbPVorname";
             this.lbPVorname.Size = new System.Drawing.Size(88, 24);
             this.lbPVorname.TabIndex = 55;
@@ -485,7 +489,7 @@
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmail.ForeColor = System.Drawing.Color.Teal;
-            this.lbEmail.Location = new System.Drawing.Point(67, 324);
+            this.lbEmail.Location = new System.Drawing.Point(67, 294);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(57, 24);
             this.lbEmail.TabIndex = 68;
@@ -496,7 +500,7 @@
             this.lbTelpNum.AutoSize = true;
             this.lbTelpNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTelpNum.ForeColor = System.Drawing.Color.Teal;
-            this.lbTelpNum.Location = new System.Drawing.Point(67, 250);
+            this.lbTelpNum.Location = new System.Drawing.Point(67, 220);
             this.lbTelpNum.Name = "lbTelpNum";
             this.lbTelpNum.Size = new System.Drawing.Size(121, 24);
             this.lbTelpNum.TabIndex = 67;
@@ -505,7 +509,7 @@
             // tboxPEmail
             // 
             this.tboxPEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPEmail.Location = new System.Drawing.Point(59, 341);
+            this.tboxPEmail.Location = new System.Drawing.Point(59, 311);
             this.tboxPEmail.Name = "tboxPEmail";
             this.tboxPEmail.Size = new System.Drawing.Size(398, 35);
             this.tboxPEmail.TabIndex = 66;
@@ -513,7 +517,7 @@
             // tboxPNumber
             // 
             this.tboxPNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPNumber.Location = new System.Drawing.Point(59, 268);
+            this.tboxPNumber.Location = new System.Drawing.Point(59, 238);
             this.tboxPNumber.Name = "tboxPNumber";
             this.tboxPNumber.Size = new System.Drawing.Size(398, 35);
             this.tboxPNumber.TabIndex = 65;
@@ -525,7 +529,7 @@
             this.btnPSpeichern.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPSpeichern.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPSpeichern.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnPSpeichern.Location = new System.Drawing.Point(161, 539);
+            this.btnPSpeichern.Location = new System.Drawing.Point(161, 521);
             this.btnPSpeichern.Name = "btnPSpeichern";
             this.btnPSpeichern.Size = new System.Drawing.Size(171, 46);
             this.btnPSpeichern.TabIndex = 64;
@@ -540,7 +544,7 @@
             this.rWeiblich.AutoSize = true;
             this.rWeiblich.Font = new System.Drawing.Font("Microsoft Tai Le", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rWeiblich.ForeColor = System.Drawing.Color.Fuchsia;
-            this.rWeiblich.Location = new System.Drawing.Point(280, 393);
+            this.rWeiblich.Location = new System.Drawing.Point(280, 486);
             this.rWeiblich.Name = "rWeiblich";
             this.rWeiblich.Size = new System.Drawing.Size(121, 33);
             this.rWeiblich.TabIndex = 63;
@@ -553,7 +557,7 @@
             this.rMänlich.AutoSize = true;
             this.rMänlich.Font = new System.Drawing.Font("Microsoft Tai Le", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rMänlich.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.rMänlich.Location = new System.Drawing.Point(125, 393);
+            this.rMänlich.Location = new System.Drawing.Point(125, 486);
             this.rMänlich.Name = "rMänlich";
             this.rMänlich.Size = new System.Drawing.Size(113, 33);
             this.rMänlich.TabIndex = 62;
@@ -564,7 +568,7 @@
             // gebDatumPicker
             // 
             this.gebDatumPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gebDatumPicker.Location = new System.Drawing.Point(59, 196);
+            this.gebDatumPicker.Location = new System.Drawing.Point(59, 166);
             this.gebDatumPicker.Name = "gebDatumPicker";
             this.gebDatumPicker.Size = new System.Drawing.Size(398, 35);
             this.gebDatumPicker.TabIndex = 61;
@@ -572,7 +576,7 @@
             // tboxPNachname
             // 
             this.tboxPNachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPNachname.Location = new System.Drawing.Point(59, 122);
+            this.tboxPNachname.Location = new System.Drawing.Point(59, 92);
             this.tboxPNachname.Name = "tboxPNachname";
             this.tboxPNachname.Size = new System.Drawing.Size(398, 35);
             this.tboxPNachname.TabIndex = 59;
@@ -580,7 +584,7 @@
             // tboxPVorname
             // 
             this.tboxPVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPVorname.Location = new System.Drawing.Point(59, 53);
+            this.tboxPVorname.Location = new System.Drawing.Point(59, 23);
             this.tboxPVorname.Name = "tboxPVorname";
             this.tboxPVorname.Size = new System.Drawing.Size(398, 35);
             this.tboxPVorname.TabIndex = 58;
@@ -588,7 +592,7 @@
             // pShadow1
             // 
             this.pShadow1.BackColor = System.Drawing.Color.Gainsboro;
-            this.pShadow1.Location = new System.Drawing.Point(64, 58);
+            this.pShadow1.Location = new System.Drawing.Point(64, 28);
             this.pShadow1.Name = "pShadow1";
             this.pShadow1.Size = new System.Drawing.Size(396, 33);
             this.pShadow1.TabIndex = 71;
@@ -596,7 +600,7 @@
             // pShadow2
             // 
             this.pShadow2.BackColor = System.Drawing.Color.Gainsboro;
-            this.pShadow2.Location = new System.Drawing.Point(64, 127);
+            this.pShadow2.Location = new System.Drawing.Point(64, 97);
             this.pShadow2.Name = "pShadow2";
             this.pShadow2.Size = new System.Drawing.Size(396, 34);
             this.pShadow2.TabIndex = 72;
@@ -604,7 +608,7 @@
             // pShadow3
             // 
             this.pShadow3.BackColor = System.Drawing.Color.Gainsboro;
-            this.pShadow3.Location = new System.Drawing.Point(64, 201);
+            this.pShadow3.Location = new System.Drawing.Point(64, 171);
             this.pShadow3.Name = "pShadow3";
             this.pShadow3.Size = new System.Drawing.Size(396, 34);
             this.pShadow3.TabIndex = 73;
@@ -612,7 +616,7 @@
             // pShadow4
             // 
             this.pShadow4.BackColor = System.Drawing.Color.Gainsboro;
-            this.pShadow4.Location = new System.Drawing.Point(64, 273);
+            this.pShadow4.Location = new System.Drawing.Point(64, 243);
             this.pShadow4.Name = "pShadow4";
             this.pShadow4.Size = new System.Drawing.Size(396, 34);
             this.pShadow4.TabIndex = 74;
@@ -620,7 +624,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel3.Location = new System.Drawing.Point(64, 346);
+            this.panel3.Location = new System.Drawing.Point(64, 316);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(396, 34);
             this.panel3.TabIndex = 75;
@@ -651,33 +655,53 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // textKrankheit
+            // lbKrankheit
             // 
-            this.textKrankheit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textKrankheit.Location = new System.Drawing.Point(59, 447);
-            this.textKrankheit.Multiline = true;
-            this.textKrankheit.Name = "textKrankheit";
-            this.textKrankheit.Size = new System.Drawing.Size(398, 86);
-            this.textKrankheit.TabIndex = 76;
+            this.lbKrankheit.AutoSize = true;
+            this.lbKrankheit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKrankheit.ForeColor = System.Drawing.Color.Teal;
+            this.lbKrankheit.Location = new System.Drawing.Point(67, 363);
+            this.lbKrankheit.Name = "lbKrankheit";
+            this.lbKrankheit.Size = new System.Drawing.Size(88, 24);
+            this.lbKrankheit.TabIndex = 80;
+            this.lbKrankheit.Text = "Krankheit";
             // 
-            // label2
+            // tboxPKrankheit
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(67, 429);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 24);
-            this.label2.TabIndex = 77;
-            this.label2.Text = "Krankheit";
+            this.tboxPKrankheit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxPKrankheit.Location = new System.Drawing.Point(59, 380);
+            this.tboxPKrankheit.Multiline = true;
+            this.tboxPKrankheit.Name = "tboxPKrankheit";
+            this.tboxPKrankheit.Size = new System.Drawing.Size(398, 85);
+            this.tboxPKrankheit.TabIndex = 78;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel4.Location = new System.Drawing.Point(64, 450);
+            this.panel4.Location = new System.Drawing.Point(64, 383);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(396, 86);
-            this.panel4.TabIndex = 76;
+            this.panel4.TabIndex = 79;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.Location = new System.Drawing.Point(100, 355);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 26);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Krankheit";
+            // 
+            // tboxKrankheit
+            // 
+            this.tboxKrankheit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tboxKrankheit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxKrankheit.Location = new System.Drawing.Point(12, 355);
+            this.tboxKrankheit.Name = "tboxKrankheit";
+            this.tboxKrankheit.Size = new System.Drawing.Size(279, 28);
+            this.tboxKrankheit.TabIndex = 60;
             // 
             // TabForm
             // 
@@ -762,8 +786,10 @@
         private System.Windows.Forms.Panel pShadow4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textKrankheit;
+        private System.Windows.Forms.Label lbKrankheit;
+        private System.Windows.Forms.TextBox tboxPKrankheit;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox tboxKrankheit;
+        private System.Windows.Forms.Label label2;
     }
 }

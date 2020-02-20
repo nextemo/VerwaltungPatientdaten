@@ -29,9 +29,10 @@ namespace verwaltung
         int angemeldet = 6;
         int nummer = 8;
         int email = 9;
+        int krankheit = 10;
         int position;
-        string krankheit = "";
         int count;
+
         Point _mouseLoc;
         public TabForm()
         {
@@ -50,6 +51,7 @@ namespace verwaltung
             var vName = tboxPVorname.Text;
             var nName = tboxPNachname.Text;
             var geburtsdatum = gebDatumPicker.Value;
+            var krankheit = tboxPKrankheit.Text;
 
             if (rMänlich.Checked) pGeschlecht = "Mänlich";
             else if (rWeiblich.Checked) pGeschlecht = "Weiblich";
@@ -81,10 +83,8 @@ namespace verwaltung
                 return;
             }
 
-            krankheit = textKrankheit.ToString();
-
             //neuer Patient
-            var neuPatient = new Patient(vName, nName, geburtsdatum, pGeschlecht, email, pNummer, pKrankheit);
+            var neuPatient = new Patient(vName, nName, geburtsdatum, pGeschlecht, email, pNummer, krankheit);
 
             pName = neuPatient.Name;
             pVorname = neuPatient.Vorname;
@@ -95,8 +95,8 @@ namespace verwaltung
             pEmail = neuPatient.Email;
             pKrankheit = neuPatient.Krankheit;
 
-            DialogResult preview = MessageBox.Show($"Vorname: {pVorname} {Environment.NewLine}Name: {pName} { Environment.NewLine}Geburtsdatum: {pGebDatum.ToShortDateString()}{Environment.NewLine}Geschlecht: {pGeschlecht}{Environment.NewLine}Alter: {pAlter}{Environment.NewLine}Tel. Nummer: {pNummer.ToString()}{Environment.NewLine}Email: {pEmail}{Environment.NewLine}Krankheit: { pKrankheit}"
-            , "Eintrag richtig?", MessageBoxButtons.OKCancel);
+            DialogResult preview = MessageBox.Show($"Vorname: {pVorname} {Environment.NewLine}Name: {pName} { Environment.NewLine}Geburtsdatum: {pGebDatum.ToShortDateString()}{Environment.NewLine}Geschlecht: {pGeschlecht}{Environment.NewLine}Alter: {pAlter}{Environment.NewLine}Tel. Nummer: {pNummer.ToString()}{Environment.NewLine}Email: {pEmail}{Environment.NewLine}Krankheit: {pKrankheit}"
+            ,"Eintrag richtig?", MessageBoxButtons.OKCancel);
 
             if (preview == DialogResult.OK)
             {
@@ -137,7 +137,7 @@ namespace verwaltung
             {
                 readOnlyTboxes();
                 tboxesBorderDisabled();
-                updateEntry(tboxVorname.Text, tboxName.Text, tboxGDatum.Text, tboxGeschlecht.Text, tboxAngemeldet.Text, tboxNummer.Text, tboxEmail.Text);
+                updateEntry(tboxVorname.Text, tboxName.Text, tboxGDatum.Text, tboxGeschlecht.Text, tboxAngemeldet.Text, tboxNummer.Text, tboxEmail.Text, tboxKrankheit.Text);
                 btnUpdate.Text = "UPDATE";
             }
             else
@@ -200,6 +200,7 @@ namespace verwaltung
             tboxNummer.BorderStyle = BorderStyle.None;
             tboxEmail.BorderStyle = BorderStyle.None;
             tboxAngemeldet.BorderStyle = BorderStyle.None;
+            tboxKrankheit.BorderStyle = BorderStyle.None;
         }
 
         void tboxesBorderApplied() {
@@ -210,6 +211,7 @@ namespace verwaltung
             tboxNummer.BorderStyle = BorderStyle.FixedSingle;
             tboxEmail.BorderStyle = BorderStyle.FixedSingle;
             tboxAngemeldet.BorderStyle = BorderStyle.FixedSingle;
+            tboxKrankheit.BorderStyle = BorderStyle.FixedSingle;
         }
         void buttonStyle() {
             btnUpdate.Font = fontFamily;
@@ -272,6 +274,10 @@ namespace verwaltung
             tboxAngemeldet.ForeColor = textColor;
             tboxAngemeldet.Font = fontFamily;
             //tboxAngemeldet.TextAlign = HorizontalAlignment.Center;
+
+            tboxKrankheit.BackColor = backColor;
+            tboxKrankheit.ForeColor = textColor;
+            tboxKrankheit.Font = fontFamily;
         }
 
 
@@ -359,6 +365,7 @@ namespace verwaltung
                 tboxNummer.Text = reader.GetString(nummer);
                 tboxEmail.Text = reader.GetString(email);
                 tboxAngemeldet.Text = reader.GetString(angemeldet);
+                tboxKrankheit.Text = reader.GetString(krankheit);
             }
         }
         void readOnlyTboxes()
@@ -370,6 +377,7 @@ namespace verwaltung
             tboxVorname.ReadOnly = true;
             tboxEmail.ReadOnly = true;
             tboxNummer.ReadOnly = true;
+            tboxKrankheit.ReadOnly = true;
         }
 
         void disableReadOnly()
@@ -381,6 +389,7 @@ namespace verwaltung
             tboxVorname.ReadOnly = false;
             tboxEmail.ReadOnly = false;
             tboxNummer.ReadOnly = false;
+            tboxKrankheit.ReadOnly = false;
         }
 
         void getTotalRows()//getting total rows available in the database
@@ -395,11 +404,11 @@ namespace verwaltung
             }
         }
 
-        void updateEntry(string vorname, string name, string geburtsDatum, string geschlecht, string ankunft, string nummer, string email)//UPDATE DATA
+        void updateEntry(string vorname, string name, string geburtsDatum, string geschlecht, string ankunft, string nummer, string email, string krankheit)//UPDATE DATA
         {
             SQLiteCommand sqlite_cmd;
             sqlite_cmd = con.CreateCommand();
-            sqlite_cmd.CommandText = $"UPDATE PatientDB SET Vorname = '{vorname}', Name = '{name}', Geburtsdatum = '{geburtsDatum}', Geschlecht = '{geschlecht}', Angemeldet = '{ankunft}', Abgemeldet = '{null}', Nummer = '{nummer}', Email = '{email}' WHERE ID = {position};";
+            sqlite_cmd.CommandText = $"UPDATE PatientDB SET Vorname = '{vorname}', Name = '{name}', Geburtsdatum = '{geburtsDatum}', Geschlecht = '{geschlecht}', Angemeldet = '{ankunft}', Abgemeldet = '{null}', Nummer = '{nummer}', Email = '{email}', Krankheit = '{krankheit}' WHERE ID = {position};";
             sqlite_cmd.ExecuteNonQuery();
         }
 
