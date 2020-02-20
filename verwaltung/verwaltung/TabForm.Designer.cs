@@ -77,6 +77,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.picBoxNeuPatient = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.textKrankheit = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.Tab.SuspendLayout();
             this.ListOfPatient.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -413,6 +416,8 @@
             // 
             // NewPatient
             // 
+            this.NewPatient.Controls.Add(this.label2);
+            this.NewPatient.Controls.Add(this.textKrankheit);
             this.NewPatient.Controls.Add(this.lbPGebDatum);
             this.NewPatient.Controls.Add(this.lbPNachname);
             this.NewPatient.Controls.Add(this.lbPVorname);
@@ -432,6 +437,7 @@
             this.NewPatient.Controls.Add(this.pShadow4);
             this.NewPatient.Controls.Add(this.panel3);
             this.NewPatient.Controls.Add(this.picBoxNeuPatient);
+            this.NewPatient.Controls.Add(this.panel4);
             this.NewPatient.Location = new System.Drawing.Point(4, 36);
             this.NewPatient.Margin = new System.Windows.Forms.Padding(2);
             this.NewPatient.Name = "NewPatient";
@@ -519,7 +525,7 @@
             this.btnPSpeichern.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPSpeichern.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPSpeichern.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnPSpeichern.Location = new System.Drawing.Point(167, 461);
+            this.btnPSpeichern.Location = new System.Drawing.Point(161, 539);
             this.btnPSpeichern.Name = "btnPSpeichern";
             this.btnPSpeichern.Size = new System.Drawing.Size(171, 46);
             this.btnPSpeichern.TabIndex = 64;
@@ -534,7 +540,7 @@
             this.rWeiblich.AutoSize = true;
             this.rWeiblich.Font = new System.Drawing.Font("Microsoft Tai Le", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rWeiblich.ForeColor = System.Drawing.Color.Fuchsia;
-            this.rWeiblich.Location = new System.Drawing.Point(281, 408);
+            this.rWeiblich.Location = new System.Drawing.Point(280, 393);
             this.rWeiblich.Name = "rWeiblich";
             this.rWeiblich.Size = new System.Drawing.Size(121, 33);
             this.rWeiblich.TabIndex = 63;
@@ -547,7 +553,7 @@
             this.rMänlich.AutoSize = true;
             this.rMänlich.Font = new System.Drawing.Font("Microsoft Tai Le", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rMänlich.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.rMänlich.Location = new System.Drawing.Point(126, 408);
+            this.rMänlich.Location = new System.Drawing.Point(125, 393);
             this.rMänlich.Name = "rMänlich";
             this.rMänlich.Size = new System.Drawing.Size(113, 33);
             this.rMänlich.TabIndex = 62;
@@ -645,6 +651,34 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // textKrankheit
+            // 
+            this.textKrankheit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textKrankheit.Location = new System.Drawing.Point(59, 447);
+            this.textKrankheit.Multiline = true;
+            this.textKrankheit.Name = "textKrankheit";
+            this.textKrankheit.Size = new System.Drawing.Size(398, 86);
+            this.textKrankheit.TabIndex = 76;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.Location = new System.Drawing.Point(67, 429);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 24);
+            this.label2.TabIndex = 77;
+            this.label2.Text = "Krankheit";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Location = new System.Drawing.Point(64, 450);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(396, 86);
+            this.panel4.TabIndex = 76;
+            // 
             // TabForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -728,5 +762,8 @@
         private System.Windows.Forms.Panel pShadow4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textKrankheit;
+        private System.Windows.Forms.Panel panel4;
     }
 }

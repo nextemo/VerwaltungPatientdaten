@@ -13,7 +13,6 @@ namespace verwaltung
 {
     public partial class Login : Form
     {
-        SQLiteConnection con = new SQLiteConnection("Data Source = C:/sqlite/Patient.db; Version = 3;");
         Font fontFamily = new Font("Microsoft Tai Le", 18, FontStyle.Bold);
         public Login()
         {

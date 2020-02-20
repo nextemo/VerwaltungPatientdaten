@@ -18,7 +18,7 @@ namespace verwaltung
         SQLiteConnection con = new SQLiteConnection($"Data Source = {path}/Patient.db; Version = 3;");//database initialize
         Font fontFamily = new Font("Microsoft Tai Le", 18, FontStyle.Bold);
 
-        string pName, pVorname, pGeschlecht, pEmail;
+        string pName, pVorname, pGeschlecht, pEmail, pKrankheit;
         DateTime pGebDatum;
         int pAlter, pNummer;
         int id = 0;
@@ -26,12 +26,11 @@ namespace verwaltung
         int name = 2;
         int geburtsdatum = 3;
         int geschlecht = 4;
-        int alter = 5;
         int angemeldet = 6;
-        int abgemeldet = 7;
         int nummer = 8;
         int email = 9;
         int position;
+        string krankheit = "";
         int count;
         Point _mouseLoc;
         public TabForm()
@@ -81,9 +80,11 @@ namespace verwaltung
                 MessageBox.Show("Mail-Addresse ist nicht gültig!", "Actung!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
+
+            krankheit = textKrankheit.ToString();
+
             //neuer Patient
-            var neuPatient = new Patient(vName, nName, geburtsdatum, pGeschlecht, email, pNummer);
+            var neuPatient = new Patient(vName, nName, geburtsdatum, pGeschlecht, email, pNummer, pKrankheit);
 
             pName = neuPatient.Name;
             pVorname = neuPatient.Vorname;
@@ -92,15 +93,17 @@ namespace verwaltung
             pAlter = neuPatient.Alter;
             pNummer = neuPatient.Nummer;
             pEmail = neuPatient.Email;
+            pKrankheit = neuPatient.Krankheit;
 
-            DialogResult preview = MessageBox.Show($"Vorname: {pVorname} {Environment.NewLine}Name: {pName} { Environment.NewLine}Geburtsdatum: {pGebDatum.ToShortDateString()}{Environment.NewLine}Geschlecht: {pGeschlecht}{Environment.NewLine}Alter: {pAlter}{Environment.NewLine}Tel. Nummer: {pNummer.ToString()}{Environment.NewLine}Email: {pEmail}", "Preview", MessageBoxButtons.OKCancel);
+            DialogResult preview = MessageBox.Show($"Vorname: {pVorname} {Environment.NewLine}Name: {pName} { Environment.NewLine}Geburtsdatum: {pGebDatum.ToShortDateString()}{Environment.NewLine}Geschlecht: {pGeschlecht}{Environment.NewLine}Alter: {pAlter}{Environment.NewLine}Tel. Nummer: {pNummer.ToString()}{Environment.NewLine}Email: {pEmail}{Environment.NewLine}Krankheit: { pKrankheit}"
+            , "Eintrag richtig?", MessageBoxButtons.OKCancel);
 
             if (preview == DialogResult.OK)
             {
                 tboxClear();
                 SQLiteCommand sqlite_cmd;
                 sqlite_cmd = con.CreateCommand();
-                sqlite_cmd.CommandText = $"INSERT INTO PatientDB (Vorname, Name, Geburtsdatum, Geschlecht, Age, Angemeldet, Abgemeldet, Nummer, Email) VALUES('{pVorname}', '{pName}', '{pGebDatum.ToShortDateString()}', '{pGeschlecht}', {pAlter}, '{DateTime.UtcNow}', '{null}', {pNummer}, '{pEmail}');";
+                sqlite_cmd.CommandText = $"INSERT INTO PatientDB (Vorname, Name, Geburtsdatum, Geschlecht, Age, Angemeldet, Abgemeldet, Nummer, Email, Krankheit) VALUES('{pVorname}', '{pName}', '{pGebDatum.ToShortDateString()}', '{pGeschlecht}', {pAlter}, '{DateTime.UtcNow}', '{null}', {pNummer}, '{pEmail}', '{pKrankheit}')";
                 sqlite_cmd.ExecuteNonQuery();
             }
         }

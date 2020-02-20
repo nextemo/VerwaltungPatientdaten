@@ -15,8 +15,9 @@ namespace verwaltung
         private string geschlecht;
         private int telNum;
         private string email;
+        private string krankheit;
 
-        public Patient(string vorname, string name, DateTime gebDatum, string geschlecht, string email, int nummer)
+        public Patient(string vorname, string name, DateTime gebDatum, string geschlecht, string email, int nummer, string krankheit)
         {
             this.vorname = vorname;
             this.name = name;
@@ -26,6 +27,7 @@ namespace verwaltung
             alter = yearNow - gebDatum.Year;
             this.email = email;
             this.telNum = nummer;
+            this.krankheit = krankheit;
         }
 
         public string Vorname{
@@ -67,6 +69,12 @@ namespace verwaltung
         {
             get { return telNum; }
             set { telNum = value; }
+        }
+
+        public string Krankheit
+        {
+            get { return krankheit; }
+            set { krankheit = value; }
         }
     }
 }
