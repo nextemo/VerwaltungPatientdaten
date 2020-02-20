@@ -243,32 +243,26 @@ namespace verwaltung
             tboxVorname.BackColor = backColor;
             tboxVorname.ForeColor = textColor;
             tboxVorname.Font = fontFamily;
-            //tboxVorname.TextAlign = HorizontalAlignment.Center;
 
             tboxName.BackColor = backColor;
             tboxName.ForeColor = textColor;
             tboxName.Font = fontFamily;
-            //tboxName.TextAlign = HorizontalAlignment.Center;
 
             tboxGDatum.BackColor = backColor;
             tboxGDatum.ForeColor = textColor;
             tboxGDatum.Font = fontFamily;
-            //tboxGDatum.TextAlign = HorizontalAlignment.Center;
 
             tboxGeschlecht.BackColor = backColor;
             tboxGeschlecht.ForeColor = textColor;
             tboxGeschlecht.Font = fontFamily;
-            //tboxGeschlecht.TextAlign = HorizontalAlignment.Center;
 
             tboxNummer.BackColor = backColor;
             tboxNummer.ForeColor = textColor;
             tboxNummer.Font = fontFamily;
-            //tboxNummer.TextAlign = HorizontalAlignment.Center;
 
             tboxEmail.BackColor = backColor;
             tboxEmail.ForeColor = textColor;
             tboxEmail.Font = fontFamily;
-            //tboxEmail.TextAlign = HorizontalAlignment.Center;
 
             tboxAngemeldet.BackColor = backColor;
             tboxAngemeldet.ForeColor = textColor;
@@ -442,22 +436,22 @@ namespace verwaltung
 
         private void btnUpdate_MouseDown(object sender, MouseEventArgs e)
         {
-            btnUpdate.Location = new Point(133, 351);
+            btnUpdate.Location = new Point(133, 404);
         }
 
         private void btnUpdate_MouseUp(object sender, MouseEventArgs e)
         {
-            btnUpdate.Location = new Point(132, 350);
+            btnUpdate.Location = new Point(132, 403);
         }
 
         private void btnPSpeichern_MouseDown(object sender, MouseEventArgs e)
         {
-            btnPSpeichern.Location = new Point(168, 462);
+            btnPSpeichern.Location = new Point(162, 522);
         }
 
         private void btnPSpeichern_MouseUp(object sender, MouseEventArgs e)
         {
-            btnPSpeichern.Location = new Point(167, 461);
+            btnPSpeichern.Location = new Point(161, 521);
         }
     }
 }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TabForm));
             this.Tab = new System.Windows.Forms.TabControl();
             this.ListOfPatient = new System.Windows.Forms.TabPage();
+            this.picBoxMedicalTeam = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tboxKrankheit = new System.Windows.Forms.TextBox();
             this.tboxEmail = new System.Windows.Forms.TextBox();
@@ -57,7 +58,6 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.picBoxMedicalTeam = new System.Windows.Forms.PictureBox();
             this.NewPatient = new System.Windows.Forms.TabPage();
             this.lbKrankheit = new System.Windows.Forms.Label();
             this.tboxPKrankheit = new System.Windows.Forms.TextBox();
@@ -84,10 +84,10 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.Tab.SuspendLayout();
             this.ListOfPatient.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxMedicalTeam)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelLabel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPatient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxMedicalTeam)).BeginInit();
             this.NewPatient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxNeuPatient)).BeginInit();
             this.SuspendLayout();
@@ -111,7 +111,6 @@
             // ListOfPatient
             // 
             this.ListOfPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ListOfPatient.Controls.Add(this.picBoxMedicalTeam);
             this.ListOfPatient.Controls.Add(this.panel1);
             this.ListOfPatient.Controls.Add(this.lSearch);
             this.ListOfPatient.Controls.Add(this.panelLabel);
@@ -121,6 +120,7 @@
             this.ListOfPatient.Controls.Add(this.btnNext);
             this.ListOfPatient.Controls.Add(this.panelShadow);
             this.ListOfPatient.Controls.Add(this.panel2);
+            this.ListOfPatient.Controls.Add(this.picBoxMedicalTeam);
             this.ListOfPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListOfPatient.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ListOfPatient.Location = new System.Drawing.Point(4, 36);
@@ -131,6 +131,17 @@
             this.ListOfPatient.TabIndex = 0;
             this.ListOfPatient.Text = "Patient";
             this.ListOfPatient.UseVisualStyleBackColor = true;
+            // 
+            // picBoxMedicalTeam
+            // 
+            this.picBoxMedicalTeam.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxMedicalTeam.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxMedicalTeam.BackgroundImage")));
+            this.picBoxMedicalTeam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxMedicalTeam.Location = new System.Drawing.Point(-15, 455);
+            this.picBoxMedicalTeam.Name = "picBoxMedicalTeam";
+            this.picBoxMedicalTeam.Size = new System.Drawing.Size(326, 141);
+            this.picBoxMedicalTeam.TabIndex = 63;
+            this.picBoxMedicalTeam.TabStop = false;
             // 
             // panel1
             // 
@@ -427,17 +438,6 @@
             this.panel2.Size = new System.Drawing.Size(236, 33);
             this.panel2.TabIndex = 67;
             // 
-            // picBoxMedicalTeam
-            // 
-            this.picBoxMedicalTeam.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxMedicalTeam.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxMedicalTeam.BackgroundImage")));
-            this.picBoxMedicalTeam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxMedicalTeam.Location = new System.Drawing.Point(-15, 455);
-            this.picBoxMedicalTeam.Name = "picBoxMedicalTeam";
-            this.picBoxMedicalTeam.Size = new System.Drawing.Size(326, 141);
-            this.picBoxMedicalTeam.TabIndex = 63;
-            this.picBoxMedicalTeam.TabStop = false;
-            // 
             // NewPatient
             // 
             this.NewPatient.Controls.Add(this.lbKrankheit);
@@ -723,12 +723,12 @@
             this.Tab.ResumeLayout(false);
             this.ListOfPatient.ResumeLayout(false);
             this.ListOfPatient.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxMedicalTeam)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelLabel.ResumeLayout(false);
             this.panelLabel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPatient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxMedicalTeam)).EndInit();
             this.NewPatient.ResumeLayout(false);
             this.NewPatient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxNeuPatient)).EndInit();
