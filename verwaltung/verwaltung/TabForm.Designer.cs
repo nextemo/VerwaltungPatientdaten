@@ -32,6 +32,7 @@
             this.Tab = new System.Windows.Forms.TabControl();
             this.ListOfPatient = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tboxKrankheit = new System.Windows.Forms.TextBox();
             this.tboxEmail = new System.Windows.Forms.TextBox();
             this.tboxNummer = new System.Windows.Forms.TextBox();
             this.tboxAngemeldet = new System.Windows.Forms.TextBox();
@@ -42,6 +43,7 @@
             this.tboxVorname = new System.Windows.Forms.TextBox();
             this.lSearch = new System.Windows.Forms.Label();
             this.panelLabel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbNummer = new System.Windows.Forms.Label();
             this.lbGeschlecht = new System.Windows.Forms.Label();
@@ -51,12 +53,15 @@
             this.lbAnkunft = new System.Windows.Forms.Label();
             this.tSearch = new System.Windows.Forms.TextBox();
             this.picBoxPatient = new System.Windows.Forms.PictureBox();
-            this.picBoxMedicalTeam = new System.Windows.Forms.PictureBox();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.picBoxMedicalTeam = new System.Windows.Forms.PictureBox();
             this.NewPatient = new System.Windows.Forms.TabPage();
+            this.lbKrankheit = new System.Windows.Forms.Label();
+            this.tboxPKrankheit = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.lbPGebDatum = new System.Windows.Forms.Label();
             this.lbPNachname = new System.Windows.Forms.Label();
             this.lbPVorname = new System.Windows.Forms.Label();
@@ -77,11 +82,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.picBoxNeuPatient = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.lbKrankheit = new System.Windows.Forms.Label();
-            this.tboxPKrankheit = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tboxKrankheit = new System.Windows.Forms.TextBox();
             this.Tab.SuspendLayout();
             this.ListOfPatient.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -111,6 +111,7 @@
             // ListOfPatient
             // 
             this.ListOfPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ListOfPatient.Controls.Add(this.picBoxMedicalTeam);
             this.ListOfPatient.Controls.Add(this.panel1);
             this.ListOfPatient.Controls.Add(this.lSearch);
             this.ListOfPatient.Controls.Add(this.panelLabel);
@@ -120,7 +121,6 @@
             this.ListOfPatient.Controls.Add(this.btnNext);
             this.ListOfPatient.Controls.Add(this.panelShadow);
             this.ListOfPatient.Controls.Add(this.panel2);
-            this.ListOfPatient.Controls.Add(this.picBoxMedicalTeam);
             this.ListOfPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListOfPatient.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ListOfPatient.Location = new System.Drawing.Point(4, 36);
@@ -148,6 +148,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(302, 454);
             this.panel1.TabIndex = 65;
+            // 
+            // tboxKrankheit
+            // 
+            this.tboxKrankheit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tboxKrankheit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxKrankheit.Location = new System.Drawing.Point(12, 355);
+            this.tboxKrankheit.Name = "tboxKrankheit";
+            this.tboxKrankheit.Size = new System.Drawing.Size(279, 28);
+            this.tboxKrankheit.TabIndex = 60;
             // 
             // tboxEmail
             // 
@@ -260,6 +269,17 @@
             this.panelLabel.Size = new System.Drawing.Size(207, 454);
             this.panelLabel.TabIndex = 64;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.Location = new System.Drawing.Point(100, 355);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 26);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Krankheit";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -357,17 +377,6 @@
             this.picBoxPatient.TabIndex = 62;
             this.picBoxPatient.TabStop = false;
             // 
-            // picBoxMedicalTeam
-            // 
-            this.picBoxMedicalTeam.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxMedicalTeam.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxMedicalTeam.BackgroundImage")));
-            this.picBoxMedicalTeam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxMedicalTeam.Location = new System.Drawing.Point(-15, 455);
-            this.picBoxMedicalTeam.Name = "picBoxMedicalTeam";
-            this.picBoxMedicalTeam.Size = new System.Drawing.Size(326, 141);
-            this.picBoxMedicalTeam.TabIndex = 63;
-            this.picBoxMedicalTeam.TabStop = false;
-            // 
             // btnPrevious
             // 
             this.btnPrevious.BackColor = System.Drawing.Color.Transparent;
@@ -418,6 +427,17 @@
             this.panel2.Size = new System.Drawing.Size(236, 33);
             this.panel2.TabIndex = 67;
             // 
+            // picBoxMedicalTeam
+            // 
+            this.picBoxMedicalTeam.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxMedicalTeam.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxMedicalTeam.BackgroundImage")));
+            this.picBoxMedicalTeam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxMedicalTeam.Location = new System.Drawing.Point(-15, 455);
+            this.picBoxMedicalTeam.Name = "picBoxMedicalTeam";
+            this.picBoxMedicalTeam.Size = new System.Drawing.Size(326, 141);
+            this.picBoxMedicalTeam.TabIndex = 63;
+            this.picBoxMedicalTeam.TabStop = false;
+            // 
             // NewPatient
             // 
             this.NewPatient.Controls.Add(this.lbKrankheit);
@@ -450,6 +470,34 @@
             this.NewPatient.TabIndex = 1;
             this.NewPatient.Text = "Neu Patient ";
             this.NewPatient.UseVisualStyleBackColor = true;
+            // 
+            // lbKrankheit
+            // 
+            this.lbKrankheit.AutoSize = true;
+            this.lbKrankheit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKrankheit.ForeColor = System.Drawing.Color.Teal;
+            this.lbKrankheit.Location = new System.Drawing.Point(67, 363);
+            this.lbKrankheit.Name = "lbKrankheit";
+            this.lbKrankheit.Size = new System.Drawing.Size(88, 24);
+            this.lbKrankheit.TabIndex = 80;
+            this.lbKrankheit.Text = "Krankheit";
+            // 
+            // tboxPKrankheit
+            // 
+            this.tboxPKrankheit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxPKrankheit.Location = new System.Drawing.Point(59, 380);
+            this.tboxPKrankheit.Multiline = true;
+            this.tboxPKrankheit.Name = "tboxPKrankheit";
+            this.tboxPKrankheit.Size = new System.Drawing.Size(398, 85);
+            this.tboxPKrankheit.TabIndex = 78;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel4.Location = new System.Drawing.Point(64, 383);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(396, 86);
+            this.panel4.TabIndex = 79;
             // 
             // lbPGebDatum
             // 
@@ -654,54 +702,6 @@
             this.btnLogout.Text = "LOGOUT";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // lbKrankheit
-            // 
-            this.lbKrankheit.AutoSize = true;
-            this.lbKrankheit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKrankheit.ForeColor = System.Drawing.Color.Teal;
-            this.lbKrankheit.Location = new System.Drawing.Point(67, 363);
-            this.lbKrankheit.Name = "lbKrankheit";
-            this.lbKrankheit.Size = new System.Drawing.Size(88, 24);
-            this.lbKrankheit.TabIndex = 80;
-            this.lbKrankheit.Text = "Krankheit";
-            // 
-            // tboxPKrankheit
-            // 
-            this.tboxPKrankheit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPKrankheit.Location = new System.Drawing.Point(59, 380);
-            this.tboxPKrankheit.Multiline = true;
-            this.tboxPKrankheit.Name = "tboxPKrankheit";
-            this.tboxPKrankheit.Size = new System.Drawing.Size(398, 85);
-            this.tboxPKrankheit.TabIndex = 78;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel4.Location = new System.Drawing.Point(64, 383);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(396, 86);
-            this.panel4.TabIndex = 79;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(100, 355);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 26);
-            this.label2.TabIndex = 58;
-            this.label2.Text = "Krankheit";
-            // 
-            // tboxKrankheit
-            // 
-            this.tboxKrankheit.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tboxKrankheit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxKrankheit.Location = new System.Drawing.Point(12, 355);
-            this.tboxKrankheit.Name = "tboxKrankheit";
-            this.tboxKrankheit.Size = new System.Drawing.Size(279, 28);
-            this.tboxKrankheit.TabIndex = 60;
             // 
             // TabForm
             // 
