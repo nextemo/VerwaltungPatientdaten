@@ -86,9 +86,9 @@
             this.lbProgramName.ForeColor = System.Drawing.Color.Teal;
             this.lbProgramName.Location = new System.Drawing.Point(35, 266);
             this.lbProgramName.Name = "lbProgramName";
-            this.lbProgramName.Size = new System.Drawing.Size(340, 45);
+            this.lbProgramName.Size = new System.Drawing.Size(326, 45);
             this.lbProgramName.TabIndex = 5;
-            this.lbProgramName.Text = "Patient Verwaltung";
+            this.lbProgramName.Text = "Patientverwaltung";
             // 
             // picBoxLogo
             // 
