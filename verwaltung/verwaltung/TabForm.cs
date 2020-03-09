@@ -21,7 +21,7 @@ namespace verwaltung
 
         string pName, pVorname, pGeschlecht, pEmail, pKrankheit;
         DateTime pGebDatum;
-        int pAlter, pNummer;
+        int pAlter, pNummer, position, count;
 
         int id = 0;
         int vorname = 1;
@@ -32,8 +32,6 @@ namespace verwaltung
         int nummer = 8;
         int email = 9;
         int krankheit = 10;
-        int position;
-        int count;
 
         Point _mouseLoc;
         public TabForm()
