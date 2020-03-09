@@ -4,9 +4,10 @@ Einleitung
 Historie der Praxis "Lustigmann"
 Problemstellung der Praxis "Lustigmann"
 Vorgaben der Praxis "Lustigmann" 
-	(Programm-Ablauf-Plan)
-	(Classen Diagramm)
+	(Used Case- Diagramm)
+	(Classen Diagramm<-- Eingeschränkt. nur das wichtige oder mit Problemen(con zu sql) und so)
 Praxis Vorstellung
+Erweiternugs-Möglichkeiten
 Bewertung von der Paxis "Lustigmann" --> ALLE TOP WIR LIEBE EUCH
 ENDE
 
