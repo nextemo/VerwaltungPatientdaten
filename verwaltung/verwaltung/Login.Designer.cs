@@ -84,11 +84,11 @@
             this.lbProgramName.BackColor = System.Drawing.Color.Wheat;
             this.lbProgramName.Font = new System.Drawing.Font("Microsoft Tai Le", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbProgramName.ForeColor = System.Drawing.Color.Teal;
-            this.lbProgramName.Location = new System.Drawing.Point(35, 266);
+            this.lbProgramName.Location = new System.Drawing.Point(24, 266);
             this.lbProgramName.Name = "lbProgramName";
-            this.lbProgramName.Size = new System.Drawing.Size(326, 45);
+            this.lbProgramName.Size = new System.Drawing.Size(366, 45);
             this.lbProgramName.TabIndex = 5;
-            this.lbProgramName.Text = "Patientverwaltung";
+            this.lbProgramName.Text = "Patientenverwaltung";
             // 
             // picBoxLogo
             // 

@@ -237,7 +237,7 @@ namespace verwaltung
             }
         }
 
-        //########################################################################### METHODE ##############################################################################
+        //########################################################################### User Interface ##############################################################################
 
         void tboxesBorderDisabled() {
             tboxName.BorderStyle = BorderStyle.None;
@@ -314,7 +314,6 @@ namespace verwaltung
             tboxAngemeldet.BackColor = backColor;
             tboxAngemeldet.ForeColor = textColor;
             tboxAngemeldet.Font = fontFamily;
-            //tboxAngemeldet.TextAlign = HorizontalAlignment.Center;
 
             tboxKrankheit.BackColor = backColor;
             tboxKrankheit.ForeColor = textColor;
