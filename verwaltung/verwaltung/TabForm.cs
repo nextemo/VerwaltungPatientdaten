@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +16,13 @@ namespace verwaltung
     {
         static string path = System.IO.Directory.GetCurrentDirectory();
         SQLiteConnection con = new SQLiteConnection($"Data Source = {path}/Patient.db; Version = 3;");//database initialize
+        SQLiteCommand command;
         Font fontFamily = new Font("Microsoft Tai Le", 18, FontStyle.Bold);
 
         string pName, pVorname, pGeschlecht, pEmail, pKrankheit;
         DateTime pGebDatum;
-        int pAlter, pNummer;
+        int pAlter, pNummer, position, count;
+
         int id = 0;
         int vorname = 1;
         int name = 2;
@@ -30,8 +32,6 @@ namespace verwaltung
         int nummer = 8;
         int email = 9;
         int krankheit = 10;
-        int position;
-        int count;
 
         Point _mouseLoc;
         public TabForm()
@@ -48,11 +48,6 @@ namespace verwaltung
 
         private void btnPSpeichern_Click(object sender, EventArgs e)// save the entered data
         {
-            var vName = tboxPVorname.Text;
-            var nName = tboxPNachname.Text;
-            var geburtsdatum = gebDatumPicker.Value;
-            var krankheit = tboxPKrankheit.Text;
-
             if (rMänlich.Checked) pGeschlecht = "Mänlich";
             else if (rWeiblich.Checked) pGeschlecht = "Weiblich";
             else pGeschlecht = "Not available";
@@ -67,15 +62,13 @@ namespace verwaltung
                 return;
             }
 
-            var email = tboxPEmail.Text;
-
             //update the Values
-            vName = vName.Replace("  ", " ");
-            nName = nName.Replace("  ", " ");
+            tboxPVorname.Text = tboxPVorname.Text.Replace("  ", " ");
+            tboxPNachname.Text = tboxPNachname.Text.Replace("  ", " ");
 
-            try
+            try //check the email format
             {
-                System.Net.Mail.MailAddress m = new System.Net.Mail.MailAddress(email);
+                System.Net.Mail.MailAddress m = new System.Net.Mail.MailAddress(tboxPEmail.Text);
             }
             catch
             {
@@ -84,7 +77,7 @@ namespace verwaltung
             }
 
             //neuer Patient
-            var neuPatient = new Patient(vName, nName, geburtsdatum, pGeschlecht, email, pNummer, krankheit);
+            var neuPatient = new Patient(tboxPVorname.Text, tboxPNachname.Text, gebDatumPicker.Value, pGeschlecht, tboxPEmail.Text, pNummer, tboxPKrankheit.Text);
 
             pName = neuPatient.Name;
             pVorname = neuPatient.Vorname;
@@ -110,7 +103,7 @@ namespace verwaltung
 
         private void tSearch_TextChanged(object sender, EventArgs e)//search patient
         {
-            SQLiteCommand command;
+            //SQLiteCommand command;
             command = con.CreateCommand();
             command.CommandText = $"SELECT * FROM PatientDB WHERE Vorname || Name || Geburtsdatum || ID || Geschlecht || Angemeldet || Age LIKE '%{tSearch.Text}%'";
             SQLiteDataReader reader = command.ExecuteReader();
@@ -119,6 +112,60 @@ namespace verwaltung
                 position = reader.GetInt32(id);
                 loadPatient();
             }
+        }
+
+        public void getFirstID()//getting the first ID of the first row
+        {
+            //SQLiteCommand command;
+            command = con.CreateCommand();
+            command.CommandText = $"SELECT * FROM PatientDB ";
+            SQLiteDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                position = reader.GetInt32(0);
+            }
+        }
+
+        public void loadPatient()//LOAD THE LIST OF PATIENT
+        {
+            readOnlyTboxes();
+            //SQLiteCommand command;
+            command = con.CreateCommand();
+            command.CommandText = $"SELECT * FROM PatientDB WHERE ID = {position}";
+            SQLiteDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                tboxVorname.Text = reader.GetString(vorname);
+                tboxName.Text = reader.GetString(name);
+                tboxGDatum.Text = reader.GetString(geburtsdatum);
+                tboxGeschlecht.Text = reader.GetString(geschlecht);
+                tboxNummer.Text = reader.GetString(nummer);
+                tboxEmail.Text = reader.GetString(email);
+                tboxAngemeldet.Text = reader.GetString(angemeldet);
+                tboxKrankheit.Text = reader.GetString(krankheit);
+            }
+        }
+
+        void getTotalRows()//getting total rows available in the database
+        {
+            //SQLiteCommand command;
+            command = con.CreateCommand();
+            command.CommandText = $"SELECT COUNT(*) FROM PatientDB";
+            SQLiteDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                count = reader.GetInt32(0);
+            }
+        }
+
+        void updateEntry(string vorname, string name, string geburtsDatum, string geschlecht, string ankunft, string nummer, string email, string krankheit)//UPDATE DATA
+        {
+            //SQLiteCommand sqlite_cmd;
+            command = con.CreateCommand();
+            command.CommandText = $"UPDATE PatientDB SET Vorname = '{vorname}', Name = '{name}', Geburtsdatum = '{geburtsDatum}', Geschlecht = '{geschlecht}', Angemeldet = '{ankunft}', Abgemeldet = '{null}', Nummer = '{nummer}', Email = '{email}', Krankheit = '{krankheit}' WHERE ID = {position};";
+            command.ExecuteNonQuery();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -190,7 +237,7 @@ namespace verwaltung
             }
         }
 
-        //########################################################################### METHODE ##############################################################################
+        //########################################################################### User Interface ##############################################################################
 
         void tboxesBorderDisabled() {
             tboxName.BorderStyle = BorderStyle.None;
@@ -267,13 +314,11 @@ namespace verwaltung
             tboxAngemeldet.BackColor = backColor;
             tboxAngemeldet.ForeColor = textColor;
             tboxAngemeldet.Font = fontFamily;
-            //tboxAngemeldet.TextAlign = HorizontalAlignment.Center;
 
             tboxKrankheit.BackColor = backColor;
             tboxKrankheit.ForeColor = textColor;
             tboxKrankheit.Font = fontFamily;
         }
-
 
         void btnNextColorChanged() {
             btnNext.FindForm();
@@ -321,47 +366,16 @@ namespace verwaltung
             }
         }
 
-        void tboxClear()
+        void tboxClear()//clear values in the textboxes 
         {
             tboxPVorname.Clear();
             tboxPNachname.Clear();
             tboxPEmail.Clear();
             tboxPNumber.Clear();
-        }//clear values in the textboxes 
-
-        public void getFirstID()//getting the first ID of the first row
-        {
-            SQLiteCommand command;
-            command = con.CreateCommand();
-            command.CommandText = $"SELECT * FROM PatientDB ";
-            SQLiteDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                position = reader.GetInt32(0);
-            }
+            tboxPKrankheit.Clear();
         }
 
-        public void loadPatient()//LOAD THE LIST OF PATIENT
-        {
-            readOnlyTboxes();
-            SQLiteCommand command;
-            command = con.CreateCommand();
-            command.CommandText = $"SELECT * FROM PatientDB WHERE ID = {position}";
-            SQLiteDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                tboxVorname.Text = reader.GetString(vorname);
-                tboxName.Text = reader.GetString(name);
-                tboxGDatum.Text = reader.GetString(geburtsdatum);
-                tboxGeschlecht.Text = reader.GetString(geschlecht);
-                tboxNummer.Text = reader.GetString(nummer);
-                tboxEmail.Text = reader.GetString(email);
-                tboxAngemeldet.Text = reader.GetString(angemeldet);
-                tboxKrankheit.Text = reader.GetString(krankheit);
-            }
-        }
+        
         void readOnlyTboxes()
         {
             tboxAngemeldet.ReadOnly = true;
@@ -384,26 +398,6 @@ namespace verwaltung
             tboxEmail.ReadOnly = false;
             tboxNummer.ReadOnly = false;
             tboxKrankheit.ReadOnly = false;
-        }
-
-        void getTotalRows()//getting total rows available in the database
-        {
-            SQLiteCommand command;
-            command = con.CreateCommand();
-            command.CommandText = $"SELECT COUNT(*) FROM PatientDB";
-            SQLiteDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                count = reader.GetInt32(0);
-            }
-        }
-
-        void updateEntry(string vorname, string name, string geburtsDatum, string geschlecht, string ankunft, string nummer, string email, string krankheit)//UPDATE DATA
-        {
-            SQLiteCommand sqlite_cmd;
-            sqlite_cmd = con.CreateCommand();
-            sqlite_cmd.CommandText = $"UPDATE PatientDB SET Vorname = '{vorname}', Name = '{name}', Geburtsdatum = '{geburtsDatum}', Geschlecht = '{geschlecht}', Angemeldet = '{ankunft}', Abgemeldet = '{null}', Nummer = '{nummer}', Email = '{email}', Krankheit = '{krankheit}' WHERE ID = {position};";
-            sqlite_cmd.ExecuteNonQuery();
         }
 
         private void Tab_SelectedIndexChanged(object sender, EventArgs e)//database will be reloaded when tabpages change
