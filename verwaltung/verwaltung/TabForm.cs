@@ -16,7 +16,7 @@ namespace verwaltung
     {
         static string path = System.IO.Directory.GetCurrentDirectory();
         SQLiteConnection con = new SQLiteConnection($"Data Source = {path}/Patient.db; Version = 3;");//database initialize
-        SQLiteCommand command;
+        SQLiteCommand command; 
         Font fontFamily = new Font("Microsoft Tai Le", 18, FontStyle.Bold);
 
         string pName, pVorname, pGeschlecht, pEmail, pKrankheit;
@@ -33,7 +33,7 @@ namespace verwaltung
         int email = 9;
         int krankheit = 10;
 
-        Point _mouseLoc;
+        Point mouseLoc;
         public TabForm()
         {
             InitializeComponent();
@@ -102,7 +102,6 @@ namespace verwaltung
 
         private void tSearch_TextChanged(object sender, EventArgs e)//search patient
         {
-            //SQLiteCommand command;
             command = con.CreateCommand();
             command.CommandText = $"SELECT * FROM PatientDB WHERE Vorname || Name || Geburtsdatum || ID || Geschlecht || Angemeldet || Age LIKE '%{tSearch.Text}%'";
             SQLiteDataReader reader = command.ExecuteReader();
@@ -115,7 +114,6 @@ namespace verwaltung
 
         public void getFirstID()//getting the first ID of the first row
         {
-            //SQLiteCommand command;
             command = con.CreateCommand();
             command.CommandText = $"SELECT * FROM PatientDB ";
             SQLiteDataReader reader = command.ExecuteReader();
@@ -129,7 +127,6 @@ namespace verwaltung
         public void loadPatient()//LOAD THE LIST OF PATIENT
         {
             readOnlyTboxes();
-            //SQLiteCommand command;
             command = con.CreateCommand();
             command.CommandText = $"SELECT * FROM PatientDB WHERE ID = {position}";
             SQLiteDataReader reader = command.ExecuteReader();
@@ -149,7 +146,6 @@ namespace verwaltung
 
         void getTotalRows()//getting total rows available in the database
         {
-            //SQLiteCommand command;
             command = con.CreateCommand();
             command.CommandText = $"SELECT COUNT(*) FROM PatientDB";
             SQLiteDataReader reader = command.ExecuteReader();
@@ -161,7 +157,6 @@ namespace verwaltung
 
         void updateEntry(string vorname, string name, string geburtsDatum, string geschlecht, string ankunft, string nummer, string email, string krankheit)//UPDATE DATA
         {
-            //SQLiteCommand sqlite_cmd;
             command = con.CreateCommand();
             command.CommandText = $"UPDATE PatientDB SET Vorname = '{vorname}', Name = '{name}', Geburtsdatum = '{geburtsDatum}', Geschlecht = '{geschlecht}', Angemeldet = '{ankunft}', Abgemeldet = '{null}', Nummer = '{nummer}', Email = '{email}', Krankheit = '{krankheit}' WHERE ID = {position};";
             command.ExecuteNonQuery();
@@ -223,15 +218,15 @@ namespace verwaltung
 
         private void TabForm_MouseDown(object sender, MouseEventArgs e)//to make form moveable
         {
-            _mouseLoc = e.Location;
+            mouseLoc = e.Location;
         }
 
         private void TabForm_MouseMove(object sender, MouseEventArgs e)//form moveable
         {
             if (e.Button == MouseButtons.Left)
             {
-                int dx = e.Location.X - _mouseLoc.X;
-                int dy = e.Location.Y - _mouseLoc.Y;
+                int dx = e.Location.X - mouseLoc.X;
+                int dy = e.Location.Y - mouseLoc.Y;
                 this.Location = new Point(this.Location.X + dx, this.Location.Y + dy);
             }
         }
