@@ -43,7 +43,6 @@ namespace verwaltung
             loadPatient();
             tboxStyle(Color.Beige, Color.Teal);
             buttonStyle();
-            
         }
 
         private void btnPSpeichern_Click(object sender, EventArgs e)// save the entered data
